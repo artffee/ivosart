@@ -130,7 +130,10 @@
   .wb:nth-child(even) .wmedia{order:2}
   .wb:nth-child(even) .wtext{order:1;text-align:right}
   .wtext .idx{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;color:var(--bronze);margin-bottom:18px}
-  .wtext h3{font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(2.4rem,6vw,5.5rem);line-height:.95;letter-spacing:-.01em;margin-bottom:18px}
+  .wtext h3{font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(2.4rem,6vw,5.5rem);line-height:.95;letter-spacing:-.01em;margin-bottom:16px}
+  .wtext .wdesc{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,1.8vw,1.5rem);line-height:1.4;color:var(--ink);max-width:30ch;margin-bottom:22px}
+  .wb:nth-child(even) .wtext .wdesc{margin-left:auto}
+  .lb-info .lb-desc{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--bronze-2);margin:12px auto 0;max-width:34ch}
   .wtext .med{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-bottom:26px;line-height:1.8}
   .wtext .inq{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:5px;cursor:none}
   .wtext .inq .ar{transition:transform .4s var(--e)}.wtext .inq:hover .ar{transform:translateX(5px)}
@@ -270,8 +273,8 @@
 <section class="hero" id="hero">
   <div class="wrap">
     <div class="hero-top">
-      <span class="mono">Abstract · Mixed media · 1&nbsp;of&nbsp;1</span>
-      <span class="mono">Est. — the studio</span>
+      <span class="mono">Abstract · Gesture · 1&nbsp;of&nbsp;1</span>
+      <span class="mono">IvosArt — the studio</span>
     </div>
     <h1 class="hero-name" id="heroName">
       <span class="l1" data-split>Ivaylo</span>
@@ -282,7 +285,7 @@
       <figcaption class="cap"><span>Crossing</span><span>2024</span></figcaption>
     </figure>
     <div class="hero-bottom">
-      <p>One-of-a-kind abstract paintings — gesture, colour and the single unbroken line. Made by hand, never reproduced.</p>
+      <p>Paintings made in a single surge of movement — colour thrown, dragged, and left where it lands. Each one happens once, and never again.</p>
       <div class="hero-actions">
         <a href="#works" class="btn btn-fill mag">Enter the gallery <span class="ar">→</span></a>
         <a href="#inquire" class="btn btn-out mag">Inquire</a>
@@ -293,8 +296,8 @@
 
 <!-- MARQUEE -->
 <div class="marq"><div class="marq-t">
-  <span>Line is thought</span><span>Line is memory</span><span>Line is the path that connects us all</span>
-  <span>Line is thought</span><span>Line is memory</span><span>Line is the path that connects us all</span>
+  <span>Gesture is memory</span><span>The hand never lies</span><span>Paint keeps the record of the moment</span>
+  <span>Gesture is memory</span><span>The hand never lies</span><span>Paint keeps the record of the moment</span>
 </div></div>
 
 <!-- WORKS -->
@@ -317,7 +320,7 @@
 <section class="stmt">
   <div class="wrap rv">
     <div class="smono">The philosophy</div>
-    <h3>Imagination, memory and destiny — themselves part of <em>one uninterrupted line.</em></h3>
+    <h3>Chaos, caught at the exact instant it <em>becomes form.</em></h3>
   </div>
 </section>
 
@@ -346,10 +349,10 @@
     </div>
     <div class="rv">
       <span class="mono">03 — The artist</span>
-      <h2>Ivaylo Peytchev celebrates the power of <em>line</em> as both form and feeling.</h2>
-      <p>Through gesture and simplicity, Ivaylo reveals complex narratives and timeless emotion. His paintings move between explosive colour and disciplined restraint — energetic, yet deeply composed.</p>
-      <p>Each canvas is built by hand in the studio: layered, instinctive, unrepeatable. No editions. No reproductions. Only originals.</p>
-      <div class="quote">“Line is thought. Line is memory.<br>Line is the path that connects us all.”</div>
+      <h2>Painting in <em>motion.</em></h2>
+      <p>Ivaylo Peytchev paints in motion. Each canvas is a single, committed gesture — colour flung and pulled across the surface, then allowed to find its own order. Nothing is planned twice. Nothing is corrected. What looks like chaos is a decision made in one breath and never taken back.</p>
+      <p>The work moves between explosive colour and severe restraint — a festival on one wall, two colours of silence on the next. Built by hand in the studio, layered and instinctive. No editions. No reproductions. Only the original moment.</p>
+      <div class="quote">“The hand never lies. Whatever happened in front of the canvas, the paint remembers.”</div>
       <div class="sig">Ivaylo Peytchev</div>
     </div>
   </div>
@@ -406,20 +409,20 @@
 <script>
 /* ===== WORKS (no prices) — edit titles / medium / tags freely ===== */
 const works=[
- {img:"work-01.jpg",title:"Crossing",medium:"Acrylic on canvas · 70 × 90 cm · 2024",tags:["gesture","colour"]},
- {img:"work-02.jpg",title:"Tempest",medium:"Acrylic & mixed media · 70 × 90 cm · 2023",tags:["colour","gesture"]},
- {img:"work-03.jpg",title:"Crimson Ascent",medium:"Acrylic on canvas · 60 × 80 cm · 2024",tags:["colour","gesture"]},
- {img:"work-04.jpg",title:"Cacophony",medium:"Mixed media · 90 × 120 cm · 2023",tags:["colour"]},
- {img:"work-05.jpg",title:"Resonance",medium:"Acrylic on canvas · 60 × 90 cm · 2024",tags:["colour","gesture"]},
- {img:"work-06.jpg",title:"First Light",medium:"Acrylic on canvas · 60 × 80 cm · 2024",tags:["gesture"]},
- {img:"work-07.jpg",title:"Festival",medium:"Acrylic on canvas · 80 × 80 cm · 2023",tags:["colour"]},
- {img:"work-08.jpg",title:"Constellation",medium:"Mixed media · 90 × 120 cm · 2023",tags:["colour","gesture"]},
- {img:"work-09.jpg",title:"Bloom in Chaos",medium:"Acrylic on canvas · 80 × 80 cm · 2024",tags:["colour"]},
- {img:"work-10.jpg",title:"Nightshade",medium:"Acrylic on canvas · 60 × 80 cm · 2024",tags:["colour","gesture"]},
- {img:"work-11.jpg",title:"Monochrome Study",medium:"Acrylic on canvas · 70 × 90 cm · 2023",tags:["monochrome","gesture"]},
- {img:"work-12.jpg",title:"Inferno",medium:"Acrylic on canvas · 70 × 90 cm · 2024",tags:["colour","gesture"]},
- {img:"work-13.jpg",title:"Devotion",medium:"Acrylic & gold on canvas · 60 × 80 cm · 2024",tags:["ink","gesture"]},
- {img:"work-14.jpg",title:"Whisper",medium:"Ink & gold on paper · 70 × 70 cm · 2024",tags:["ink","monochrome"]},
+ {img:"work-01.jpg",title:"Crossing",desc:"Two forces meet, and neither yields.",medium:"Acrylic on canvas · 70 × 90 cm · 2024",tags:["gesture","colour"]},
+ {img:"work-02.jpg",title:"Tempest",desc:"Weather with a temper. Silver and blood, refusing to settle.",medium:"Acrylic & mixed media · 70 × 90 cm · 2023",tags:["colour","gesture"]},
+ {img:"work-03.jpg",title:"Crimson Ascent",desc:"Red climbing out of its own wreckage.",medium:"Acrylic on canvas · 60 × 80 cm · 2024",tags:["colour","gesture"]},
+ {img:"work-04.jpg",title:"Cacophony",desc:"Every voice at once — and somehow, a chord.",medium:"Mixed media · 90 × 120 cm · 2023",tags:["colour"]},
+ {img:"work-05.jpg",title:"Resonance",desc:"A struck note you can see before you hear it.",medium:"Acrylic on canvas · 60 × 90 cm · 2024",tags:["colour","gesture"]},
+ {img:"work-06.jpg",title:"First Light",desc:"The quietest violence in the room.",medium:"Acrylic on canvas · 60 × 80 cm · 2024",tags:["gesture"]},
+ {img:"work-07.jpg",title:"Festival",desc:"Joy with no brakes on.",medium:"Acrylic on canvas · 80 × 80 cm · 2023",tags:["colour"]},
+ {img:"work-08.jpg",title:"Constellation",desc:"A night sky that forgot to hold still.",medium:"Mixed media · 90 × 120 cm · 2023",tags:["colour","gesture"]},
+ {img:"work-09.jpg",title:"Bloom in Chaos",desc:"Spring, if spring were an argument.",medium:"Acrylic on canvas · 80 × 80 cm · 2024",tags:["colour"]},
+ {img:"work-10.jpg",title:"Nightshade",desc:"Beautiful, and not to be touched.",medium:"Acrylic on canvas · 60 × 80 cm · 2024",tags:["colour","gesture"]},
+ {img:"work-11.jpg",title:"Monochrome Study",desc:"Everything loud, said in two colours.",medium:"Acrylic on canvas · 70 × 90 cm · 2023",tags:["monochrome","gesture"]},
+ {img:"work-12.jpg",title:"Inferno",desc:"A slow burn that refuses to go out.",medium:"Acrylic on canvas · 70 × 90 cm · 2024",tags:["colour","gesture"]},
+ {img:"work-13.jpg",title:"Devotion",desc:"Gold held together by its own dark gravity.",medium:"Acrylic & gold on canvas · 60 × 80 cm · 2024",tags:["ink","gesture"]},
+ {img:"work-14.jpg",title:"Whisper",desc:"The least paint, saying the most.",medium:"Ink & gold on paper · 70 × 70 cm · 2024",tags:["ink","monochrome"]},
 ];
 
 const flow=document.getElementById("flow");
@@ -442,6 +445,7 @@ function render(f="all"){
       <div class="wtext">
         <div class="idx">Work №${pad(k+1)} / ${pad(list.length)}</div>
         <h3>${w.title}</h3>
+        ${w.desc?`<p class="wdesc">${w.desc}</p>`:""}
         <div class="med">${w.medium}</div>
         ${w.sold?'<span class="acq">Acquired</span>':`<a class="inq" href="#inquire" onclick="pre('${w.title.replace(/'/g,'')}')">Inquire to acquire <span class="ar">→</span></a>`}
       </div>`;
@@ -465,7 +469,7 @@ const lb=document.getElementById("lb"),stage=document.getElementById("lbstage");
 function openLb(i){li=i;drawLb();lb.classList.add("open");document.body.style.overflow="hidden";}
 function drawLb(){const w=works[li];stage.innerHTML=`
   <img src="images/${w.img}" alt="${w.title}" onerror="this.outerHTML='<div style=\\'width:60vw;max-width:440px;aspect-ratio:4/5;background:linear-gradient(150deg,#2a261d,#1a160f);display:grid;place-items:center;color:#6c655a;font-family:var(--serif);font-style:italic\\'>${w.title}</div>'"/>
-  <div class="lb-info"><h3>${w.title}</h3><div class="m">${w.medium}</div>
+  <div class="lb-info"><h3>${w.title}</h3>${w.desc?`<p class="lb-desc">${w.desc}</p>`:""}<div class="m">${w.medium}</div>
   ${w.sold?'<span class="acq">Acquired</span>':`<a href="#inquire" class="btn mag" onclick="pre('${w.title.replace(/'/g,'')}');closeLb()">Inquire to acquire <span class="ar">→</span></a>`}</div>`;bind();}
 function closeLb(){lb.classList.remove("open");document.body.style.overflow="";}
 function step(d){li=(li+d+works.length)%works.length;drawLb();}

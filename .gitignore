@@ -7,3 +7,5 @@ images/_originals/
 # os / editor
 Thumbs.db
 .DS_Store
+
+.vercel
