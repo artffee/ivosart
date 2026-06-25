@@ -1,0 +1,9 @@
+# local backup of full-resolution originals (not needed for the site)
+images/_originals/
+
+# vercel
+.vercel
+
+# os / editor
+Thumbs.db
+.DS_Store

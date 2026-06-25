@@ -1,0 +1,44 @@
+HOW TO ADD YOUR PAINTINGS  —  IvosArt
+======================================
+
+Save each painting into THIS "images" folder using the EXACT filename below
+(all lowercase, .jpg). The website loads them automatically — no code editing
+needed. Until a file exists, the site shows an elegant placeholder, so nothing
+ever looks broken.
+
+Tip: for the best look, crop each photo to JUST the artwork (you can leave the
+frame in — it looks great). Aim for ~1200px on the long edge.
+
+--------------------------------------------------------------------------
+FILENAME            WHICH PAINTING (from the photos you sent)
+--------------------------------------------------------------------------
+work-01.jpg   →  Bold ORANGE + BLACK "X" brushstrokes on white (dark frame)
+                 *This is also the big HERO image at the top.*
+work-02.jpg   →  Red / grey / black swirling impasto (silver frame, tall)
+work-03.jpg   →  Red / black / gold gestural strokes (black frame, tall)
+work-04.jpg   →  Dense YELLOW / black / green / red palette-knife (gold frame)
+work-05.jpg   →  Yellow / grey / black / red on white (black frame, tall)
+work-06.jpg   →  Cream / black / orange feather-like splash (silver frame)
+work-07.jpg   →  Pink / orange / black / yellow splatter (black frame, square)
+work-08.jpg   →  Orange / red / green dots over dark grey (silver frame)
+work-09.jpg   →  Orange / purple / green explosive splatter (walnut frame, square)
+work-10.jpg   →  Black / yellow / pink / purple on white (black frame, tall)
+work-11.jpg   →  Black & white gestural strokes (black frame, tall)
+work-12.jpg   →  Black / yellow / red / orange on cream (silver frame, tall)
+work-13.jpg   →  Black / orange / gold "heart" strokes (black frame, tall)
+work-14.jpg   →  Grey / gold / black fluid ink splash on white (black frame, square)
+
+don-quixote.jpg → The single-line DON QUIXOTE drawing
+                  (crop it out of the magazine/collector's poster image)
+
+artist.jpg    →  (Optional) A photo of you for the "Artist" section.
+                 If you don't add one, a tasteful "IP" monogram shows instead.
+--------------------------------------------------------------------------
+
+WANT TO CHANGE TITLES, SIZES OR PRICES?
+Open index.html, find the "WORKS DATA" list near the bottom, and edit the
+title / medium / year / price text. To mark a piece as sold, add  sold:true
+to its line, e.g.:
+   {img:"work-03.jpg", title:"Crimson Ascent", ... , sold:true},
+
+That's it — refresh the page and your gallery is live.
