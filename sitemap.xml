@@ -2,23 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://ivosart.vercel.app/</loc>
+    <loc>https://ivosart.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <image:image><image:loc>https://ivosart.vercel.app/images/work-01.jpg</image:loc><image:title>Crossing</image:title></image:image>
-    <image:image><image:loc>https://ivosart.vercel.app/images/work-02.jpg</image:loc><image:title>Tempest</image:title></image:image>
-    <image:image><image:loc>https://ivosart.vercel.app/images/work-03.jpg</image:loc><image:title>Crimson Ascent</image:title></image:image>
-    <image:image><image:loc>https://ivosart.vercel.app/images/work-04.jpg</image:loc><image:title>Cacophony</image:title></image:image>
-    <image:image><image:loc>https://ivosart.vercel.app/images/work-05.jpg</image:loc><image:title>Resonance</image:title></image:image>
-    <image:image><image:loc>https://ivosart.vercel.app/images/work-06.jpg</image:loc><image:title>First Light</image:title></image:image>
-    <image:image><image:loc>https://ivosart.vercel.app/images/work-07.jpg</image:loc><image:title>Festival</image:title></image:image>
-    <image:image><image:loc>https://ivosart.vercel.app/images/work-08.jpg</image:loc><image:title>Constellation</image:title></image:image>
-    <image:image><image:loc>https://ivosart.vercel.app/images/work-09.jpg</image:loc><image:title>Bloom in Chaos</image:title></image:image>
-    <image:image><image:loc>https://ivosart.vercel.app/images/work-10.jpg</image:loc><image:title>Nightshade</image:title></image:image>
-    <image:image><image:loc>https://ivosart.vercel.app/images/work-11.jpg</image:loc><image:title>Monochrome Study</image:title></image:image>
-    <image:image><image:loc>https://ivosart.vercel.app/images/work-12.jpg</image:loc><image:title>Inferno</image:title></image:image>
-    <image:image><image:loc>https://ivosart.vercel.app/images/work-13.jpg</image:loc><image:title>Devotion</image:title></image:image>
-    <image:image><image:loc>https://ivosart.vercel.app/images/work-14.jpg</image:loc><image:title>Whisper</image:title></image:image>
-    <image:image><image:loc>https://ivosart.vercel.app/images/don-quixote.jpg</image:loc><image:title>Don Quixote in a single line</image:title></image:image>
+    <image:image><image:loc>https://ivosart.com/images/work-01.jpg</image:loc><image:title>Crossing</image:title></image:image>
+    <image:image><image:loc>https://ivosart.com/images/work-02.jpg</image:loc><image:title>Tempest</image:title></image:image>
+    <image:image><image:loc>https://ivosart.com/images/work-03.jpg</image:loc><image:title>Crimson Ascent</image:title></image:image>
+    <image:image><image:loc>https://ivosart.com/images/work-04.jpg</image:loc><image:title>Cacophony</image:title></image:image>
+    <image:image><image:loc>https://ivosart.com/images/work-05.jpg</image:loc><image:title>Resonance</image:title></image:image>
+    <image:image><image:loc>https://ivosart.com/images/work-06.jpg</image:loc><image:title>First Light</image:title></image:image>
+    <image:image><image:loc>https://ivosart.com/images/work-07.jpg</image:loc><image:title>Festival</image:title></image:image>
+    <image:image><image:loc>https://ivosart.com/images/work-08.jpg</image:loc><image:title>Constellation</image:title></image:image>
+    <image:image><image:loc>https://ivosart.com/images/work-09.jpg</image:loc><image:title>Bloom in Chaos</image:title></image:image>
+    <image:image><image:loc>https://ivosart.com/images/work-10.jpg</image:loc><image:title>Nightshade</image:title></image:image>
+    <image:image><image:loc>https://ivosart.com/images/work-11.jpg</image:loc><image:title>Monochrome Study</image:title></image:image>
+    <image:image><image:loc>https://ivosart.com/images/work-12.jpg</image:loc><image:title>Inferno</image:title></image:image>
+    <image:image><image:loc>https://ivosart.com/images/work-13.jpg</image:loc><image:title>Devotion</image:title></image:image>
+    <image:image><image:loc>https://ivosart.com/images/work-14.jpg</image:loc><image:title>Whisper</image:title></image:image>
+    <image:image><image:loc>https://ivosart.com/images/don-quixote.jpg</image:loc><image:title>Don Quixote in a single line</image:title></image:image>
   </url>
 </urlset>

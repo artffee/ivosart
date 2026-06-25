@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ivosart.vercel.app/sitemap.xml
+Sitemap: https://ivosart.com/sitemap.xml
