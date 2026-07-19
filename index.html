@@ -264,6 +264,98 @@
     .hero-img{position:relative;right:auto;top:auto;transform:rotate(-2deg);width:200px;margin-top:30px}
     .hero.go .hero-img{transform:rotate(-2deg)}
   }
+
+  /* ===== AI concierge ===== */
+  .cc-fab{position:fixed;right:clamp(18px,3vw,34px);bottom:clamp(18px,3vw,34px);z-index:450;display:inline-flex;align-items:center;gap:11px;background:var(--ink);color:var(--bone);border:1px solid var(--ink);border-radius:100px;padding:14px 22px;cursor:pointer;font-family:var(--mono);font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;box-shadow:0 22px 44px -22px rgba(18,16,9,.7);transition:background .45s var(--e),transform .45s var(--e),opacity .5s var(--e)}
+  .cc-fab:hover{background:var(--bronze);border-color:var(--bronze)}
+  .cc-fab .dot{width:7px;height:7px;border-radius:50%;background:var(--bronze-2);box-shadow:0 0 0 0 rgba(192,168,120,.6);animation:ccp 2.6s var(--e) infinite}
+  .cc-fab.hide{opacity:0;transform:translateY(20px) scale(.9);pointer-events:none}
+  @keyframes ccp{0%{box-shadow:0 0 0 0 rgba(192,168,120,.55)}70%{box-shadow:0 0 0 9px rgba(192,168,120,0)}100%{box-shadow:0 0 0 0 rgba(192,168,120,0)}}
+
+  .cc-panel{position:fixed;right:clamp(14px,3vw,34px);bottom:clamp(14px,3vw,34px);z-index:700;width:min(400px,calc(100vw - 28px));height:min(600px,calc(100vh - 28px));display:flex;flex-direction:column;background:var(--bone);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 60px 120px -40px rgba(18,16,9,.6);opacity:0;transform:translateY(24px) scale(.97);pointer-events:none;transition:opacity .5s var(--e),transform .5s var(--e)}
+  .cc-panel.open{opacity:1;transform:none;pointer-events:auto}
+  .cc-head{display:flex;align-items:center;gap:13px;padding:18px 20px;background:var(--ink);color:var(--bone)}
+  .cc-head .mg{width:38px;height:38px;border:1px solid var(--bronze-2);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:1rem;color:var(--bronze-2)}
+  .cc-head .ci h4{font-family:var(--serif);font-weight:400;font-size:1.15rem;line-height:1.1}
+  .cc-head .ci span{font-family:var(--mono);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze-2)}
+  .cc-x{margin-left:auto;width:34px;height:34px;border:1px solid rgba(255,255,255,.24);border-radius:50%;background:none;color:var(--bone);font-size:1.05rem;cursor:pointer;transition:.3s}
+  .cc-x:hover{background:var(--bone);color:var(--ink)}
+  .cc-body{flex:1;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:14px;scroll-behavior:smooth}
+  .cc-msg{max-width:85%;padding:12px 15px;border-radius:15px;font-size:.94rem;line-height:1.55;white-space:pre-wrap;word-wrap:break-word}
+  .cc-msg.bot{align-self:flex-start;background:var(--bone-2);border:1px solid var(--line);border-bottom-left-radius:5px;color:var(--ink)}
+  .cc-msg.me{align-self:flex-end;background:var(--ink);color:var(--bone);border-bottom-right-radius:5px}
+  .cc-typing{align-self:flex-start;display:flex;gap:5px;padding:14px 16px;background:var(--bone-2);border:1px solid var(--line);border-radius:15px;border-bottom-left-radius:5px}
+  .cc-typing i{width:6px;height:6px;border-radius:50%;background:var(--bronze);opacity:.5;animation:ccb 1.2s infinite}
+  .cc-typing i:nth-child(2){animation-delay:.2s}.cc-typing i:nth-child(3){animation-delay:.4s}
+  @keyframes ccb{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-5px);opacity:1}}
+  .cc-chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 20px 14px}
+  .cc-chips button{background:none;border:1px solid var(--line);border-radius:100px;padding:8px 13px;cursor:pointer;font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);transition:.3s}
+  .cc-chips button:hover{border-color:var(--bronze);color:var(--ink)}
+  .cc-foot{display:flex;gap:10px;align-items:flex-end;padding:14px 16px;border-top:1px solid var(--line);background:var(--bone-2)}
+  .cc-foot textarea{flex:1;resize:none;max-height:110px;border:none;background:transparent;font-family:var(--sans);font-weight:300;font-size:.95rem;color:var(--ink);line-height:1.5;padding:8px 4px}
+  .cc-foot textarea:focus{outline:none}
+  .cc-send{width:42px;height:42px;flex:none;border-radius:50%;border:none;background:var(--ink);color:var(--bone);cursor:pointer;font-size:1rem;transition:background .35s var(--e)}
+  .cc-send:hover{background:var(--bronze)}
+  .cc-send:disabled{opacity:.4;cursor:default}
+  @media(max-width:480px){.cc-fab span{display:none}.cc-fab{padding:15px}}
+
+  /* ===== Energy Reading — section ===== */
+  .reading-sec{padding:clamp(90px,12vw,170px) 0;background:var(--bone-2);text-align:center}
+  .reading-sec .wrap{max-width:760px}
+  .reading-sec .mono{color:var(--bronze);display:block;margin-bottom:22px}
+  .reading-sec h2{font-family:var(--serif);font-weight:300;font-size:clamp(2.4rem,6vw,5rem);line-height:.98;letter-spacing:-.01em;margin-bottom:26px}
+  .reading-sec h2 em{font-style:italic;color:var(--bronze)}
+  .reading-sec p{color:var(--ink-2);font-size:1.08rem;max-width:560px;margin:0 auto 38px}
+  .reading-sec .btn{justify-content:center}
+
+  /* ===== Energy Reading — overlay ===== */
+  .er{position:fixed;inset:0;z-index:800;background:rgba(13,11,7,.98);color:var(--bone);display:flex;align-items:center;justify-content:center;padding:clamp(20px,5vw,48px);opacity:0;pointer-events:none;transition:opacity .6s var(--e)}
+  .er.open{opacity:1;pointer-events:auto}
+  .er::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 0%,rgba(154,124,77,.16),transparent 60%)}
+  .er-inner{position:relative;z-index:1;width:100%;max-width:720px;text-align:center}
+  .er-screen{display:none;animation:erin .8s var(--e)}
+  .er-screen.on{display:block}
+  @keyframes erin{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  .er-mono{font-family:var(--mono);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze-2);display:block;margin-bottom:24px}
+  .er-h{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,8vw,5.6rem);line-height:.96;letter-spacing:-.01em;margin-bottom:26px}
+  .er-h em{font-style:italic;color:var(--bronze-2)}
+  .er-h2{font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(1.9rem,5vw,3.4rem);line-height:1.02;margin-bottom:14px}
+  .er-lead{font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,2.4vw,1.6rem);line-height:1.5;color:#d8d1c4;max-width:34ch;margin:0 auto 40px}
+  .er-hint{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:#9a9086;margin-bottom:40px}
+  .er .btn{border-color:var(--bone);color:var(--bone)}
+  .er .btn:hover{background:var(--bone);color:var(--ink)}
+  .er .btn-fill{background:var(--bronze);border-color:var(--bronze);color:var(--ink)}
+  .er .btn-fill:hover{background:var(--bone);border-color:var(--bone)}
+  .er-cta{margin:0 auto}
+  .er-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:clamp(10px,1.4vw,18px);max-height:64vh;overflow-y:auto;padding:4px}
+  .er-tile{cursor:pointer;background:#fff;padding:8px;transition:transform .5s var(--e),box-shadow .5s var(--e)}
+  .er-tile:hover{transform:translateY(-5px);box-shadow:0 24px 44px -20px rgba(0,0,0,.7)}
+  .er-tile img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+  .er-tile.noimg{aspect-ratio:4/5;display:grid;place-items:center;background:linear-gradient(150deg,#2a261d,#1a160f);color:#6c655a;font-family:var(--serif);font-style:italic;font-size:.9rem;padding:10px;text-align:center}
+  .er-tile .tt{font-family:var(--mono);font-size:.54rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-top:7px}
+  .er-chosen{display:flex;align-items:center;gap:16px;justify-content:center;margin-bottom:26px}
+  .er-chosen img{width:66px;height:82px;object-fit:cover;background:#fff;padding:5px}
+  .er-chosen .ec-noimg{width:66px;height:82px;background:linear-gradient(150deg,#2a261d,#1a160f)}
+  .er-chosen .ec-t{text-align:left}
+  .er-chosen .ec-t b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.25rem;display:block}
+  .er-chosen .ec-t span{font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:#9a9086}
+  .er-input{width:100%;max-width:420px;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.3);color:var(--bone);font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,3vw,1.9rem);text-align:center;padding:12px 4px;margin:6px auto 34px;display:block}
+  .er-input::placeholder{color:#6f675c}
+  .er-input:focus{outline:none;border-color:var(--bronze-2)}
+  .er-actions{display:flex;flex-direction:column;align-items:center;gap:18px}
+  .er-skip{background:none;border:none;color:#9a9086;cursor:pointer;font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid transparent;padding-bottom:3px;transition:.3s}
+  .er-skip:hover{color:var(--bone);border-color:var(--bronze-2)}
+  .er-orb{width:88px;height:88px;margin:0 auto 30px;position:relative;display:grid;place-items:center}
+  .er-orb i{position:absolute;border-radius:50%;border:1px solid var(--bronze-2)}
+  .er-orb i:nth-child(1){inset:0;animation:erpulse 2.4s var(--e) infinite}
+  .er-orb i:nth-child(2){inset:16px;animation:erpulse 2.4s var(--e) infinite .5s}
+  .er-orb i:nth-child(3){inset:32px;background:var(--bronze-2);border:none;animation:erglow 2.4s var(--e) infinite}
+  @keyframes erpulse{0%{opacity:.15;transform:scale(.7)}50%{opacity:.9}100%{opacity:.15;transform:scale(1.1)}}
+  @keyframes erglow{0%,100%{opacity:.5;transform:scale(.85)}50%{opacity:1;transform:scale(1.15)}}
+  .er-attuning{font-family:var(--mono);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze-2)}
+  .er-freq{font-family:var(--mono);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze-2);display:block;margin-bottom:26px}
+  .er-reading{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,3vw,2.1rem);line-height:1.5;color:#efe9dc;max-width:26ch;margin:0 auto 40px}
+  @media(max-width:520px){.er-grid{grid-template-columns:repeat(auto-fill,minmax(94px,1fr))}}
 </style>
 </head>
 <body>
@@ -281,6 +373,7 @@
     <a href="#" class="brand"><span class="mg">IP</span> Ivaylo Peytchev</a>
     <div class="nlinks">
       <a href="#works">Works</a>
+      <a href="#reading">Reading</a>
       <a href="#signature">Signature</a>
       <a href="#artist">Artist</a>
       <a href="#inquire">Inquire</a>
@@ -291,7 +384,7 @@
 
 <div class="mm" id="mm">
   <button class="mx" id="mx">✕</button>
-  <a href="#works">Works</a><a href="#signature">Signature</a><a href="#artist">Artist</a><a href="#inquire">Inquire</a>
+  <a href="#works">Works</a><a href="#reading">Reading</a><a href="#signature">Signature</a><a href="#artist">Artist</a><a href="#inquire">Inquire</a>
 </div>
 
 <!-- HERO -->
@@ -346,6 +439,16 @@
   <div class="wrap rv">
     <div class="smono">The philosophy</div>
     <h3>Chaos, caught at the exact instant it <em>becomes form.</em></h3>
+  </div>
+</section>
+
+<!-- ENERGY READING -->
+<section class="reading-sec" id="reading">
+  <div class="wrap rv">
+    <span class="mono">The ritual</span>
+    <h2>Let a painting <em>read you</em></h2>
+    <p>Each canvas here was made in a single charged moment — and it still carries that charge. Let your eyes wander the works until one holds them; that pull is information. Offer one word for what you're carrying, and the studio will read your energy back to you.</p>
+    <button class="btn btn-fill mag" id="erOpen">Begin your reading <span class="ar">→</span></button>
   </div>
 </section>
 
@@ -429,6 +532,74 @@
   <button class="lb-n lb-nx" id="lbnx">→</button>
   <div class="lb-stage" id="lbstage"></div>
 </div>
+
+<!-- ENERGY READING OVERLAY -->
+<div class="er" id="er" role="dialog" aria-modal="true" aria-label="Energy reading">
+  <button class="lb-x" id="erX" aria-label="Close">✕</button>
+  <div class="er-inner">
+    <div class="er-screen on" data-s="intro">
+      <span class="er-mono">IvosArt · Energy Reading</span>
+      <h3 class="er-h">Let a painting <em>read you</em></h3>
+      <p class="er-lead">Don't choose with your mind. Let your eyes drift across the works until one holds them — then give me a single word for what you're carrying. I'll read it back.</p>
+      <button class="btn er-cta mag" data-go="choose">Begin <span class="ar">→</span></button>
+    </div>
+
+    <div class="er-screen" data-s="choose">
+      <span class="er-mono">Step one — the pull</span>
+      <h3 class="er-h2">Which one pulls you?</h3>
+      <p class="er-hint">Trust the first pull. Tap it.</p>
+      <div class="er-grid" id="erGrid"></div>
+    </div>
+
+    <div class="er-screen" data-s="feel">
+      <span class="er-mono">Step two — the word</span>
+      <div class="er-chosen" id="erChosen1"></div>
+      <h3 class="er-h2">One word — what are you carrying?</h3>
+      <input class="er-input" id="erWord" placeholder="restless · hopeful · tired · in love…" maxlength="60" autocomplete="off" />
+      <div class="er-actions">
+        <button class="btn btn-fill er-cta mag" id="erReveal">Read my energy <span class="ar">→</span></button>
+        <button class="er-skip" id="erSkip">Skip — just read the painting</button>
+      </div>
+    </div>
+
+    <div class="er-screen" data-s="attune">
+      <div class="er-orb"><i></i><i></i><i></i></div>
+      <p class="er-attuning" id="erAttuning">Attuning…</p>
+    </div>
+
+    <div class="er-screen" data-s="result">
+      <span class="er-freq" id="erFreq"></span>
+      <div class="er-chosen" id="erChosen2"></div>
+      <p class="er-reading" id="erReading"></p>
+      <div class="er-actions">
+        <button class="btn btn-fill er-cta mag" id="erInquire">Bring this one home <span class="ar">→</span></button>
+        <button class="er-skip" id="erAgain">Read another</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AI CONCIERGE -->
+<button class="cc-fab" id="ccFab" aria-label="Chat with the concierge">
+  <span class="dot"></span><span>Consult the Comte</span>
+</button>
+<section class="cc-panel" id="ccPanel" aria-live="polite" aria-label="IvosArt concierge">
+  <div class="cc-head">
+    <span class="mg">IP</span>
+    <div class="ci"><h4>Le Comte</h4><span>de Saint-Germain · always at your service</span></div>
+    <button class="cc-x" id="ccX" aria-label="Close chat">✕</button>
+  </div>
+  <div class="cc-body" id="ccBody"></div>
+  <div class="cc-chips" id="ccChips">
+    <button data-q="Which work would suit a calm, minimal room?">A calm, minimal room</button>
+    <button data-q="Tell me about the Don Quixote single-line piece.">The Don Quixote piece</button>
+    <button data-q="How do I acquire a painting?">How to acquire</button>
+  </div>
+  <div class="cc-foot">
+    <textarea id="ccInput" rows="1" placeholder="Confide a mood, a room, a longing…"></textarea>
+    <button class="cc-send" id="ccSend" aria-label="Send">→</button>
+  </div>
+</section>
 
 <div class="toast" id="toast">Inquiry sent — thank you ✦</div>
 
@@ -585,6 +756,128 @@ let n=0;const t=setInterval(()=>{
   lcount.textContent=pad(n);lbar.style.transform="scaleX("+(n/100)+")";
 },55);
 function finish(){setTimeout(()=>{loader.classList.add("done");document.getElementById("hero").classList.add("go");},250);}
+
+/* ===== AI concierge ===== */
+(function(){
+  const fab=document.getElementById("ccFab"),panel=document.getElementById("ccPanel");
+  const body=document.getElementById("ccBody"),input=document.getElementById("ccInput");
+  const sendBtn=document.getElementById("ccSend"),chips=document.getElementById("ccChips");
+  const history=[]; let busy=false, greeted=false;
+
+  const scroll=()=>{body.scrollTop=body.scrollHeight;};
+  function bubble(role,text){
+    const el=document.createElement("div");
+    el.className="cc-msg "+(role==="user"?"me":"bot");
+    el.textContent=text; body.appendChild(el); scroll(); return el;
+  }
+  function typing(on){
+    let t=document.getElementById("ccTyping");
+    if(on){ if(t)return; t=document.createElement("div"); t.className="cc-typing"; t.id="ccTyping";
+      t.innerHTML="<i></i><i></i><i></i>"; body.appendChild(t); scroll(); }
+    else if(t){ t.remove(); }
+  }
+  function open(){
+    panel.classList.add("open"); fab.classList.add("hide");
+    if(!greeted){ greeted=true;
+      bubble("bot","Ah — you have found your way to me. I am the Comte de Saint-Germain, keeper of this studio. I have watched colour move through three centuries, and still it undoes me. Tell me, mon ami — what feeling carried you here tonight? I shall find the canvas that already knows it.");
+    }
+    setTimeout(()=>input.focus(),350);
+  }
+  function close(){ panel.classList.remove("open"); fab.classList.remove("hide"); }
+  fab.onclick=open; document.getElementById("ccX").onclick=close;
+
+  async function send(text){
+    text=(text||input.value).trim();
+    if(!text||busy)return;
+    busy=true; sendBtn.disabled=true;
+    if(chips){chips.style.display="none";}
+    bubble("user",text); history.push({role:"user",content:text});
+    input.value=""; input.style.height="auto"; typing(true);
+    try{
+      const res=await fetch("/api/chat",{
+        method:"POST",headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({messages:history})
+      });
+      const data=await res.json().catch(()=>({}));
+      typing(false);
+      if(res.ok&&data.reply){ bubble("bot",data.reply); history.push({role:"assistant",content:data.reply}); }
+      else{ bubble("bot",data.error||"Sorry — I couldn't reach the studio just now. Please email usivaylo@gmail.com."); }
+    }catch(e){
+      typing(false);
+      bubble("bot","Network hiccup — please try again, or email usivaylo@gmail.com.");
+    }
+    busy=false; sendBtn.disabled=false; input.focus();
+  }
+  sendBtn.onclick=()=>send();
+  input.addEventListener("keydown",e=>{ if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();send();} });
+  input.addEventListener("input",()=>{ input.style.height="auto"; input.style.height=Math.min(input.scrollHeight,110)+"px"; });
+  chips.addEventListener("click",e=>{ if(e.target.tagName==="BUTTON")send(e.target.dataset.q); });
+})();
+
+/* ===== Energy Reading ===== */
+(function(){
+  const er=document.getElementById("er"),grid=document.getElementById("erGrid");
+  const word=document.getElementById("erWord"),attuning=document.getElementById("erAttuning");
+  const freqEl=document.getElementById("erFreq"),readingEl=document.getElementById("erReading");
+  const screens=er.querySelectorAll(".er-screen");
+  let chosen=null, gridBuilt=false;
+
+  function show(name){ screens.forEach(s=>s.classList.toggle("on",s.dataset.s===name)); }
+  function chosenHTML(w){
+    return `<img src="images/${w.img}" alt="${w.title}" onerror="this.outerHTML='<div class=ec-noimg></div>'"/>`
+      +`<div class="ec-t"><b>${w.title}</b><span>${w.medium}</span></div>`;
+  }
+  function renderChosen(){
+    const html=chosenHTML(chosen);
+    document.getElementById("erChosen1").innerHTML=html;
+    document.getElementById("erChosen2").innerHTML=html;
+  }
+  function buildGrid(){
+    if(gridBuilt)return; gridBuilt=true;
+    works.forEach(w=>{
+      const tile=document.createElement("div"); tile.className="er-tile";
+      const img=document.createElement("img"); img.src="images/"+w.img; img.alt=w.title; img.loading="lazy";
+      img.onerror=()=>{tile.classList.add("noimg");tile.textContent=w.title;};
+      const tt=document.createElement("div"); tt.className="tt"; tt.textContent=w.title;
+      tile.appendChild(img); tile.appendChild(tt);
+      tile.onclick=()=>{ chosen=w; renderChosen(); show("feel"); word.value=""; setTimeout(()=>word.focus(),350); };
+      grid.appendChild(tile);
+    });
+  }
+  function open(){ buildGrid(); chosen=null; show("intro"); er.classList.add("open"); document.body.style.overflow="hidden"; }
+  function close(){ er.classList.remove("open"); document.body.style.overflow=""; }
+  const delay=ms=>new Promise(r=>setTimeout(r,ms));
+
+  async function reveal(feeling){
+    if(!chosen)return;
+    show("attune"); attuning.textContent="Attuning to "+chosen.title+"…";
+    let data=null;
+    const call=(async()=>{ try{
+      const res=await fetch("/api/reading",{method:"POST",headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({work:chosen.title,feeling})});
+      data=await res.json().catch(()=>null);
+    }catch(e){} })();
+    await Promise.all([call, delay(1700)]); // let the ritual breathe
+    let reading, freq;
+    if(data && data.reading){ reading=data.reading; freq=data.freq; }
+    else { reading="This one chose you. "+chosen.desc+" Sit with it a moment — what it stirs in you is already yours."; freq=""; }
+    freqEl.textContent=freq?("Your frequency · "+freq):"";
+    freqEl.style.display=freq?"block":"none";
+    readingEl.textContent=reading;
+    show("result");
+  }
+
+  document.getElementById("erOpen").onclick=open;
+  document.getElementById("erX").onclick=close;
+  er.addEventListener("click",e=>{ if(e.target===er)close(); });
+  addEventListener("keydown",e=>{ if(e.key==="Escape"&&er.classList.contains("open"))close(); });
+  er.querySelector('[data-go="choose"]').onclick=()=>show("choose");
+  document.getElementById("erReveal").onclick=()=>reveal(word.value.trim());
+  document.getElementById("erSkip").onclick=()=>reveal("");
+  word.addEventListener("keydown",e=>{ if(e.key==="Enter"){e.preventDefault();reveal(word.value.trim());} });
+  document.getElementById("erAgain").onclick=()=>{ chosen=null; show("choose"); };
+  document.getElementById("erInquire").onclick=()=>{ if(chosen)pre(chosen.title); close(); location.hash="#inquire"; };
+})();
 
 render();bind();
 </script>
