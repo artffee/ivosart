@@ -92,29 +92,29 @@ const WORKS = [
     reading: "You're being called to say less and mean more. Whisper is the least paint saying the most — proof that the quietest signal is often the truest one. Listen for it.",
   },
 
-  // ═══ A305X series — constellation collage cards, each carrying a single word ═══
-  { title: "Radiance", desc: "Leo — the light it cannot help but throw.", medium: "Mixed-media collage · 2025", tags: ["a305x"],
+  // ═══ Zodiac — constellation collage cards, each carrying a single word ═══
+  { title: "Radiance", desc: "Leo — the light it cannot help but throw.", medium: "Mixed-media collage · 2025", tags: ["zodiac"],
     freq: "528 Hz — the tone of light",
     reading: "Radiance chose you — Leo, the light that cannot help but be seen. Stop dimming yourself; the room was always warmer with you lit." },
-  { title: "Integrity", desc: "Virgo — every line true, nothing out of place.", medium: "Mixed-media collage · 2025", tags: ["a305x"],
+  { title: "Integrity", desc: "Virgo — every line true, nothing out of place.", medium: "Mixed-media collage · 2025", tags: ["zodiac"],
     freq: "285 Hz — the tone of order",
     reading: "Integrity found you — Virgo, every line kept true. Trust the part of you that refuses to cut the corner; it is your compass." },
-  { title: "Endurance", desc: "Capricorn — holding the long line without complaint.", medium: "Mixed-media collage · 2025", tags: ["a305x"],
+  { title: "Endurance", desc: "Capricorn — holding the long line without complaint.", medium: "Mixed-media collage · 2025", tags: ["zodiac"],
     freq: "396 Hz — the tone of endurance",
     reading: "Endurance — Capricorn, the long climb held without complaint. You are not stuck, my friend. You are still going." },
-  { title: "Resolve", desc: "Capricorn — the climb decided before the first step.", medium: "Mixed-media collage · 2025", tags: ["a305x"],
+  { title: "Resolve", desc: "Capricorn — the climb decided before the first step.", medium: "Mixed-media collage · 2025", tags: ["zodiac"],
     freq: "417 Hz — the tone of decision",
     reading: "Resolve — the climb decided before the first step was taken. You already know the answer. Begin." },
-  { title: "Equilibrium", desc: "Libra — weighing the world until it balances.", medium: "Mixed-media collage · 2025", tags: ["a305x"],
+  { title: "Equilibrium", desc: "Libra — weighing the world until it balances.", medium: "Mixed-media collage · 2025", tags: ["zodiac"],
     freq: "639 Hz — the tone of balance",
     reading: "Equilibrium — Libra, weighing the world until it finally settles. The balance you long for is already tilting your way." },
-  { title: "Curiosity", desc: "Gemini — two minds, one restless question.", medium: "Mixed-media collage · 2025", tags: ["a305x"],
+  { title: "Curiosity", desc: "Gemini — two minds, one restless question.", medium: "Mixed-media collage · 2025", tags: ["zodiac"],
     freq: "741 Hz — the tone of the question",
     reading: "Curiosity — Gemini, two minds and one restless question. Follow it without shame; the question itself is the doorway." },
-  { title: "Innovation", desc: "Aquarius — pouring the new thing into an old sky.", medium: "Mixed-media collage · 2025", tags: ["a305x"],
+  { title: "Innovation", desc: "Aquarius — pouring the new thing into an old sky.", medium: "Mixed-media collage · 2025", tags: ["zodiac"],
     freq: "852 Hz — the tone of the new",
     reading: "Innovation — Aquarius, pouring something new into an old sky. What feels strange in you is only the future, arriving early." },
-  { title: "Nurture", desc: "Cancer — the moon cradled in quiet water.", medium: "Mixed-media collage · 2025", tags: ["a305x"],
+  { title: "Nurture", desc: "Cancer — the moon cradled in quiet water.", medium: "Mixed-media collage · 2025", tags: ["zodiac"],
     freq: "432 Hz — the tone of care",
     reading: "Nurture — Cancer, the moon cradled in still water. Tend to yourself the way you so easily tend to everyone else." },
 
@@ -140,6 +140,17 @@ const WORKS = [
   { title: "Benediction", desc: "Two gold arms open over a still, dark heart.", medium: "Oil & gold leaf on canvas · diptych · 2025", tags: ["zodiac"],
     freq: "432 Hz — the tone of grace",
     reading: "Benediction — two gold arms opened over a still, dark heart. You are allowed to receive, my friend. Hold your hands open." },
+
+  // ═══ A305X — Area 305 / Miami collage cards ═══
+  { title: "Between Sun & Shadow", desc: "Miami, 305 — the city caught between sun and shadow.", medium: "Mixed-media collage · 2025", tags: ["a305x"],
+    freq: "639 Hz — the tone of the in-between",
+    reading: "Between Sun & Shadow chose you — Miami, held on the line where light meets its own dark. You are not lost in the middle; the middle is where everything interesting happens." },
+  { title: "Analog Paradise", desc: "Area 305, Signal 04 — paradise, transmitted by hand.", medium: "Mixed-media collage · 2025", tags: ["a305x"],
+    freq: "432 Hz — the tone of the handmade",
+    reading: "Analog Paradise — a signal sent by hand in a screen-lit age. Slow down, my friend; the warmth you have been missing is analog, and it is still here." },
+  { title: "Afterglow", desc: "Miami, Florida — the arch, the sea, the last of the light.", medium: "Mixed-media collage · 2025", tags: ["a305x"],
+    freq: "528 Hz — the tone of afterglow",
+    reading: "Afterglow — Miami after the sun, when the heat still hums in everything it touched. What you loved has not left; it is glowing, just under the surface." },
 ];
 
 const worksText = WORKS.map(
