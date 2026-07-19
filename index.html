@@ -581,12 +581,12 @@
 
 <!-- AI CONCIERGE -->
 <button class="cc-fab" id="ccFab" aria-label="Chat with the concierge">
-  <span class="dot"></span><span>Consult the Comte</span>
+  <span class="dot"></span><span>Speak with Ivaylo</span>
 </button>
 <section class="cc-panel" id="ccPanel" aria-live="polite" aria-label="IvosArt concierge">
   <div class="cc-head">
     <span class="mg">IP</span>
-    <div class="ci"><h4>Le Comte</h4><span>de Saint-Germain · always at your service</span></div>
+    <div class="ci"><h4>Ivaylo Peytchev</h4><span>The artist · in his own words</span></div>
     <button class="cc-x" id="ccX" aria-label="Close chat">✕</button>
   </div>
   <div class="cc-body" id="ccBody"></div>
@@ -779,7 +779,7 @@ function finish(){setTimeout(()=>{loader.classList.add("done");document.getEleme
   function open(){
     panel.classList.add("open"); fab.classList.add("hide");
     if(!greeted){ greeted=true;
-      bubble("bot","Ah — you have found your way to me. I am the Comte de Saint-Germain, keeper of this studio. I have watched colour move through three centuries, and still it undoes me. Tell me, mon ami — what feeling carried you here tonight? I shall find the canvas that already knows it.");
+      bubble("bot","You've found your way to my studio. I am Ivaylo — I paint in a single breath, colour thrown and left where it lands. Tell me, my friend, what feeling carried you here tonight? I'll find you the canvas that already knows it.");
     }
     setTimeout(()=>input.focus(),350);
   }
