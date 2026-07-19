@@ -139,6 +139,8 @@
 
   /* works editorial flow */
   .flow{display:flex;flex-direction:column;gap:clamp(90px,13vw,210px)}
+  .flow-empty{font-family:var(--serif);font-style:italic;font-size:clamp(1.5rem,3vw,2.2rem);color:var(--ink-2);text-align:center;padding:clamp(40px,7vw,90px) 0;line-height:1.4}
+  .flow-empty a{border-bottom:1px solid var(--bronze);color:var(--ink)}
   .wb{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(30px,5vw,80px)}
   .wb .ghost{position:absolute;top:-7vw;font-family:var(--serif);font-style:italic;font-size:clamp(8rem,20vw,22rem);line-height:1;color:transparent;-webkit-text-stroke:1px var(--line);z-index:0;pointer-events:none;user-select:none}
   .wb:nth-child(odd) .ghost{right:6%}
@@ -345,14 +347,16 @@
   .er-actions{display:flex;flex-direction:column;align-items:center;gap:18px}
   .er-skip{background:none;border:none;color:#9a9086;cursor:pointer;font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid transparent;padding-bottom:3px;transition:.3s}
   .er-skip:hover{color:var(--bone);border-color:var(--bronze-2)}
-  .er-orb{width:88px;height:88px;margin:0 auto 30px;position:relative;display:grid;place-items:center}
-  .er-orb i{position:absolute;border-radius:50%;border:1px solid var(--bronze-2)}
-  .er-orb i:nth-child(1){inset:0;animation:erpulse 2.4s var(--e) infinite}
-  .er-orb i:nth-child(2){inset:16px;animation:erpulse 2.4s var(--e) infinite .5s}
-  .er-orb i:nth-child(3){inset:32px;background:var(--bronze-2);border:none;animation:erglow 2.4s var(--e) infinite}
-  @keyframes erpulse{0%{opacity:.15;transform:scale(.7)}50%{opacity:.9}100%{opacity:.15;transform:scale(1.1)}}
-  @keyframes erglow{0%,100%{opacity:.5;transform:scale(.85)}50%{opacity:1;transform:scale(1.15)}}
-  .er-attuning{font-family:var(--mono);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze-2)}
+  .er-scan{width:min(240px,66vw);margin:0 auto 26px}
+  .er-scan-art{position:relative;aspect-ratio:4/5;background:#17140d;overflow:hidden;border:1px solid rgba(192,168,120,.3)}
+  .er-scan-art img{width:100%;height:100%;object-fit:cover;opacity:.7}
+  .er-scan-art::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background-image:linear-gradient(rgba(192,168,120,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(192,168,120,.10) 1px,transparent 1px);background-size:20px 20px;mix-blend-mode:overlay}
+  .er-scan-line{position:absolute;left:0;right:0;top:-2px;height:2px;z-index:3;background:linear-gradient(90deg,transparent,var(--bronze-2),transparent);box-shadow:0 0 18px 4px rgba(192,168,120,.65);animation:erscan 2.2s var(--e) infinite}
+  @keyframes erscan{0%{top:-2px}100%{top:calc(100% + 2px)}}
+  .er-scanbar{height:1px;background:rgba(255,255,255,.15);margin-top:18px;position:relative;overflow:hidden}
+  .er-scanbar i{position:absolute;inset:0;background:var(--bronze-2);transform:scaleX(0);transform-origin:left;transition:transform .2s linear}
+  .er-scan-pct{font-family:var(--mono);font-size:.58rem;letter-spacing:.2em;color:var(--bronze-2);margin-top:9px;text-align:right;font-variant-numeric:tabular-nums}
+  .er-attuning{font-family:var(--mono);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze-2);transition:opacity .4s var(--e)}
   .er-freq{font-family:var(--mono);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze-2);display:block;margin-bottom:26px}
   .er-reading{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,3vw,2.1rem);line-height:1.5;color:#efe9dc;max-width:26ch;margin:0 auto 40px}
   @media(max-width:520px){.er-grid{grid-template-columns:repeat(auto-fill,minmax(94px,1fr))}}
@@ -430,6 +434,8 @@
     <button data-f="monochrome">Monochrome</button>
     <button data-f="gesture">Gesture</button>
     <button data-f="ink">Ink &amp; gold</button>
+    <button data-f="a305x">A305X</button>
+    <button data-f="zodiac">Zodiac</button>
   </div>
   <div class="flow" id="flow"></div>
 </section>
@@ -563,8 +569,12 @@
     </div>
 
     <div class="er-screen" data-s="attune">
-      <div class="er-orb"><i></i><i></i><i></i></div>
-      <p class="er-attuning" id="erAttuning">Attuning…</p>
+      <div class="er-scan">
+        <div class="er-scan-art" id="erScanArt"></div>
+        <div class="er-scanbar"><i id="erScanFill"></i></div>
+        <div class="er-scan-pct" id="erScanPct">0%</div>
+      </div>
+      <p class="er-attuning" id="erAttuning">Attuning to the canvas…</p>
     </div>
 
     <div class="er-screen" data-s="result">
@@ -620,6 +630,17 @@ const works=[
  {img:"work-12.jpg",title:"Inferno",desc:"A slow burn that refuses to go out.",medium:"Acrylic on canvas · 70 × 90 cm · 2024",tags:["colour","gesture"]},
  {img:"work-13.jpg",title:"Devotion",desc:"Gold held together by its own dark gravity.",medium:"Acrylic & gold on canvas · 60 × 80 cm · 2024",tags:["ink","gesture"]},
  {img:"work-14.jpg",title:"Whisper",desc:"The least paint, saying the most.",medium:"Ink & gold on paper · 70 × 70 cm · 2024",tags:["ink","monochrome"]},
+
+ /* ═══ A305X series ═══  (shows under the "A305X" tab)
+    Put the image in the  images/a305x/  folder, then add a line here.
+    Point img at that folder with the "a305x/" prefix, and keep tags:["a305x"].
+    Add another tag like "colour" to make it show under that tab too. */
+ // {img:"a305x/a305x-01.jpg",title:"A305X — I",desc:"One line about the piece.",medium:"Acrylic on canvas · 70 × 90 cm · 2025",tags:["a305x"]},
+
+ /* ═══ Zodiac series ═══  (shows under the "Zodiac" tab)
+    Put the image in the  images/zodiac/  folder, then add a line here.
+    Point img at that folder with the "zodiac/" prefix, and keep tags:["zodiac"]. */
+ // {img:"zodiac/zodiac-aries.jpg",title:"Aries",desc:"One line about the piece.",medium:"Acrylic on canvas · 60 × 80 cm · 2025",tags:["zodiac"]},
 ];
 
 const flow=document.getElementById("flow");
@@ -627,6 +648,10 @@ const pad=n=>String(n).padStart(2,"0");
 function render(f="all"){
   flow.innerHTML="";
   const list=works.map((w,i)=>({w,i})).filter(o=>f==="all"||o.w.tags.includes(f));
+  if(!list.length){
+    flow.innerHTML='<p class="flow-empty">New works in this series are arriving soon — <a href="#inquire">inquire</a> to be the first to see them.</p>';
+    return;
+  }
   list.forEach((o,k)=>{
     const w=o.w;
     const el=document.createElement("article");
@@ -818,6 +843,7 @@ function finish(){setTimeout(()=>{loader.classList.add("done");document.getEleme
 (function(){
   const er=document.getElementById("er"),grid=document.getElementById("erGrid");
   const word=document.getElementById("erWord"),attuning=document.getElementById("erAttuning");
+  const scanArt=document.getElementById("erScanArt"),scanFill=document.getElementById("erScanFill"),scanPct=document.getElementById("erScanPct");
   const freqEl=document.getElementById("erFreq"),readingEl=document.getElementById("erReading");
   const screens=er.querySelectorAll(".er-screen");
   let chosen=null, gridBuilt=false;
@@ -848,16 +874,43 @@ function finish(){setTimeout(()=>{loader.classList.add("done");document.getEleme
   function close(){ er.classList.remove("open"); document.body.style.overflow=""; }
   const delay=ms=>new Promise(r=>setTimeout(r,ms));
 
+  const SCAN_MS=5200;
+  const SCAN_LINES=["Attuning to the canvas…","Reading your field…","Gathering the colour's pulse…","Aligning your frequencies…","The paint remembers…"];
+
   async function reveal(feeling){
     if(!chosen)return;
-    show("attune"); attuning.textContent="Attuning to "+chosen.title+"…";
-    let data=null;
-    const call=(async()=>{ try{
+    show("attune");
+    scanArt.innerHTML='<img src="images/'+chosen.img+'" alt="" onerror="this.remove()"/><span class="er-scan-line"></span>';
+    scanFill.style.transform="scaleX(0)"; scanPct.textContent="0%";
+
+    // cycle the status lines
+    let liIdx=0; attuning.textContent=SCAN_LINES[0];
+    const lineTimer=setInterval(()=>{
+      liIdx=(liIdx+1)%SCAN_LINES.length;
+      attuning.style.opacity=0;
+      setTimeout(()=>{attuning.textContent=SCAN_LINES[liIdx];attuning.style.opacity=1;},300);
+    },1250);
+
+    // fetch the reading in the background while the scan runs
+    let data=null, fetchDone=false;
+    (async()=>{ try{
       const res=await fetch("/api/reading",{method:"POST",headers:{"Content-Type":"application/json"},
         body:JSON.stringify({work:chosen.title,feeling})});
       data=await res.json().catch(()=>null);
-    }catch(e){} })();
-    await Promise.all([call, delay(1700)]); // let the ritual breathe
+    }catch(e){} fetchDone=true; })();
+
+    // run the scan meter for at least SCAN_MS, and until the reading returns
+    const start=Date.now();
+    await new Promise(resolve=>{
+      const prog=setInterval(()=>{
+        const el=(Date.now()-start)/SCAN_MS;
+        const shown=Math.min(el, fetchDone?1:0.92); // hold near the end until the reading lands
+        scanFill.style.transform="scaleX("+shown+")";
+        scanPct.textContent=Math.round(Math.min(shown,1)*100)+"%";
+        if(el>=1 && fetchDone){ clearInterval(prog); clearInterval(lineTimer); resolve(); }
+      },60);
+    });
+
     let reading, freq;
     if(data && data.reading){ reading=data.reading; freq=data.freq; }
     else { reading="This one chose you. "+chosen.desc+" Sit with it a moment — what it stirs in you is already yours."; freq=""; }

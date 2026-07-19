@@ -1,0 +1,16 @@
+HOW TO ADD  —  ZODIAC SERIES
+============================
+
+1) Save each Zodiac painting into THIS folder ( images/zodiac/ ).
+   Use a simple lowercase .jpg name, e.g.  zodiac-aries.jpg , zodiac-leo.jpg …
+   Tip: crop to just the artwork (frame is fine). ~1200px on the long edge.
+
+2) Open index.html, find the "Zodiac series" spot in the works list
+   (near the bottom), and add ONE line per painting. Point img at this
+   folder with the  zodiac/  prefix, and keep the zodiac tag:
+
+   {img:"zodiac/zodiac-aries.jpg", title:"Aries", desc:"One line.", medium:"Acrylic on canvas · 60 × 80 cm · 2025", tags:["zodiac"]},
+
+That's it — it appears under the "Zodiac" tab (and under "All") automatically.
+Until you add a line, the Zodiac tab shows a tasteful "arriving soon" message,
+so nothing ever looks broken.

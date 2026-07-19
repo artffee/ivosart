@@ -1,0 +1,16 @@
+HOW TO ADD  —  A305X SERIES
+===========================
+
+1) Save each A305X painting into THIS folder ( images/a305x/ ).
+   Use a simple lowercase .jpg name, e.g.  a305x-01.jpg , a305x-02.jpg …
+   Tip: crop to just the artwork (frame is fine). ~1200px on the long edge.
+
+2) Open index.html, find the "A305X series" spot in the works list
+   (near the bottom), and add ONE line per painting. Point img at this
+   folder with the  a305x/  prefix, and keep the a305x tag:
+
+   {img:"a305x/a305x-01.jpg", title:"A305X — I", desc:"One line.", medium:"Acrylic on canvas · 70 × 90 cm · 2025", tags:["a305x"]},
+
+That's it — it appears under the "A305X" tab (and under "All") automatically.
+Until you add a line, the A305X tab shows a tasteful "arriving soon" message,
+so nothing ever looks broken.
