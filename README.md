@@ -10,9 +10,9 @@ Portfolio site for the original abstract works of **Ivaylo Peytchev**.
 Open `index.html`, find the `works` array near the bottom, and edit titles / medium / tags.
 Mark a piece as sold by adding `sold:true` to its entry.
 
-## AI concierge (chat widget)
-A floating "Ask the concierge" chat, bottom-right of the page, powered by the Google Gemini API.
-It knows every work, the artist, and the philosophy, and guides visitors toward the inquiry form.
+## Multilingual Ivo AI guide (chat widget)
+A floating "Meet Ivo's AI" guide, bottom-right of the page, powered by the Google Gemini API.
+It is clearly disclosed as an AI representative. It knows every work plus the approved public story of NEMO Studio, House Passport, Ivaylo's books / Orion Saint, and A305X. It replies in the visitor's language and guides serious inquiries to the form.
 
 - Frontend: chat widget markup/styles/JS live inside [`index.html`](index.html) (search for `AI CONCIERGE` / `cc-`).
 - Backend: [`api/chat.js`](api/chat.js) — a Vercel serverless function that calls Gemini. The API key stays server-side and never reaches the browser.

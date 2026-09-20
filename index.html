@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ivaylo Peytchev — IvosArt | Original Abstract Paintings</title>
-<meta name="description" content="IvosArt — original abstract expressionist paintings by Ivaylo Peytchev. One-of-a-kind gestural works on canvas, made by hand. Inquire to acquire." />
-<meta name="keywords" content="Ivaylo Peytchev, IvosArt, abstract painting, abstract expressionism, original art, gestural painting, contemporary artist, art for sale" />
+<title>Ivaylo Peytchev — Artist, Writer &amp; Creative Inventor | IvosArt</title>
+<meta name="description" content="Original abstract paintings and creative worlds by Ivaylo Peytchev — artist, writer and creative inventor behind IvosArt, NEMO Studio, House Passport and A305X." />
+<meta name="keywords" content="Ivaylo Peytchev, IvosArt, abstract painting, original art, NEMO Studio, House Passport, A305X, Orion Saint, creative studio" />
 <meta name="author" content="Ivaylo Peytchev" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta name="theme-color" content="#121009" />
@@ -14,8 +14,8 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="IvosArt — Ivaylo Peytchev" />
-<meta property="og:title" content="Ivaylo Peytchev — IvosArt | Original Abstract Paintings" />
-<meta property="og:description" content="One-of-a-kind abstract expressionist paintings, made by hand. Gesture, colour, and the moment it becomes form." />
+<meta property="og:title" content="Ivaylo Peytchev — Artist, Writer &amp; Creative Inventor" />
+<meta property="og:description" content="Original paintings, books and story-led creative worlds. Meet the work — or speak with Ivo's multilingual AI guide." />
 <meta property="og:url" content="https://ivosart.com/" />
 <meta property="og:image" content="https://ivosart.com/images/work-01.jpg" />
 <meta property="og:image:alt" content="Crossing — a painting by Ivaylo Peytchev" />
@@ -23,7 +23,7 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Ivaylo Peytchev — IvosArt" />
-<meta name="twitter:description" content="Original abstract paintings, made by hand. Inquire to acquire." />
+<meta name="twitter:description" content="Original paintings, books and story-led creative worlds by Ivaylo Peytchev." />
 <meta name="twitter:image" content="https://ivosart.com/images/work-01.jpg" />
 
 <!-- Structured data -->
@@ -35,10 +35,10 @@
   "alternateName": "IvosArt",
   "url": "https://ivosart.com/",
   "image": "https://ivosart.com/images/work-01.jpg",
-  "jobTitle": "Artist",
-  "description": "Abstract expressionist painter creating one-of-a-kind gestural works on canvas.",
+  "jobTitle": "Artist, writer and creative inventor",
+  "description": "Artist, writer and creative inventor creating original paintings, books and story-led experiences.",
   "email": "usivaylo@gmail.com",
-  "knowsAbout": ["Abstract painting", "Abstract expressionism", "Contemporary art"]
+  "knowsAbout": ["Abstract painting", "Contemporary art", "Story design", "Creative publishing", "AI-guided experiences"]
 }
 </script>
 
@@ -199,6 +199,24 @@
   .about-port img{width:100%;height:100%;object-fit:cover}
   .about-port .mgbig{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--serif);font-size:9rem;color:var(--bronze-2);opacity:.45}
 
+  /* creative worlds */
+  .worlds{position:relative;overflow:hidden;background:var(--ink);color:var(--bone);padding:clamp(100px,14vw,190px) 0}
+  .worlds::before{content:"IP";position:absolute;right:-.04em;top:-.2em;font-family:var(--serif);font-style:italic;font-size:clamp(16rem,38vw,42rem);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(192,168,120,.12);pointer-events:none}
+  .worlds-head{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,7vw,100px);align-items:end;margin-bottom:clamp(50px,8vw,100px)}
+  .worlds .mono{display:block;color:var(--bronze-2);margin-bottom:22px}
+  .worlds h2{font-family:var(--serif);font-weight:300;font-size:clamp(3rem,8vw,7.2rem);line-height:.9;letter-spacing:-.015em}
+  .worlds h2 em{display:block;font-style:italic;color:var(--bronze-2);margin-left:clamp(18px,5vw,70px)}
+  .worlds-intro{max-width:560px;color:#c9c1b3;font-size:1.06rem}
+  .worlds-intro strong{display:block;font-family:var(--serif);font-size:clamp(1.5rem,2.5vw,2.1rem);font-style:italic;font-weight:400;line-height:1.25;color:var(--bone);margin-bottom:18px}
+  .world-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.16);border-left:1px solid rgba(255,255,255,.16)}
+  .world-card{min-height:310px;padding:clamp(28px,4vw,52px);border-right:1px solid rgba(255,255,255,.16);border-bottom:1px solid rgba(255,255,255,.16);display:flex;flex-direction:column;align-items:flex-start;transition:background .55s var(--e),transform .55s var(--e)}
+  .world-card:hover{background:rgba(192,168,120,.09)}
+  .world-no{font-family:var(--mono);font-size:.64rem;letter-spacing:.22em;color:var(--bronze-2);margin-bottom:clamp(36px,5vw,64px)}
+  .world-card h3{font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(2rem,4vw,3.4rem);line-height:1;margin-bottom:18px}
+  .world-card p{max-width:47ch;color:#aaa193;margin-bottom:30px}
+  .world-ask{margin-top:auto;border:0;border-bottom:1px solid var(--bronze-2);background:none;color:var(--bone);padding:0 0 6px;cursor:pointer;font-family:var(--mono);font-size:.64rem;letter-spacing:.17em;text-transform:uppercase;transition:color .3s var(--e),padding .3s var(--e)}
+  .world-ask:hover{color:var(--bronze-2);padding-right:8px}
+
   /* inquire */
   .inq-sec{padding:clamp(90px,12vw,180px) 0}
   .inq-sec .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:center}
@@ -262,7 +280,9 @@
     .wb .wmedia,.wb .wtext{order:0!important;text-align:left!important}
     .wb:nth-child(even) .wtext{text-align:left}
     .wplate,.wb:nth-child(even) .wplate{transform:rotate(0)}
-    .feat .wrap,.about .wrap,.inq-sec .wrap{grid-template-columns:1fr}
+    .feat .wrap,.about .wrap,.inq-sec .wrap,.worlds-head{grid-template-columns:1fr}
+    .world-grid{grid-template-columns:1fr}
+    .world-card{min-height:270px}
     .hero-img{position:relative;right:auto;top:auto;transform:rotate(-2deg);width:200px;margin-top:30px}
     .hero.go .hero-img{transform:rotate(-2deg)}
   }
@@ -380,6 +400,7 @@
       <a href="#reading">Reading</a>
       <a href="#signature">Signature</a>
       <a href="#artist">Artist</a>
+      <a href="#worlds">Worlds</a>
       <a href="#inquire">Inquire</a>
     </div>
     <button class="burger" id="burger"><span></span><span></span><span></span></button>
@@ -388,7 +409,7 @@
 
 <div class="mm" id="mm">
   <button class="mx" id="mx">✕</button>
-  <a href="#works">Works</a><a href="#reading">Reading</a><a href="#signature">Signature</a><a href="#artist">Artist</a><a href="#inquire">Inquire</a>
+  <a href="#works">Works</a><a href="#reading">Reading</a><a href="#signature">Signature</a><a href="#artist">Artist</a><a href="#worlds">Worlds</a><a href="#inquire">Inquire</a>
 </div>
 
 <!-- HERO -->
@@ -410,7 +431,7 @@
       <p>Paintings made in a single surge of movement — colour thrown, dragged, and left where it lands. Each one happens once, and never again.</p>
       <div class="hero-actions">
         <a href="#works" class="btn btn-fill mag">Enter the gallery <span class="ar">→</span></a>
-        <a href="#inquire" class="btn btn-out mag">Inquire</a>
+        <button type="button" class="btn btn-out mag" onclick="window.openIvoAI?.()">Meet my AI</button>
       </div>
     </div>
   </div>
@@ -482,12 +503,55 @@
       <div class="mgbig">IP</div>
     </div>
     <div class="rv">
-      <span class="mono">03 — The artist</span>
-      <h2>Painting in <em>motion.</em></h2>
+      <span class="mono">03 — Artist · writer · inventor</span>
+      <h2>Ideas in <em>motion.</em></h2>
       <p>Ivaylo Peytchev paints in motion. Each canvas is a single, committed gesture — colour flung and pulled across the surface, then allowed to find its own order. Nothing is planned twice. Nothing is corrected. What looks like chaos is a decision made in one breath and never taken back.</p>
       <p>The work moves between explosive colour and severe restraint — a festival on one wall, two colours of silence on the next. Built by hand in the studio, layered and instinctive. No editions. No reproductions. Only the original moment.</p>
+      <p>The same instinct continues beyond the canvas: into books, personal magazines, rebellious objects and new ways for people, places and ideas to tell their stories.</p>
       <div class="quote">“The hand never lies. Whatever happened in front of the canvas, the paint remembers.”</div>
       <div class="sig">Ivaylo Peytchev</div>
+    </div>
+  </div>
+</section>
+
+<!-- CREATIVE WORLDS -->
+<section class="worlds" id="worlds">
+  <div class="wrap">
+    <div class="worlds-head rv">
+      <div>
+        <span class="mono">04 — Creative worlds</span>
+        <h2>One hand.<em>Many doors.</em></h2>
+      </div>
+      <div class="worlds-intro">
+        <strong>I turn people, places and impossible ideas into stories.</strong>
+        <p>The canvas is the beginning, not the border. Explore the connected worlds behind the work—or ask my multilingual AI guide where to start.</p>
+      </div>
+    </div>
+    <div class="world-grid rv">
+      <article class="world-card">
+        <span class="world-no">01 / NEMO</span>
+        <h3>NEMO Studio</h3>
+        <p>Personal magazines and story experiences for people, weddings, birthdays, homes and brands—made to feel collected, not generated.</p>
+        <button type="button" class="world-ask" onclick="window.openIvoAI?.('Tell me about NEMO Studio and the personal magazines you create.')">Ask my AI <span aria-hidden="true">→</span></button>
+      </article>
+      <article class="world-card">
+        <span class="world-no">02 / HOME</span>
+        <h3>House Passport</h3>
+        <p>A living record of a home: its facts, care, repairs, memories and owner's soul—connected to a multilingual AI House Guardian.</p>
+        <button type="button" class="world-ask" onclick="window.openIvoAI?.('Explain the House Passport and AI House Guardian idea.')">Ask my AI <span aria-hidden="true">→</span></button>
+      </article>
+      <article class="world-card">
+        <span class="world-no">03 / ORION</span>
+        <h3>Art &amp; Books</h3>
+        <p>Satire, speculative fiction and retro-futurist story worlds—where old paper, future machines and inconvenient questions meet.</p>
+        <button type="button" class="world-ask" onclick="window.openIvoAI?.('Tell me about Ivaylo’s books and his author identity Orion Saint.')">Ask my AI <span aria-hidden="true">→</span></button>
+      </article>
+      <article class="world-card">
+        <span class="world-no">04 / A305X</span>
+        <h3>A305X</h3>
+        <p>The anti-war flamingo: art, streetwear, noise and kindness in Miami colour. A small rebellion you can wear, carry or hang on a wall.</p>
+        <button type="button" class="world-ask" onclick="window.openIvoAI?.('What is A305X and the anti-war flamingo?')">Ask my AI <span aria-hidden="true">→</span></button>
+      </article>
     </div>
   </div>
 </section>
@@ -496,9 +560,9 @@
 <section class="inq-sec" id="inquire">
   <div class="wrap">
     <div class="rv">
-      <span class="mono">04 — Acquire</span>
+      <span class="mono">05 — Acquire · commission · collaborate</span>
       <h2>Inquire to <em>acquire</em></h2>
-      <p>Interested in a work, a commission, or a private viewing? Send a note and Ivaylo will reply personally with availability and details.</p>
+      <p>Interested in a work, a commission, a private viewing or a creative project? Send a note and Ivaylo will reply personally with availability and details.</p>
       <div class="inq-row"><b>Email</b><span><a href="mailto:usivaylo@gmail.com">usivaylo@gmail.com</a></span></div>
       <div class="inq-row"><b>Studio</b><span>By appointment</span></div>
       <div class="inq-row"><b>Follow</b><span>@ivosart</span></div>
@@ -521,7 +585,7 @@
       <div class="fname">Ivaylo<br><em>Peytchev</em></div>
       <div class="flinks">
         <a href="#works">Works</a><a href="#signature">Signature</a><a href="#artist">Artist</a>
-        <a href="#inquire">Inquire</a><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+        <a href="#worlds">Worlds</a><a href="#inquire">Inquire</a><a href="https://instagram.com/ivosart" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
     <div class="fbot">
@@ -590,23 +654,25 @@
 </div>
 
 <!-- AI CONCIERGE -->
-<button class="cc-fab" id="ccFab" aria-label="Chat with the concierge">
-  <span class="dot"></span><span>Speak with Ivaylo</span>
+<button class="cc-fab" id="ccFab" aria-label="Chat with Ivo's AI guide">
+  <span class="dot"></span><span>Meet Ivo's AI</span>
 </button>
-<section class="cc-panel" id="ccPanel" aria-live="polite" aria-label="IvosArt concierge">
+<section class="cc-panel" id="ccPanel" aria-live="polite" aria-label="Ivo's multilingual AI guide">
   <div class="cc-head">
     <span class="mg">IP</span>
-    <div class="ci"><h4>Ivaylo Peytchev</h4><span>The artist · in his own words</span></div>
+    <div class="ci"><h4>Meet Ivo</h4><span>AI guide · every language</span></div>
     <button class="cc-x" id="ccX" aria-label="Close chat">✕</button>
   </div>
   <div class="cc-body" id="ccBody"></div>
   <div class="cc-chips" id="ccChips">
-    <button data-q="Which work would suit a calm, minimal room?">A calm, minimal room</button>
-    <button data-q="Tell me about the Don Quixote single-line piece.">The Don Quixote piece</button>
-    <button data-q="How do I acquire a painting?">How to acquire</button>
+    <button data-q="Help me find a painting that fits my mood or room.">Find my painting</button>
+    <button data-q="Tell me about NEMO Studio and its personal magazines.">NEMO Studio</button>
+    <button data-q="Explain the House Passport and AI House Guardian.">House Passport</button>
+    <button data-q="Tell me about Ivaylo's books and story worlds.">Art &amp; books</button>
+    <button data-q="What is A305X?">A305X</button>
   </div>
   <div class="cc-foot">
-    <textarea id="ccInput" rows="1" placeholder="Confide a mood, a room, a longing…"></textarea>
+    <textarea id="ccInput" rows="1" placeholder="Ask about a painting, book, idea or project…"></textarea>
     <button class="cc-send" id="ccSend" aria-label="Send">→</button>
   </div>
 </section>
@@ -815,7 +881,7 @@ function finish(){setTimeout(()=>{loader.classList.add("done");document.getEleme
   function open(){
     panel.classList.add("open"); fab.classList.add("hide");
     if(!greeted){ greeted=true;
-      bubble("bot","You've found your way to my studio. I am Ivaylo — I paint in a single breath, colour thrown and left where it lands. Tell me, my friend, what feeling carried you here tonight? I'll find you the canvas that already knows it.");
+      bubble("bot","Welcome. I’m Ivo’s AI guide—not the human, but trained on his approved creative world. I can help you discover a painting, explore NEMO Studio, House Passport, books or A305X, and I can speak with you in any language. What shall we open first?");
     }
     setTimeout(()=>input.focus(),350);
   }
@@ -848,6 +914,7 @@ function finish(){setTimeout(()=>{loader.classList.add("done");document.getEleme
   input.addEventListener("keydown",e=>{ if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();send();} });
   input.addEventListener("input",()=>{ input.style.height="auto"; input.style.height=Math.min(input.scrollHeight,110)+"px"; });
   chips.addEventListener("click",e=>{ if(e.target.tagName==="BUTTON")send(e.target.dataset.q); });
+  window.openIvoAI=(prompt)=>{open();if(prompt)setTimeout(()=>send(prompt),420);};
 })();
 
 /* ===== Energy Reading ===== */
