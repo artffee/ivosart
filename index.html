@@ -139,13 +139,16 @@
 
   /* works editorial flow */
   .flow{display:flex;flex-direction:column;gap:clamp(90px,13vw,210px)}
+  .gallery-more{text-align:center;padding:clamp(65px,8vw,110px) 0 0}
+  .gallery-more[hidden]{display:none}
+  .gallery-more .btn{margin:0 auto}
   .flow-empty{font-family:var(--serif);font-style:italic;font-size:clamp(1.5rem,3vw,2.2rem);color:var(--ink-2);text-align:center;padding:clamp(40px,7vw,90px) 0;line-height:1.4}
   .flow-empty a{border-bottom:1px solid var(--bronze);color:var(--ink)}
   .wb{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(30px,5vw,80px)}
   .wb .ghost{position:absolute;top:-7vw;font-family:var(--serif);font-style:italic;font-size:clamp(8rem,20vw,22rem);line-height:1;color:transparent;-webkit-text-stroke:1px var(--line);z-index:0;pointer-events:none;user-select:none}
   .wb:nth-child(odd) .ghost{right:6%}
   .wb:nth-child(even) .ghost{left:6%}
-  .wmedia{position:relative;z-index:1;cursor:pointer}
+  .wmedia{position:relative;z-index:1;cursor:pointer;display:block;width:100%;border:0;background:none;text-align:left;color:inherit}
   .wplate{background:#fff;padding:clamp(12px,1.4vw,20px);box-shadow:0 4px 14px rgba(18,16,9,.07);transform:rotate(-2deg);transition:transform .8s var(--e),box-shadow .8s var(--e)}
   .wb:nth-child(even) .wplate{transform:rotate(2deg)}
   .wmedia:hover .wplate{transform:rotate(0);box-shadow:0 50px 80px -34px rgba(18,16,9,.5)}
@@ -197,6 +200,7 @@
   .about .sig{font-family:var(--serif);font-style:italic;font-size:2.4rem;margin-top:8px}
   .about-port{aspect-ratio:4/5;position:relative;overflow:hidden;background:var(--ink);transform:rotate(-1.5deg)}
   .about-port img{width:100%;height:100%;object-fit:cover}
+  .about-port figcaption{position:absolute;bottom:0;left:0;right:0;padding:40px 25px 20px;background:linear-gradient(transparent,rgba(18,16,9,.78));color:#fff;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}
   .about-port .mgbig{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--serif);font-size:9rem;color:var(--bronze-2);opacity:.45}
 
   /* creative worlds */
@@ -216,6 +220,9 @@
   .world-card p{max-width:47ch;color:#aaa193;margin-bottom:30px}
   .world-ask{margin-top:auto;border:0;border-bottom:1px solid var(--bronze-2);background:none;color:var(--bone);padding:0 0 6px;cursor:pointer;font-family:var(--mono);font-size:.64rem;letter-spacing:.17em;text-transform:uppercase;transition:color .3s var(--e),padding .3s var(--e)}
   .world-ask:hover{color:var(--bronze-2);padding-right:8px}
+  .world-actions{display:flex;gap:20px 28px;align-items:center;flex-wrap:wrap;margin-top:auto}
+  .world-actions .world-ask{margin-top:0}
+  .world-secondary{color:#bdb4a4;border-bottom-color:rgba(255,255,255,.28)}
 
   /* inquire */
   .inq-sec{padding:clamp(90px,12vw,180px) 0}
@@ -233,6 +240,8 @@
   form.f textarea{resize:vertical;min-height:70px}
   form.f input:focus,form.f textarea:focus{outline:none;border-color:var(--ink)}
   form.f .btn{justify-content:center}
+  form.f .form-note{font-size:.86rem;color:var(--ink-2);line-height:1.5;margin:-6px 0 0}
+  :is(a,button,input,textarea):focus-visible{outline:2px solid var(--bronze);outline-offset:4px}
 
   /* footer */
   footer{background:var(--ink);color:var(--bone);padding:clamp(70px,9vw,110px) 0 40px}
@@ -449,8 +458,8 @@
     <h2>Selected<br><em>works</em></h2>
     <div class="scol"><span class="mono">01 — Archive</span>Each piece is unique. When a work is acquired, it is gone for good.</div>
   </div>
-  <div class="fil rv" id="fil">
-    <button class="on" data-f="all">All</button>
+  <div class="fil rv" id="fil" aria-label="Filter artworks">
+    <button class="on" data-f="all" aria-pressed="true">All</button>
     <button data-f="colour">Colour</button>
     <button data-f="monochrome">Monochrome</button>
     <button data-f="gesture">Gesture</button>
@@ -459,6 +468,7 @@
     <button data-f="zodiac">Zodiac</button>
   </div>
   <div class="flow" id="flow"></div>
+  <div class="gallery-more" id="galleryMore"><button class="btn btn-out" id="moreWorks" type="button" aria-controls="flow">See all 32 works <span class="ar" aria-hidden="true">→</span></button></div>
 </section>
 
 <!-- STATEMENT -->
@@ -498,10 +508,10 @@
 <!-- ARTIST -->
 <section class="about" id="artist">
   <div class="wrap">
-    <div class="about-port rv">
-      <img src="images/artist.jpg" alt="Ivaylo Peytchev" onerror="this.style.display='none'" />
-      <div class="mgbig">IP</div>
-    </div>
+    <figure class="about-port rv">
+      <img src="images/work-04.jpg" alt="Detail of Cacophony, a painting by Ivaylo Peytchev" loading="lazy" />
+      <figcaption>From the studio / Cacophony</figcaption>
+    </figure>
     <div class="rv">
       <span class="mono">03 — Artist · writer · inventor</span>
       <h2>Ideas in <em>motion.</em></h2>
@@ -532,25 +542,25 @@
         <span class="world-no">01 / NEMO</span>
         <h3>NEMO Studio</h3>
         <p>Personal magazines and story experiences for people, weddings, birthdays, homes and brands—made to feel collected, not generated.</p>
-        <button type="button" class="world-ask" onclick="window.openIvoAI?.('Tell me about NEMO Studio and the personal magazines you create.')">Ask my AI <span aria-hidden="true">→</span></button>
+        <div class="world-actions"><a class="world-ask" href="https://stories-by-nemo.vercel.app" target="_blank" rel="noopener noreferrer">Explore NEMO <span aria-hidden="true">↗</span></a><button type="button" class="world-ask world-secondary" onclick="window.openIvoAI?.('Tell me about NEMO Studio and the personal magazines you create.')">Ask the AI <span aria-hidden="true">→</span></button></div>
       </article>
       <article class="world-card">
         <span class="world-no">02 / HOME</span>
         <h3>House Passport</h3>
         <p>A living record of a home: its facts, care, repairs, memories and owner's soul—connected to a multilingual AI House Guardian.</p>
-        <button type="button" class="world-ask" onclick="window.openIvoAI?.('Explain the House Passport and AI House Guardian idea.')">Ask my AI <span aria-hidden="true">→</span></button>
+        <div class="world-actions"><a class="world-ask" href="#inquire" onclick="pre('House Passport')">Discuss a home <span aria-hidden="true">→</span></a><button type="button" class="world-ask world-secondary" onclick="window.openIvoAI?.('Explain the House Passport and AI House Guardian idea.')">Ask the AI <span aria-hidden="true">→</span></button></div>
       </article>
       <article class="world-card">
         <span class="world-no">03 / ORION</span>
         <h3>Art &amp; Books</h3>
         <p>Satire, speculative fiction and retro-futurist story worlds—where old paper, future machines and inconvenient questions meet.</p>
-        <button type="button" class="world-ask" onclick="window.openIvoAI?.('Tell me about Ivaylo’s books and his author identity Orion Saint.')">Ask my AI <span aria-hidden="true">→</span></button>
+        <div class="world-actions"><a class="world-ask" href="https://departmentofsurrender.com" target="_blank" rel="noopener noreferrer">Explore the books <span aria-hidden="true">↗</span></a><button type="button" class="world-ask world-secondary" onclick="window.openIvoAI?.('Tell me about Ivaylo’s books and his author identity Orion Saint.')">Ask the AI <span aria-hidden="true">→</span></button></div>
       </article>
       <article class="world-card">
         <span class="world-no">04 / A305X</span>
         <h3>A305X</h3>
         <p>The anti-war flamingo: art, streetwear, noise and kindness in Miami colour. A small rebellion you can wear, carry or hang on a wall.</p>
-        <button type="button" class="world-ask" onclick="window.openIvoAI?.('What is A305X and the anti-war flamingo?')">Ask my AI <span aria-hidden="true">→</span></button>
+        <div class="world-actions"><a class="world-ask" href="https://antiwar-flock.vercel.app" target="_blank" rel="noopener noreferrer">Explore A305X <span aria-hidden="true">↗</span></a><button type="button" class="world-ask world-secondary" onclick="window.openIvoAI?.('What is A305X and the anti-war flamingo?')">Ask the AI <span aria-hidden="true">→</span></button></div>
       </article>
     </div>
   </div>
@@ -565,7 +575,7 @@
       <p>Interested in a work, a commission, a private viewing or a creative project? Send a note and Ivaylo will reply personally with availability and details.</p>
       <div class="inq-row"><b>Email</b><span><a href="mailto:usivaylo@gmail.com">usivaylo@gmail.com</a></span></div>
       <div class="inq-row"><b>Studio</b><span>By appointment</span></div>
-      <div class="inq-row"><b>Follow</b><span>@ivosart</span></div>
+      <div class="inq-row"><b>Follow</b><span><a href="https://instagram.com/ivosart" target="_blank" rel="noopener noreferrer">@ivosart ↗</a></span></div>
     </div>
     <form class="f rv" id="f">
       <div class="fld"><label>Name</label><input type="text" name="name" required /></div>
@@ -573,7 +583,8 @@
       <div class="fld"><label>Work of interest</label><input type="text" name="work" id="wfield" placeholder="e.g. Crossing — or open to suggestions" /></div>
       <div class="fld"><label>Message</label><textarea name="message" placeholder="Tell me about the space…"></textarea></div>
       <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true" />
-      <button type="submit" class="btn btn-fill mag">Send inquiry <span class="ar">→</span></button>
+      <button type="submit" class="btn btn-fill mag" id="submitInquiry">Open email draft <span class="ar">→</span></button>
+      <p class="form-note" id="formNote">Your email app will open with this message ready. Press Send there to contact Ivaylo.</p>
     </form>
   </div>
 </section>
@@ -596,10 +607,10 @@
 </footer>
 
 <!-- LIGHTBOX -->
-<div class="lb" id="lb">
-  <button class="lb-x" id="lbx">✕</button>
-  <button class="lb-n lb-p" id="lbp">←</button>
-  <button class="lb-n lb-nx" id="lbnx">→</button>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Artwork details" inert>
+  <button class="lb-x" id="lbx" aria-label="Close artwork details">✕</button>
+  <button class="lb-n lb-p" id="lbp" aria-label="Previous artwork">←</button>
+  <button class="lb-n lb-nx" id="lbnx" aria-label="Next artwork">→</button>
   <div class="lb-stage" id="lbstage"></div>
 </div>
 
@@ -677,7 +688,7 @@
   </div>
 </section>
 
-<div class="toast" id="toast">Inquiry sent — thank you ✦</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 /* ===== WORKS (no prices) — edit titles / medium / tags freely ===== */
@@ -722,25 +733,31 @@ const works=[
 
 const flow=document.getElementById("flow");
 const pad=n=>String(n).padStart(2,"0");
-function render(f="all"){
+const galleryMore=document.getElementById("galleryMore");
+let currentFilter="all",expanded=false,visibleWorkIndices=[];
+function render(f=currentFilter){
+  currentFilter=f;
   flow.innerHTML="";
   const list=works.map((w,i)=>({w,i})).filter(o=>f==="all"||o.w.tags.includes(f));
+  const displayed=f==="all"&&!expanded?list.slice(0,6):list;
+  visibleWorkIndices=displayed.map(o=>o.i);
+  galleryMore.hidden=f!=="all"||expanded||list.length<=6;
   if(!list.length){
     flow.innerHTML='<p class="flow-empty">New works in this series are arriving soon — <a href="#inquire">inquire</a> to be the first to see them.</p>';
     return;
   }
-  list.forEach((o,k)=>{
+  displayed.forEach((o,k)=>{
     const w=o.w;
     const el=document.createElement("article");
     el.className="wb rv";
     el.innerHTML=`
       <span class="ghost">${pad(k+1)}</span>
-      <div class="wmedia" data-i="${o.i}">
+      <button class="wmedia" type="button" aria-label="View ${w.title} in detail" data-i="${o.i}">
         <div class="wplate">
           <div class="wcue"><span>View work</span></div>
           <img src="images/${w.img}" alt="${w.title}" loading="lazy" onerror="this.parentElement.classList.add('noimg');this.remove()"/>
         </div>
-      </div>
+      </button>
       <div class="wtext">
         <div class="idx">Work №${pad(k+1)} / ${pad(list.length)}</div>
         <h3>${w.title}</h3>
@@ -754,24 +771,27 @@ function render(f="all"){
   });
   bind();
 }
+document.getElementById("moreWorks").addEventListener("click",()=>{expanded=true;render("all");});
 
 /* filters */
 document.getElementById("fil").addEventListener("click",e=>{
   if(e.target.tagName!=="BUTTON")return;
-  document.querySelectorAll("#fil button").forEach(b=>b.classList.remove("on"));
+  if(e.target.dataset.f!==currentFilter)expanded=false;
+  document.querySelectorAll("#fil button").forEach(b=>{b.classList.remove("on");b.setAttribute("aria-pressed","false");});
   e.target.classList.add("on");
+  e.target.setAttribute("aria-pressed","true");
   render(e.target.dataset.f);
 });
 
 /* lightbox */
-const lb=document.getElementById("lb"),stage=document.getElementById("lbstage");let li=0;
-function openLb(i){li=i;drawLb();lb.classList.add("open");document.body.style.overflow="hidden";}
+const lb=document.getElementById("lb"),stage=document.getElementById("lbstage");let li=0,lightboxTrigger=null;
+function openLb(i){li=i;lightboxTrigger=document.activeElement;drawLb();lb.inert=false;lb.classList.add("open");document.body.style.overflow="hidden";document.getElementById("lbx").focus();}
 function drawLb(){const w=works[li];stage.innerHTML=`
   <img src="images/${w.img}" alt="${w.title}" onerror="this.outerHTML='<div style=\\'width:60vw;max-width:440px;aspect-ratio:4/5;background:linear-gradient(150deg,#2a261d,#1a160f);display:grid;place-items:center;color:#6c655a;font-family:var(--serif);font-style:italic\\'>${w.title}</div>'"/>
   <div class="lb-info"><h3>${w.title}</h3>${w.desc?`<p class="lb-desc">${w.desc}</p>`:""}<div class="m">${w.medium}</div>
   ${w.sold?'<span class="acq">Acquired</span>':`<a href="#inquire" class="btn mag" onclick="pre('${w.title.replace(/'/g,'')}');closeLb()">Inquire to acquire <span class="ar">→</span></a>`}</div>`;bind();}
-function closeLb(){lb.classList.remove("open");document.body.style.overflow="";}
-function step(d){li=(li+d+works.length)%works.length;drawLb();}
+function closeLb(){lb.classList.remove("open");lb.inert=true;document.body.style.overflow="";if(lightboxTrigger?.isConnected)lightboxTrigger.focus();}
+function step(d){const k=visibleWorkIndices.indexOf(li);li=visibleWorkIndices[(k+d+visibleWorkIndices.length)%visibleWorkIndices.length];drawLb();}
 document.getElementById("lbx").onclick=closeLb;
 document.getElementById("lbp").onclick=()=>step(-1);
 document.getElementById("lbnx").onclick=()=>step(1);
@@ -790,16 +810,18 @@ const WEB3FORMS_KEY = "PASTE_YOUR_WEB3FORMS_KEY_HERE";
 const INBOX = "usivaylo@gmail.com";
 const form = document.getElementById("f");
 const toast = document.getElementById("toast");
+const formSendEnabled=Boolean(WEB3FORMS_KEY&&WEB3FORMS_KEY!=="PASTE_YOUR_WEB3FORMS_KEY_HERE");
+if(formSendEnabled){document.getElementById("submitInquiry").innerHTML='Send inquiry <span class="ar">→</span>';document.getElementById("formNote").textContent="Your message will be sent to the studio.";}
 function showToast(msg){toast.textContent=msg;toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),3200);}
 form.addEventListener("submit", async e=>{
   e.preventDefault();
   const d = Object.fromEntries(new FormData(form).entries());
   // Fallback (no service key yet): open a pre-filled email
-  if(!WEB3FORMS_KEY || WEB3FORMS_KEY==="PASTE_YOUR_WEB3FORMS_KEY_HERE"){
+  if(!formSendEnabled){
     const subject = encodeURIComponent(`Inquiry — ${d.work || "IvosArt"}`);
     const body = encodeURIComponent(`Name: ${d.name||""}\nEmail: ${d.email||""}\nWork of interest: ${d.work||"(open to suggestions)"}\n\n${d.message||""}`);
     window.location.href = `mailto:${INBOX}?subject=${subject}&body=${body}`;
-    showToast("Opening your email app…");
+    showToast("Email draft opened — press Send in your email app.");
     return;
   }
   // Service send (silent, stays on page)
