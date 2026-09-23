@@ -412,12 +412,12 @@
       <a href="#worlds">Worlds</a>
       <a href="#inquire">Inquire</a>
     </div>
-    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+    <button class="burger" id="burger" type="button" aria-label="Open navigation" aria-controls="mm" aria-expanded="false"><span></span><span></span><span></span></button>
   </nav>
 </header>
 
-<div class="mm" id="mm">
-  <button class="mx" id="mx">✕</button>
+<div class="mm" id="mm" aria-hidden="true" inert>
+  <button class="mx" id="mx" type="button" aria-label="Close navigation">✕</button>
   <a href="#works">Works</a><a href="#reading">Reading</a><a href="#signature">Signature</a><a href="#artist">Artist</a><a href="#worlds">Worlds</a><a href="#inquire">Inquire</a>
 </div>
 
@@ -440,7 +440,7 @@
       <p>Paintings made in a single surge of movement — colour thrown, dragged, and left where it lands. Each one happens once, and never again.</p>
       <div class="hero-actions">
         <a href="#works" class="btn btn-fill mag">Enter the gallery <span class="ar">→</span></a>
-        <button type="button" class="btn btn-out mag" onclick="window.openIvoAI?.()">Meet my AI</button>
+        <a href="#worlds" class="btn btn-out mag">Explore my worlds <span class="ar" aria-hidden="true">→</span></a>
       </div>
     </div>
   </div>
@@ -456,7 +456,7 @@
 <section class="wrap" id="works" style="padding-top:clamp(90px,12vw,170px);padding-bottom:clamp(60px,8vw,120px)">
   <div class="shead rv">
     <h2>Selected<br><em>works</em></h2>
-    <div class="scol"><span class="mono">01 — Archive</span>Each piece is unique. When a work is acquired, it is gone for good.</div>
+    <div class="scol"><span class="mono">01 — Archive</span>Paintings, ink works and Miami collage studies. Ask the studio about availability.</div>
   </div>
   <div class="fil rv" id="fil" aria-label="Filter artworks">
     <button class="on" data-f="all" aria-pressed="true">All</button>
@@ -578,10 +578,10 @@
       <div class="inq-row"><b>Follow</b><span><a href="https://instagram.com/ivosart" target="_blank" rel="noopener noreferrer">@ivosart ↗</a></span></div>
     </div>
     <form class="f rv" id="f">
-      <div class="fld"><label>Name</label><input type="text" name="name" required /></div>
-      <div class="fld"><label>Email</label><input type="email" name="email" required /></div>
-      <div class="fld"><label>Work of interest</label><input type="text" name="work" id="wfield" placeholder="e.g. Crossing — or open to suggestions" /></div>
-      <div class="fld"><label>Message</label><textarea name="message" placeholder="Tell me about the space…"></textarea></div>
+      <div class="fld"><label for="inqName">Name</label><input type="text" name="name" id="inqName" required /></div>
+      <div class="fld"><label for="inqEmail">Email</label><input type="email" name="email" id="inqEmail" required /></div>
+      <div class="fld"><label for="wfield">Work of interest</label><input type="text" name="work" id="wfield" placeholder="e.g. Crossing — or open to suggestions" /></div>
+      <div class="fld"><label for="inqMessage">Message</label><textarea name="message" id="inqMessage" placeholder="Tell me about the space…"></textarea></div>
       <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true" />
       <button type="submit" class="btn btn-fill mag" id="submitInquiry">Open email draft <span class="ar">→</span></button>
       <p class="form-note" id="formNote">Your email app will open with this message ready. Press Send there to contact Ivaylo.</p>
@@ -601,7 +601,7 @@
     </div>
     <div class="fbot">
       <span>© 2026 IvosArt — all works © the artist</span>
-      <span>Made by hand · shipped worldwide</span>
+      <span>South Florida · inquiries worldwide</span>
     </div>
   </div>
 </footer>
@@ -671,7 +671,7 @@
 <section class="cc-panel" id="ccPanel" aria-live="polite" aria-label="Ivo's multilingual AI guide">
   <div class="cc-head">
     <span class="mg">IP</span>
-    <div class="ci"><h4>Meet Ivo</h4><span>AI guide · every language</span></div>
+    <div class="ci"><h4>Ivo's studio guide</h4><span>AI guide · multilingual</span></div>
     <button class="cc-x" id="ccX" aria-label="Close chat">✕</button>
   </div>
   <div class="cc-body" id="ccBody"></div>
@@ -853,9 +853,13 @@ document.querySelectorAll(".rv").forEach(el=>io.observe(el));
 const header=document.getElementById("header");
 addEventListener("scroll",()=>header.classList.toggle("solid",scrollY>window.innerHeight*.9));
 const mm=document.getElementById("mm");
-document.getElementById("burger").onclick=()=>mm.classList.add("open");
-document.getElementById("mx").onclick=()=>mm.classList.remove("open");
-mm.querySelectorAll("a").forEach(a=>a.onclick=()=>mm.classList.remove("open"));
+const burger=document.getElementById("burger");
+function openMenu(){mm.inert=false;mm.setAttribute("aria-hidden","false");mm.classList.add("open");burger.setAttribute("aria-expanded","true");mm.querySelector("a").focus();}
+function closeMenu(){mm.classList.remove("open");mm.inert=true;mm.setAttribute("aria-hidden","true");burger.setAttribute("aria-expanded","false");burger.focus();}
+burger.onclick=openMenu;
+document.getElementById("mx").onclick=closeMenu;
+mm.querySelectorAll("a").forEach(a=>a.onclick=closeMenu);
+addEventListener("keydown",e=>{if(e.key==="Escape"&&mm.classList.contains("open"))closeMenu();});
 
 /* magnetic buttons (standard system cursor) */
 const hover=matchMedia("(hover:hover)").matches;
@@ -903,7 +907,7 @@ function finish(){setTimeout(()=>{loader.classList.add("done");document.getEleme
   function open(){
     panel.classList.add("open"); fab.classList.add("hide");
     if(!greeted){ greeted=true;
-      bubble("bot","Welcome. I’m Ivo’s AI guide—not the human, but trained on his approved creative world. I can help you discover a painting, explore NEMO Studio, House Passport, books or A305X, and I can speak with you in any language. What shall we open first?");
+      bubble("bot","Welcome. I’m Ivo’s AI guide, here to help you discover a painting or explore NEMO Studio, House Passport, books and A305X. You can ask in your own language. Where would you like to begin?");
     }
     setTimeout(()=>input.focus(),350);
   }
