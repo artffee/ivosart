@@ -1,8 +1,8 @@
 // IvosArt — shared catalogue of works.
-// Used by both api/chat.js (concierge) and api/reading.js (energy reading).
-// Each work also carries a "frequency" and a hand-written energy reading —
-// the reading is what the Energy Reader returns when no AI key is set, so the
-// feature is beautiful out of the box and only gets more personal with a key.
+// Used by api/chat.js (studio guide) and api/reading.js (playful art game).
+// Legacy poetic frequency labels and notes remain for catalogue compatibility.
+// They are inventions, not measurements, and are excluded from the chat facts.
+// The current game uses its own choice-based fallback in assets/a305x-reader-data.js.
 //
 // When you add or rename a work in index.html, mirror it here.
 
@@ -154,7 +154,7 @@ const WORKS = [
 ];
 
 const worksText = WORKS.map(
-  (w, i) => `${i + 1}. "${w.title}" — ${w.desc} (${w.medium}). Themes: ${w.tags.join(", ")}. Frequency: ${w.freq}.`
+  (w, i) => `${i + 1}. "${w.title}" — ${w.desc} (${w.medium}). Themes: ${w.tags.join(", ")}.`
 ).join("\n");
 
 function findWork(title) {
