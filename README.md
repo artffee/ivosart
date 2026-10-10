@@ -6,6 +6,9 @@ Portfolio site for the original abstract works of **Ivaylo Peytchev**.
 - Artwork lives in [`images/`](images/) — see [`images/HOW-TO-ADD-YOUR-ART.txt`](images/HOW-TO-ADD-YOUR-ART.txt)
 - No build step, no dependencies (fonts load from Google Fonts)
 
+## Discover your reality
+A rose paper panel at `#reality`, inspired by torn-paper collage, reveals **"Ivo's Art — Discover your reality."** The lettering is live, readable HTML; the paper is an inline SVG with subtle texture and a folded edge. The panel links to the gallery, adapts to phones, supports keyboard focus, and honours reduced-motion preferences. The Muse's instructions carry the same invitation.
+
 ## Edit works
 Open `index.html`, find the `works` array near the bottom, and edit titles / medium / tags.
 Mark a piece as sold by adding `sold:true` to its entry.

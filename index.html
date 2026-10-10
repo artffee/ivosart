@@ -116,6 +116,22 @@
   .btn-out:hover{background:var(--ink);color:var(--bone)}
   .btn .ar{transition:transform .4s var(--e)}.btn:hover .ar{transform:translateX(5px)}
 
+  /* reality — a paper opening into the gallery */
+  .reality-sec{padding-top:clamp(50px,7vw,100px);scroll-margin-top:90px}
+  .reality-paper{position:relative;isolation:isolate;display:block;max-width:1180px;min-height:clamp(340px,42vw,520px);margin:0 auto;overflow:hidden;border-radius:14px;background:#bc9590;box-shadow:0 30px 65px -45px rgba(71,39,35,.55)}
+  .reality-art{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+  .reality-copy{position:absolute;inset:30% 6% 30% 26%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#2b2721}
+  .reality-studio{font-family:var(--mono);font-size:clamp(.62rem,1vw,.82rem);letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px}
+  .reality-copy h2{font-family:var(--mono);font-weight:400;font-size:clamp(1.5rem,3.6vw,3.1rem);letter-spacing:-.055em;line-height:1.2;max-width:23ch;text-wrap:balance}
+  .reality-enter{position:absolute;right:6%;bottom:9%;font-family:var(--mono);font-size:clamp(.58rem,1vw,.72rem);letter-spacing:.12em;text-transform:uppercase;color:#3c2927}
+  .reality-enter span{display:inline-block;margin-left:10px;transition:transform .5s var(--e)}
+  .reality-flap{transform-box:fill-box;transform-origin:right center;transition:transform .7s var(--e)}
+  .reality-paper:hover .reality-flap,.reality-paper:focus-visible .reality-flap{transform:translateX(-12px) rotate(-2deg)}
+  .reality-paper:hover .reality-enter span,.reality-paper:focus-visible .reality-enter span{transform:translateX(5px)}
+  .reality-paper:focus-visible{outline:2px solid var(--bronze);outline-offset:6px}
+  @media(max-width:480px){.reality-copy{left:25%;right:5%}.reality-copy h2{font-size:clamp(1.25rem,6vw,1.75rem)}.reality-studio{letter-spacing:.14em;margin-bottom:12px}.reality-enter{font-size:.56rem;letter-spacing:.07em}}
+  @media(prefers-reduced-motion:reduce){.reality-flap,.reality-enter span{transition:none}.reality-paper:hover .reality-flap,.reality-paper:focus-visible .reality-flap,.reality-paper:hover .reality-enter span,.reality-paper:focus-visible .reality-enter span{transform:none}}
+
   /* marquee */
   .marq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:20px 0}
   .marq-t{display:flex;gap:50px;white-space:nowrap;animation:scr 34s linear infinite;font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,3vw,2.2rem);color:var(--ink)}
@@ -454,6 +470,48 @@
   <span>Gesture is memory</span><span>The hand never lies</span><span>Paint keeps the record of the moment</span>
   <span>Gesture is memory</span><span>The hand never lies</span><span>Paint keeps the record of the moment</span>
 </div></div>
+
+<!-- DISCOVER YOUR REALITY -->
+<section class="reality-sec" id="reality" aria-labelledby="reality-title">
+  <div class="wrap rv">
+    <a class="reality-paper" href="#works" aria-labelledby="reality-studio reality-title">
+      <svg class="reality-art" viewBox="0 0 1200 560" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="realityRose" x2=".15" y2="1">
+            <stop stop-color="#c9a5a0"/><stop offset="1" stop-color="#ac807b"/>
+          </linearGradient>
+          <linearGradient id="realityCream" x2="0" y2="1">
+            <stop stop-color="#f5edda"/><stop offset=".5" stop-color="#fff8e6"/><stop offset="1" stop-color="#eadfc6"/>
+          </linearGradient>
+          <linearGradient id="realityFold">
+            <stop stop-color="#9c706b"/><stop offset=".25" stop-color="#cba5a0"/><stop offset=".6" stop-color="#d9b9b1"/><stop offset="1" stop-color="#a97d77"/>
+          </linearGradient>
+          <filter id="realityShadow" x="-30%" y="-20%" width="170%" height="150%">
+            <feDropShadow dx="7" dy="7" stdDeviation="7" flood-color="#604039" flood-opacity=".42"/>
+          </filter>
+          <filter id="realityGrain">
+            <feTurbulence type="fractalNoise" baseFrequency=".65" numOctaves="3" seed="8"/>
+            <feColorMatrix type="saturate" values="0"/>
+          </filter>
+        </defs>
+        <rect width="1200" height="560" fill="url(#realityRose)"/>
+        <path d="M196 188 L220 202 245 195 266 212 294 215 312 202 337 211 362 191 385 195 408 179 435 184 456 174 481 181 509 166 534 170 552 181 577 172 600 187 627 180 651 197 679 188 699 202 728 195 752 210 776 204 802 219 826 211 850 225 876 214 903 225 930 214 953 220 978 204 1004 215 1031 201 1059 210 1087 199 1115 213 1144 203 1172 220 1200 210 L1200 385 1170 389 1146 374 1121 383 1095 373 1070 386 1046 379 1020 391 991 380 966 393 940 382 915 394 889 385 863 398 838 389 811 401 787 394 761 405 736 394 711 404 685 392 660 401 635 386 610 397 582 384 559 391 532 378 507 388 480 375 455 382 430 369 405 379 380 367 355 376 330 365 305 374 279 363 254 374 228 363 202 375 Z" fill="url(#realityCream)" filter="url(#realityShadow)"/>
+        <path d="M196 188 L220 202 245 195 266 212 294 215 312 202 337 211 362 191 385 195 408 179 435 184 456 174 481 181 509 166 534 170 552 181 577 172 600 187 627 180 651 197 679 188 699 202 728 195 752 210 776 204 802 219 826 211 850 225 876 214 903 225 930 214 953 220 978 204 1004 215 1031 201 1059 210 1087 199 1115 213 1144 203 1172 220 1200 210" fill="none" stroke="#e4c8bc" stroke-width="7" stroke-linejoin="round"/>
+        <path d="M202 375 L228 363 254 374 279 363 305 374 330 365 355 376 380 367 405 379 430 369 455 382 480 375 507 388 532 378 559 391 582 384 610 397 635 386 660 401 685 392 711 404 736 394 761 405 787 394 811 401 838 389 863 398 889 385 915 394 940 382 966 393 991 380 1020 391 1046 379 1070 386 1095 373 1121 383 1146 374 1170 389 1200 385" fill="none" stroke="#e4c8bc" stroke-width="8" stroke-linejoin="round"/>
+        <g class="reality-flap" filter="url(#realityShadow)">
+          <path d="M152 174 L175 182 192 172 210 183 223 176 235 191 241 211 236 234 244 260 239 284 246 311 240 337 247 360 238 390 220 385 203 398 184 389 167 397 151 382 156 357 149 331 154 305 147 279 152 251 146 225 154 200 Z" fill="url(#realityFold)" stroke="#e5c9bd" stroke-width="5" stroke-linejoin="round"/>
+          <path d="M219 190 C230 244 226 327 230 382" fill="none" stroke="#8e635d" stroke-width="2" opacity=".35"/>
+        </g>
+        <rect width="1200" height="560" filter="url(#realityGrain)" opacity=".065" style="mix-blend-mode:multiply"/>
+      </svg>
+      <div class="reality-copy">
+        <span class="reality-studio" id="reality-studio">Ivo’s Art</span>
+        <h2 id="reality-title">Discover your reality.</h2>
+      </div>
+      <span class="reality-enter">Explore the paintings <span aria-hidden="true">→</span></span>
+    </a>
+  </div>
+</section>
 
 <!-- WORKS -->
 <section class="wrap" id="works" style="padding-top:clamp(90px,12vw,170px);padding-bottom:clamp(60px,8vw,120px)">
