@@ -7,20 +7,20 @@ Portfolio site for the original abstract works of **Ivaylo Peytchev**.
 - No build step, no dependencies (fonts load from Google Fonts)
 
 ## Discover your reality
-A rose paper panel at `#reality`, inspired by torn-paper collage, pairs **"Ivo's Art — Discover your reality."** with Ivaylo's original **Crimson Ascent** (`images/work-03.jpg`). A large torn window reveals the painting beside the live HTML lettering; an SVG viewport crops the photographed frame without modifying the artwork file. The paper has subtle texture and a folded edge. On phones the painting sits above the words. The panel links to the gallery, supports keyboard focus, and honours reduced-motion preferences. The Muse's instructions carry the same invitation.
+A rose paper panel at `#reality`, inspired by torn-paper collage, pairs **"Ivo's Art — Discover your reality."** with Ivaylo's original **Crimson Ascent** (`images/work-03.jpg`). A large torn window reveals the painting beside the live HTML lettering; an SVG viewport crops the photographed frame without modifying the artwork file. The paper has subtle texture and a folded edge. On phones the painting sits above the words. The panel links to the gallery, supports keyboard focus, and honours reduced-motion preferences. A305X's instructions carry the same invitation.
 
 ## Edit works
 Open `index.html`, find the `works` array near the bottom, and edit titles / medium / tags.
 Mark a piece as sold by adding `sold:true` to its entry.
 The home gallery initially shows six works. Visitors can expand all 32 or choose a series filter.
 
-## Multilingual Ivo AI guide (chat widget)
-A floating "Meet Ivo's Muse" guide, bottom-right of the page, powered by the Google Gemini API. Its character is funny, elegant, and free-spirited, with dry wit and the motto **"Born to disobey. Free to create."** The welcome message, panel heading, and backend voice share this identity. The launcher keeps its label visible on phones.
-It is clearly disclosed as an AI representative. Its system prompt in `api/chat.js` covers the works, NEMO Studio, the House Passport concept, Orion Saint's books, and A305X. It replies in the visitor's language when possible and guides inquiries to Ivaylo's email. The creative-world cards also link directly to the live NEMO, Orion, and A305X sites.
+## Multilingual A305X studio guide (chat widget)
+A floating "Meet A305X" guide, bottom-right of the page, powered by the Google Gemini API. Its character is funny, elegant, and free-spirited, with Miami colour, anti-war kindness, dry wit, and the motto **"Born to disobey. Free to create."** The welcome message, panel heading, accessible labels, and backend voice share this identity. The launcher keeps its label visible on phones.
+A305X introduces itself by name without unsolicited technical explanations. If asked directly whether it is AI, automated, or human, it answers honestly; it never claims to be Ivaylo or a human. Its system prompt in `api/chat.js` covers the works, NEMO Studio, the House Passport concept, Orion Saint's books, and A305X. It replies in the visitor's language when possible and guides inquiries to Ivaylo's email. The creative-world cards also link directly to the live NEMO, Orion, and A305X sites, with "Ask A305X" buttons opening the guide.
 
-The Muse answers practical questions first and uses occasional, gentle humour. Creative rebellion never changes facts: it does not invent prices or availability, claim to be Ivaylo, or claim to process purchases. Customer problems receive calm, direct replies.
+A305X answers practical questions first and uses occasional, gentle humour. Creative rebellion never changes facts: it does not invent prices or availability, claim to be Ivaylo, or claim to process purchases. Customer problems receive calm, direct replies.
 
-The studio's philosophy, **"Only through art can we live in reality—because we create it,"** appears in the philosophy section and the Muse's greeting. Its backend prompt carries the same idea into conversations about art, imagination, and freedom.
+The studio's philosophy, **"Only through art can we live in reality—because we create it,"** appears in the philosophy section and A305X's greeting. Its backend prompt carries the same idea into conversations about art, imagination, and freedom.
 
 - Frontend: chat widget markup/styles/JS live inside [`index.html`](index.html) (search for `AI CONCIERGE` / `cc-`).
 - Backend: [`api/chat.js`](api/chat.js) — a Vercel serverless function that calls Gemini. The API key stays server-side and never reaches the browser.
