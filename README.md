@@ -7,7 +7,7 @@ Portfolio site for the original abstract works of **Ivaylo Peytchev**.
 - No build step, no dependencies (fonts load from Google Fonts)
 
 ## Discover your reality
-A rose paper panel at `#reality`, inspired by torn-paper collage, reveals **"Ivo's Art — Discover your reality."** The lettering is live, readable HTML; the paper is an inline SVG with subtle texture and a folded edge. The panel links to the gallery, adapts to phones, supports keyboard focus, and honours reduced-motion preferences. The Muse's instructions carry the same invitation.
+A rose paper panel at `#reality`, inspired by torn-paper collage, pairs **"Ivo's Art — Discover your reality."** with Ivaylo's original **Crimson Ascent** (`images/work-03.jpg`). A large torn window reveals the painting beside the live HTML lettering; an SVG viewport crops the photographed frame without modifying the artwork file. The paper has subtle texture and a folded edge. On phones the painting sits above the words. The panel links to the gallery, supports keyboard focus, and honours reduced-motion preferences. The Muse's instructions carry the same invitation.
 
 ## Edit works
 Open `index.html`, find the `works` array near the bottom, and edit titles / medium / tags.

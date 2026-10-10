@@ -118,18 +118,23 @@
 
   /* reality — a paper opening into the gallery */
   .reality-sec{padding-top:clamp(50px,7vw,100px);scroll-margin-top:90px}
-  .reality-paper{position:relative;isolation:isolate;display:block;max-width:1180px;min-height:clamp(340px,42vw,520px);margin:0 auto;overflow:hidden;border-radius:14px;background:#bc9590;box-shadow:0 30px 65px -45px rgba(71,39,35,.55)}
+  .reality-paper{position:relative;isolation:isolate;display:block;max-width:1180px;min-height:clamp(440px,46vw,560px);margin:0 auto;overflow:hidden;border-radius:14px;background:#bc9590;box-shadow:0 30px 65px -45px rgba(71,39,35,.55)}
   .reality-art{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-  .reality-copy{position:absolute;inset:30% 6% 30% 26%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#2b2721}
+  .reality-window{--tear:polygon(3% 2%,10% 3%,17% 1%,24% 3%,31% 2%,38% 4%,45% 1%,53% 3%,61% 2%,68% 4%,75% 2%,83% 3%,91% 1%,97% 3%,96% 11%,99% 19%,97% 27%,99% 35%,96% 44%,98% 53%,96% 62%,99% 71%,97% 80%,99% 89%,97% 98%,90% 97%,82% 99%,74% 97%,66% 99%,58% 97%,50% 99%,42% 97%,34% 99%,26% 97%,18% 99%,10% 97%,2% 99%,3% 91%,1% 82%,3% 73%,1% 64%,3% 55%,1% 46%,3% 37%,1% 28%,3% 19%,1% 10%);position:absolute;left:6%;top:5%;width:36%;height:88%;filter:drop-shadow(5px 7px 7px rgba(71,39,35,.3));pointer-events:none}
+  .reality-mount{position:absolute;inset:0;background:#f5edda;clip-path:var(--tear)}
+  .reality-canvas{position:absolute;inset:7px;clip-path:var(--tear);overflow:hidden}
+  .reality-painting{display:block;width:100%;height:100%}
+  .reality-copy{position:absolute;inset:19% 6% 22% 48%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#2b2721}
   .reality-studio{font-family:var(--mono);font-size:clamp(.62rem,1vw,.82rem);letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px}
-  .reality-copy h2{font-family:var(--mono);font-weight:400;font-size:clamp(1.5rem,3.6vw,3.1rem);letter-spacing:-.055em;line-height:1.2;max-width:23ch;text-wrap:balance}
-  .reality-enter{position:absolute;right:6%;bottom:9%;font-family:var(--mono);font-size:clamp(.58rem,1vw,.72rem);letter-spacing:.12em;text-transform:uppercase;color:#3c2927}
+  .reality-copy h2{font-family:var(--mono);font-weight:400;font-size:clamp(1.5rem,3.6vw,3.1rem);letter-spacing:-.055em;line-height:1.2;max-width:15ch;text-wrap:balance}
+  .reality-credit{position:absolute;left:6%;bottom:2.5%;font-family:var(--mono);font-size:clamp(.5rem,.75vw,.61rem);letter-spacing:.06em;color:#3c2927}
+  .reality-enter{position:absolute;right:6%;bottom:13%;font-family:var(--mono);font-size:clamp(.58rem,1vw,.72rem);letter-spacing:.12em;text-transform:uppercase;color:#3c2927}
   .reality-enter span{display:inline-block;margin-left:10px;transition:transform .5s var(--e)}
   .reality-flap{transform-box:fill-box;transform-origin:right center;transition:transform .7s var(--e)}
   .reality-paper:hover .reality-flap,.reality-paper:focus-visible .reality-flap{transform:translateX(-12px) rotate(-2deg)}
   .reality-paper:hover .reality-enter span,.reality-paper:focus-visible .reality-enter span{transform:translateX(5px)}
   .reality-paper:focus-visible{outline:2px solid var(--bronze);outline-offset:6px}
-  @media(max-width:480px){.reality-copy{left:25%;right:5%}.reality-copy h2{font-size:clamp(1.25rem,6vw,1.75rem)}.reality-studio{letter-spacing:.14em;margin-bottom:12px}.reality-enter{font-size:.56rem;letter-spacing:.07em}}
+  @media(max-width:640px){.reality-paper{min-height:clamp(540px,165vw,660px)}.reality-window{top:3%;left:50%;width:min(76%,290px);height:59%;transform:translateX(-50%)}.reality-copy{inset:65% 8% 13%}.reality-copy h2{font-size:clamp(1.5rem,7vw,2.2rem)}.reality-studio{letter-spacing:.14em;margin-bottom:12px}.reality-credit{left:0;right:0;bottom:auto;top:62%;text-align:center;font-size:.5rem}.reality-enter{right:0;left:0;bottom:5%;text-align:center;font-size:.56rem;letter-spacing:.07em}.reality-flap{display:none}}
   @media(prefers-reduced-motion:reduce){.reality-flap,.reality-enter span{transition:none}.reality-paper:hover .reality-flap,.reality-paper:focus-visible .reality-flap,.reality-paper:hover .reality-enter span,.reality-paper:focus-visible .reality-enter span{transform:none}}
 
   /* marquee */
@@ -480,9 +485,6 @@
           <linearGradient id="realityRose" x2=".15" y2="1">
             <stop stop-color="#c9a5a0"/><stop offset="1" stop-color="#ac807b"/>
           </linearGradient>
-          <linearGradient id="realityCream" x2="0" y2="1">
-            <stop stop-color="#f5edda"/><stop offset=".5" stop-color="#fff8e6"/><stop offset="1" stop-color="#eadfc6"/>
-          </linearGradient>
           <linearGradient id="realityFold">
             <stop stop-color="#9c706b"/><stop offset=".25" stop-color="#cba5a0"/><stop offset=".6" stop-color="#d9b9b1"/><stop offset="1" stop-color="#a97d77"/>
           </linearGradient>
@@ -495,19 +497,28 @@
           </filter>
         </defs>
         <rect width="1200" height="560" fill="url(#realityRose)"/>
-        <path d="M196 188 L220 202 245 195 266 212 294 215 312 202 337 211 362 191 385 195 408 179 435 184 456 174 481 181 509 166 534 170 552 181 577 172 600 187 627 180 651 197 679 188 699 202 728 195 752 210 776 204 802 219 826 211 850 225 876 214 903 225 930 214 953 220 978 204 1004 215 1031 201 1059 210 1087 199 1115 213 1144 203 1172 220 1200 210 L1200 385 1170 389 1146 374 1121 383 1095 373 1070 386 1046 379 1020 391 991 380 966 393 940 382 915 394 889 385 863 398 838 389 811 401 787 394 761 405 736 394 711 404 685 392 660 401 635 386 610 397 582 384 559 391 532 378 507 388 480 375 455 382 430 369 405 379 380 367 355 376 330 365 305 374 279 363 254 374 228 363 202 375 Z" fill="url(#realityCream)" filter="url(#realityShadow)"/>
-        <path d="M196 188 L220 202 245 195 266 212 294 215 312 202 337 211 362 191 385 195 408 179 435 184 456 174 481 181 509 166 534 170 552 181 577 172 600 187 627 180 651 197 679 188 699 202 728 195 752 210 776 204 802 219 826 211 850 225 876 214 903 225 930 214 953 220 978 204 1004 215 1031 201 1059 210 1087 199 1115 213 1144 203 1172 220 1200 210" fill="none" stroke="#e4c8bc" stroke-width="7" stroke-linejoin="round"/>
-        <path d="M202 375 L228 363 254 374 279 363 305 374 330 365 355 376 380 367 405 379 430 369 455 382 480 375 507 388 532 378 559 391 582 384 610 397 635 386 660 401 685 392 711 404 736 394 761 405 787 394 811 401 838 389 863 398 889 385 915 394 940 382 966 393 991 380 1020 391 1046 379 1070 386 1095 373 1121 383 1146 374 1170 389 1200 385" fill="none" stroke="#e4c8bc" stroke-width="8" stroke-linejoin="round"/>
-        <g class="reality-flap" filter="url(#realityShadow)">
-          <path d="M152 174 L175 182 192 172 210 183 223 176 235 191 241 211 236 234 244 260 239 284 246 311 240 337 247 360 238 390 220 385 203 398 184 389 167 397 151 382 156 357 149 331 154 305 147 279 152 251 146 225 154 200 Z" fill="url(#realityFold)" stroke="#e5c9bd" stroke-width="5" stroke-linejoin="round"/>
-          <path d="M219 190 C230 244 226 327 230 382" fill="none" stroke="#8e635d" stroke-width="2" opacity=".35"/>
-        </g>
         <rect width="1200" height="560" filter="url(#realityGrain)" opacity=".065" style="mix-blend-mode:multiply"/>
+      </svg>
+      <div class="reality-window">
+        <div class="reality-mount"></div>
+        <div class="reality-canvas">
+          <svg class="reality-painting" viewBox="39 46 469 636" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="reality-painting-title">
+            <title id="reality-painting-title">Crimson Ascent — an original painting by Ivaylo Peytchev</title>
+            <image href="images/work-03.jpg" width="548" height="731"/>
+          </svg>
+        </div>
+      </div>
+      <svg class="reality-art" viewBox="0 0 1200 560" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <g class="reality-flap" filter="url(#realityShadow)">
+          <path d="M453 30 L469 38 483 31 495 44 487 65 500 91 491 120 501 148 491 179 501 210 492 242 500 275 490 306 501 338 492 370 501 401 492 433 500 465 489 495 475 490 462 501 449 492 433 500 441 474 435 445 443 416 436 386 444 354 437 322 444 291 437 261 445 230 437 198 444 167 436 136 445 104 437 73 445 49 Z" fill="url(#realityFold)" stroke="#e5c9bd" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M479 46 C471 160 487 355 477 480" fill="none" stroke="#8e635d" stroke-width="2" opacity=".35"/>
+        </g>
       </svg>
       <div class="reality-copy">
         <span class="reality-studio" id="reality-studio">Ivo’s Art</span>
         <h2 id="reality-title">Discover your reality.</h2>
       </div>
+      <span class="reality-credit">Crimson Ascent · Ivaylo Peytchev</span>
       <span class="reality-enter">Explore the paintings <span aria-hidden="true">→</span></span>
     </a>
   </div>
