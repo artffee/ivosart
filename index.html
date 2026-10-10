@@ -423,6 +423,84 @@
   .er-freq{font-family:var(--mono);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze-2);display:block;margin-bottom:26px}
   .er-reading{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,3vw,2.1rem);line-height:1.5;color:#efe9dc;max-width:26ch;margin:0 auto 40px}
   @media(max-width:520px){.er-grid{grid-template-columns:repeat(auto-fill,minmax(94px,1fr))}}
+
+  /* A305X's original, choice-based mind reader */
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .reading-sec{text-align:left}
+  .reading-sec .wrap{max-width:1170px;display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(32px,6vw,88px);align-items:center}
+  .reading-sec h2{font-size:clamp(2.8rem,5.6vw,5.4rem)}
+  .reading-sec h2 em{color:#9b5c66}
+  .reading-sec p{margin:0 0 30px;max-width:44ch}
+  .reading-note{display:block;margin-top:16px;max-width:40ch;color:var(--ink-2);font-size:.8rem}
+  .reading-figure{position:relative;min-height:420px;background:var(--ink);border-radius:190px 190px 18px 18px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:45px 24px 30px;overflow:hidden}
+  .reading-figure::before{content:"";position:absolute;inset:14px;border:1px solid rgba(225,162,183,.32);border-radius:inherit;pointer-events:none}
+  .reading-figure img{position:relative;max-width:230px;width:75%;height:320px;object-fit:contain;transition:transform .6s var(--e)}
+  .reading-figure:hover img{transform:rotate(4deg)}
+  .reading-frequency{position:relative;color:#e1a2b7;font-family:var(--mono);font-size:.52rem;letter-spacing:.15em;margin-bottom:14px}
+  .reading-figure figcaption{position:relative;margin-top:16px;color:var(--bone);font-family:var(--serif);font-style:italic;font-size:1.15rem;line-height:1.35;text-align:center}
+  .er{padding:28px;background:rgba(18,16,9,.99)}
+  .er::after{background:radial-gradient(ellipse at 80% 15%,rgba(225,162,183,.08),transparent 60%)}
+  .er>.lb-x{top:14px;right:14px;z-index:3}
+  .er-inner{max-width:900px;max-height:calc(100vh - 56px);max-height:calc(100dvh - 56px);overflow-y:auto;padding:10px 16px 20px;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--bronze) transparent}
+  .er-brand{display:flex;align-items:center;justify-content:center;gap:15px;margin-bottom:30px;text-align:left}
+  .er-brand video{display:block;width:52px;height:78px;object-fit:contain;border-radius:8px;background:var(--ink)}
+  .er-brand b{display:block;font-family:var(--serif);font-weight:400;font-size:1.75rem;line-height:1.1;margin-bottom:7px}
+  .er-brand span{font-family:var(--mono);font-size:.51rem;letter-spacing:.09em;text-transform:uppercase;color:#e1a2b7}
+  .er-motion{width:28px;height:28px;flex:none;border:1px solid rgba(255,255,255,.3);border-radius:50%;color:var(--bone);background:transparent;cursor:pointer}
+  .er-mono{margin-bottom:16px;font-size:.59rem;letter-spacing:.16em;color:#e1a2b7}
+  .er-h{font-size:clamp(2.8rem,6.9vw,5.2rem);margin-bottom:24px}
+  .er-h em{color:#e1a2b7}
+  .er-h2{font-size:clamp(1.8rem,4.7vw,3.05rem)}
+  .er-lead{max-width:40ch;margin-bottom:26px;font-size:clamp(1.12rem,2.15vw,1.45rem)}
+  .er-note{margin:20px auto 0;font-size:.78rem;line-height:1.5;max-width:58ch;color:#afa698}
+  .er-hint{margin-bottom:25px;font-size:.59rem;line-height:1.7;letter-spacing:.08em;color:#bbb2a5}
+  .er .btn{font-size:.6rem;letter-spacing:.12em}
+  .er .btn-fill{background:#e1a2b7;border-color:#e1a2b7;color:var(--ink)}
+  .er-screen:focus,.er h3:focus,.er-attuning:focus{outline:none}
+  .er-moods{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:720px;margin:0 auto}
+  .er-moods button{position:relative;display:flex;flex-direction:column;align-items:center;gap:11px;min-height:148px;padding:22px 15px;border:1px solid rgba(255,255,255,.18);border-radius:12px;background:rgba(255,255,255,.03);color:var(--bone);cursor:pointer;transition:border-color .3s,background .3s,transform .3s}
+  .er-moods button:hover{border-color:#e1a2b7;background:rgba(225,162,183,.09);transform:translateY(-3px)}
+  .er-moods b{font-family:var(--serif);font-weight:400;font-size:1.3rem}
+  .er-moods small{color:#bbb2a5;font-family:var(--sans);font-size:.78rem;line-height:1.35}
+  .er-orb{width:24px;height:24px;border-radius:50%;background:var(--orb);box-shadow:0 0 28px -3px var(--orb)}
+  .er-grid{max-height:45vh;max-height:45dvh;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:14px}
+  .er-tile{border:2px solid transparent;border-radius:4px;text-align:left;display:block}
+  .er-tile:focus-visible{outline:2px solid #e1a2b7;outline-offset:4px}
+  .er-back{margin-top:22px}
+  .er-options{border:0;padding:0;margin:20px auto;max-width:620px}
+  .er-options legend{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;color:#d8d1c4;float:none;width:100%;margin-bottom:12px}
+  .er-rules,.er-voices{display:grid;gap:9px;grid-template-columns:repeat(2,1fr)}
+  .er-voices{grid-template-columns:repeat(3,1fr)}
+  .er-options button{border:1px solid rgba(255,255,255,.2);border-radius:8px;background:transparent;padding:12px 10px;color:#d8d1c4;font-family:var(--sans);font-size:.88rem;cursor:pointer}
+  .er-options button[aria-pressed="true"]{border-color:#e1a2b7;color:var(--bone);background:rgba(225,162,183,.12)}
+  .er-options button:hover{border-color:#e1a2b7}
+  .er-word-label{display:block;margin-top:24px;font-family:var(--mono);font-size:.59rem;letter-spacing:.1em;color:#d8d1c4}
+  .er-word-label span{color:#aaa193}
+  .er-input{font-size:1.3rem;margin:4px auto 24px;padding:10px}
+  .er-chosen{margin-bottom:18px}
+  .er-chosen .ec-t span{letter-spacing:.03em;line-height:1.6}
+  .er-attuning{font-size:.62rem;line-height:1.8;letter-spacing:.12em}
+  .er-scan-art{border-radius:5px}
+  .er-result-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:36px;text-align:left;align-items:start}
+  .er-result-copy .er-h2{color:#e1a2b7;font-style:normal;line-height:1.08;margin-bottom:23px}
+  .er-result .er-reading{max-width:none;margin:0 0 24px;font-family:var(--sans);font-style:normal;font-size:1.02rem;line-height:1.75}
+  .er-dare{padding:18px 20px;border-left:2px solid #e1a2b7;background:rgba(225,162,183,.07);border-radius:0 8px 8px 0}
+  .er-dare>span{display:block;font-family:var(--mono);font-size:.57rem;letter-spacing:.14em;text-transform:uppercase;color:#e1a2b7;margin-bottom:9px}
+  .er-dare p{font-size:.95rem;line-height:1.65}
+  .er-permission{font-family:var(--serif);font-style:italic;font-size:1.45rem;line-height:1.4;color:#e1a2b7;margin-top:23px}
+  .er-result-art{padding-top:4px;text-align:center}
+  .er-result-art .er-chosen{display:flex;flex-direction:column;gap:13px}
+  .er-result-art .er-chosen img{width:100%;height:auto;max-height:305px;object-fit:contain;padding:8px;background:var(--bone)}
+  .er-result-art .ec-t{text-align:center}
+  .er-result-art .er-skip{letter-spacing:.08em;line-height:1.6}
+  .er-result-actions{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:35px}
+  .er-result-actions .btn{padding:16px 20px}
+  .er button:focus-visible{outline:2px solid #e1a2b7;outline-offset:4px}
+  .cc-portrait{background:var(--ink)}
+  .cc-fab img{object-fit:contain}
+  @media(max-width:760px){.reading-sec .wrap{grid-template-columns:1fr}.reading-figure{width:min(330px,100%);margin:0 auto;min-height:380px}.reading-figure img{height:280px}.er-result-grid{grid-template-columns:1fr;gap:28px}.er-result-art{max-width:240px;margin:0 auto}.er-result-art .er-chosen img{max-height:200px}.er-inner{padding:8px 8px 18px}.er-brand{margin-bottom:24px}.er-result .er-reading{font-size:.98rem}.er-result-copy .er-h2{font-size:2.3rem}}
+  @media(max-width:520px){.er{padding:20px 12px}.er-inner{max-height:calc(100dvh - 40px)}.er-brand{gap:10px;padding-right:15px;justify-content:flex-start}.er-brand span{font-size:.46rem}.er-moods{grid-template-columns:repeat(2,1fr);gap:9px}.er-moods button{min-height:135px;padding:18px 10px}.er-moods small{font-size:.72rem}.er-grid{grid-template-columns:repeat(3,1fr);gap:9px}.er-tile{padding:5px}.er-tile .tt{font-size:.49rem;letter-spacing:.04em}.er-voices{gap:6px}.er-options button{padding:11px 7px;font-size:.79rem}.er-result-actions{gap:14px;flex-direction:column}.er-result-actions .btn{width:100%;justify-content:center}.er-hint{margin-bottom:20px}}
+  @media(prefers-reduced-motion:reduce){.er,.er-screen,.er-tile,.er-moods button,.reading-figure img{transition:none;animation:none}.er-scan-line{animation:none;top:50%}.er-scanbar i{transition:none}.reading-figure:hover img{transform:none}}
 </style>
 </head>
 <body>
@@ -440,7 +518,7 @@
     <a href="#" class="brand"><span class="mg">IP</span> Ivaylo Peytchev</a>
     <div class="nlinks">
       <a href="#works">Works</a>
-      <a href="#reading">Reading</a>
+      <a href="#reading">Mind reader</a>
       <a href="#signature">Signature</a>
       <a href="#artist">Artist</a>
       <a href="#worlds">Worlds</a>
@@ -452,7 +530,7 @@
 
 <div class="mm" id="mm" aria-hidden="true" inert>
   <button class="mx" id="mx" type="button" aria-label="Close navigation">✕</button>
-  <a href="#works">Works</a><a href="#reading">Reading</a><a href="#signature">Signature</a><a href="#artist">Artist</a><a href="#worlds">Worlds</a><a href="#inquire">Inquire</a>
+  <a href="#works">Works</a><a href="#reading">Mind reader</a><a href="#signature">Signature</a><a href="#artist">Artist</a><a href="#worlds">Worlds</a><a href="#inquire">Inquire</a>
 </div>
 
 <!-- HERO -->
@@ -562,13 +640,21 @@
   </div>
 </section>
 
-<!-- ENERGY READING -->
+<!-- A305X MIND READER -->
 <section class="reading-sec" id="reading">
-  <div class="wrap rv">
-    <span class="mono">The ritual</span>
-    <h2>Let a painting <em>read you</em></h2>
-    <p>Each canvas here was made in a single charged moment — and it still carries that charge. Let your eyes wander the works until one holds them; that pull is information. Offer one word for what you're carrying, and the studio will read your energy back to you.</p>
-    <button class="btn btn-fill mag" id="erOpen">Begin your reading <span class="ar">→</span></button>
+  <div class="wrap">
+    <div class="reading-copy rv">
+      <span class="mono">A305X · Born to disobey</span>
+      <h2>Let A305X<br><em>read your mind.</em></h2>
+      <p>Your inner voice has excellent taste. And very little patience for boring rules. Pick a mood, follow a painting, and meet the beautiful trouble hiding in your imagination.</p>
+      <button class="btn btn-fill mag" id="erOpen" aria-controls="er">Read my mind <span class="ar">→</span></button>
+      <small class="reading-note">A playful art reading shaped by your choices.</small>
+    </div>
+    <figure class="reading-figure rv">
+      <span class="reading-frequency">SIGNAL 305 / FREE TO CREATE</span>
+      <img src="images/a305x/flamingo.webp" width="640" height="960" alt="A305X, Ivo's mischievous flamingo, without the cans" loading="lazy"/>
+      <figcaption>Impeccable manners.<br>Questionable obedience.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -697,66 +783,115 @@
   <div class="lb-stage" id="lbstage"></div>
 </div>
 
-<!-- ENERGY READING OVERLAY -->
-<div class="er" id="er" role="dialog" aria-modal="true" aria-label="Energy reading">
-  <button class="lb-x" id="erX" aria-label="Close">✕</button>
+<!-- A305X MIND READER OVERLAY -->
+<div class="er" id="er" role="dialog" aria-modal="true" aria-label="Let A305X read your mind" aria-hidden="true" inert>
+  <button class="lb-x" id="erX" aria-label="Close mind reader">✕</button>
   <div class="er-inner">
+    <header class="er-brand">
+      <video id="erFlamingo" width="384" height="576" muted loop playsinline preload="none" poster="images/a305x/flamingo.webp" aria-label="A305X, the animated flamingo">
+        <source src="images/a305x/flamingo-dance.mp4" type="video/mp4"/>
+      </video>
+      <div><b>A305X</b><span>Ivo's inner voice · Born to disobey</span></div>
+      <button class="er-motion" id="erMotion" aria-label="Pause flamingo animation" aria-pressed="false" title="Pause animation">Ⅱ</button>
+    </header>
     <div class="er-screen on" data-s="intro">
-      <span class="er-mono">IvosArt · Energy Reading</span>
-      <h3 class="er-h">Let a painting <em>read you</em></h3>
-      <p class="er-lead">Don't choose with your mind. Let your eyes drift across the works until one holds them — then give me a single word for what you're carrying. I'll read it back.</p>
-      <button class="btn er-cta mag" data-go="choose">Begin <span class="ar">→</span></button>
+      <span class="er-mono">The very unofficial mind reader</span>
+      <h3 class="er-h" tabindex="-1">Your mind called.<br><em>It wants a day off.</em></h3>
+      <p class="er-lead">Pick your mood. Trust your eyes. Choose your rebellion. I'll turn those clues into a little art, a little mischief, and permission to be yourself.</p>
+      <button class="btn btn-fill er-cta" data-go="mood">Catch my signal <span class="ar">→</span></button>
+      <p class="er-note">A playful reading based on your choices. Take what speaks to you.</p>
+    </div>
+
+    <div class="er-screen" data-s="mood">
+      <span class="er-mono">01 / The noise in your head</span>
+      <h3 class="er-h2" tabindex="-1">What's your mood today?</h3>
+      <p class="er-hint">Choose what fits. All moods are welcome here.</p>
+      <div class="er-moods" id="erMoods">
+        <button data-mood="curious"><span class="er-orb" style="--orb:#dcb963"></span><b>Curious</b><small>Something is calling.</small></button>
+        <button data-mood="restless"><span class="er-orb" style="--orb:#ed8a68"></span><b>Restless</b><small>My imagination needs a bigger room.</small></button>
+        <button data-mood="overthinking"><span class="er-orb" style="--orb:#a896d7"></span><b>Overthinking</b><small>Seventeen tabs. One brain.</small></button>
+        <button data-mood="tired"><span class="er-orb" style="--orb:#86a9b3"></span><b>Tired</b><small>Soft rebellion, please.</small></button>
+        <button data-mood="joyful"><span class="er-orb" style="--orb:#e2a756"></span><b>Joyful</b><small>My joy has questionable brakes.</small></button>
+        <button data-mood="love"><span class="er-orb" style="--orb:#e583a7"></span><b>In love</b><small>Romantic interference detected.</small></button>
+      </div>
     </div>
 
     <div class="er-screen" data-s="choose">
-      <span class="er-mono">Step one — the pull</span>
-      <h3 class="er-h2">Which one pulls you?</h3>
-      <p class="er-hint">Trust the first pull. Tap it.</p>
+      <span class="er-mono">02 / The beautiful pull</span>
+      <h3 class="er-h2" tabindex="-1">Which painting interrupts you?</h3>
+      <p class="er-hint">Your eyes get a vote. Tap the first one that holds them.</p>
       <div class="er-grid" id="erGrid"></div>
+      <button class="er-skip er-back" data-go="mood">← Change my mood</button>
     </div>
 
     <div class="er-screen" data-s="feel">
-      <span class="er-mono">Step two — the word</span>
+      <span class="er-mono">03 / Your little rebellion</span>
       <div class="er-chosen" id="erChosen1"></div>
-      <h3 class="er-h2">One word — what are you carrying?</h3>
-      <input class="er-input" id="erWord" placeholder="restless · hopeful · tired · in love…" maxlength="60" autocomplete="off" />
+      <h3 class="er-h2" tabindex="-1">What are you rebelling against?</h3>
+      <fieldset class="er-options"><legend class="sr-only">Choose your rebellion</legend><div class="er-rules" id="erRules">
+        <button type="button" data-rule="overthinking" aria-pressed="true">Overthinking</button>
+        <button type="button" data-rule="peoplepleasing" aria-pressed="false">People pleasing</button>
+        <button type="button" data-rule="routine" aria-pressed="false">The same old routine</button>
+        <button type="button" data-rule="boringwalls" aria-pressed="false">Boring walls</button>
+      </div></fieldset>
+      <fieldset class="er-options"><legend>How rebellious should I be?</legend><div class="er-voices" id="erVoices">
+        <button type="button" data-tone="elegant" aria-pressed="true">Elegant</button>
+        <button type="button" data-tone="mischievous" aria-pressed="false">A little mischief</button>
+        <button type="button" data-tone="wild" aria-pressed="false">Full flamingo</button>
+      </div></fieldset>
+      <label class="er-word-label" for="erWord">One word on your mind <span>(optional)</span></label>
+      <input class="er-input" id="erWord" placeholder="freedom · change · coffee…" maxlength="60" autocomplete="off"/>
       <div class="er-actions">
-        <button class="btn btn-fill er-cta mag" id="erReveal">Read my energy <span class="ar">→</span></button>
-        <button class="er-skip" id="erSkip">Skip — just read the painting</button>
+        <button class="btn btn-fill er-cta" id="erReveal">Read my beautiful chaos <span class="ar">→</span></button>
+        <button class="er-skip" data-go="choose">← Choose another painting</button>
       </div>
     </div>
 
     <div class="er-screen" data-s="attune">
+      <span class="er-mono">Making room for beautiful trouble</span>
       <div class="er-scan">
         <div class="er-scan-art" id="erScanArt"></div>
         <div class="er-scanbar"><i id="erScanFill"></i></div>
-        <div class="er-scan-pct" id="erScanPct">0%</div>
+        <div class="er-scan-pct" id="erScanPct">Preparing your reading…</div>
       </div>
-      <p class="er-attuning" id="erAttuning">Attuning to the canvas…</p>
+      <p class="er-attuning" id="erAttuning" role="status" tabindex="-1">Offering your inner critic a day off…</p>
     </div>
 
-    <div class="er-screen" data-s="result">
-      <span class="er-freq" id="erFreq"></span>
-      <div class="er-chosen" id="erChosen2"></div>
-      <p class="er-reading" id="erReading"></p>
-      <div class="er-actions">
-        <button class="btn btn-fill er-cta mag" id="erInquire">Bring this one home <span class="ar">→</span></button>
-        <button class="er-skip" id="erAgain">Read another</button>
+    <div class="er-screen er-result" data-s="result">
+      <div class="er-result-grid">
+        <div class="er-result-copy">
+          <span class="er-mono">Your rebel signal</span>
+          <h3 class="er-h2" id="erSignal" tabindex="-1"></h3>
+          <p class="er-reading" id="erReading"></p>
+          <div class="er-dare"><span>Your tiny rebellion</span><p id="erDare"></p></div>
+          <p class="er-permission" id="erPermission"></p>
+        </div>
+        <aside class="er-result-art">
+          <span class="er-mono">The painting that caught your eye</span>
+          <div class="er-chosen" id="erChosen2"></div>
+          <button class="er-skip" id="erInquire">Inquire about this work ↗</button>
+        </aside>
       </div>
+      <div class="er-result-actions">
+        <button class="btn btn-fill" id="erCopy">Copy my rebel reading <span class="ar">↗</span></button>
+        <button class="btn" id="erDiscuss">Discuss with A305X <span class="ar">→</span></button>
+        <button class="er-skip" id="erAgain">Read me again ↻</button>
+      </div>
+      <p class="er-note">Born to disobey. Free to create. A playful art reading shaped by your choices.</p>
     </div>
   </div>
 </div>
 
 <!-- A305X — IVO'S INNER VOICE -->
 <button class="cc-fab" id="ccFab" aria-label="Chat with A305X, Ivo's inner voice and customer service guide" aria-controls="ccPanel" aria-expanded="false">
-  <img src="images/a305x/inner-voice.jpg" width="52" height="78" alt="" decoding="async"/>
+  <img src="images/a305x/flamingo.webp" width="52" height="78" alt="" decoding="async"/>
   <span class="cc-fab-copy"><b>Meet A305X</b><small>Ivo's inner voice</small></span>
 </button>
 <section class="cc-panel" id="ccPanel" aria-live="polite" aria-label="A305X, Ivo's inner voice and multilingual customer service guide" aria-hidden="true" inert>
   <div class="cc-head">
     <div class="cc-portrait">
-      <video id="ccFlamingo" width="384" height="576" muted loop playsinline preload="none" poster="images/a305x/inner-voice.jpg" aria-label="A305X, Ivo's animated flamingo">
-        <source src="images/a305x/inner-voice.mp4" type="video/mp4"/>
+      <video id="ccFlamingo" width="384" height="576" muted loop playsinline preload="none" poster="images/a305x/flamingo.webp" aria-label="A305X, Ivo's animated flamingo">
+        <source src="images/a305x/flamingo-dance.mp4" type="video/mp4"/>
       </video>
       <button class="cc-motion" id="ccMotion" aria-label="Pause flamingo animation" aria-pressed="false" title="Pause animation">Ⅱ</button>
     </div>
@@ -766,6 +901,7 @@
   <p class="cc-motto">Born to disobey. Free to create.</p>
   <div class="cc-body" id="ccBody"></div>
   <div class="cc-chips" id="ccChips">
+    <button data-action="read">Read my mind</button>
     <button data-q="Help me find a painting that fits my mood or room.">Find my painting</button>
     <button data-q="How can I ask about a painting, a commission, or get customer support?">Customer care</button>
     <button data-q="Tell me about NEMO Studio and its personal magazines.">NEMO Studio</button>
@@ -781,6 +917,7 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<script src="assets/a305x-reader-data.js"></script>
 <script>
 /* ===== WORKS (no prices) — edit titles / medium / tags freely ===== */
 const works=[
@@ -1049,101 +1186,169 @@ function finish(){setTimeout(()=>{loader.classList.add("done");document.getEleme
   sendBtn.onclick=()=>send();
   input.addEventListener("keydown",e=>{ if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();send();} });
   input.addEventListener("input",()=>{ input.style.height="auto"; input.style.height=Math.min(input.scrollHeight,110)+"px"; });
-  chips.addEventListener("click",e=>{ if(e.target.tagName==="BUTTON")send(e.target.dataset.q); });
+  chips.addEventListener("click",e=>{if(e.target.tagName!=="BUTTON")return;if(e.target.dataset.action==="read"){close();window.openA305XReader?.();}else send(e.target.dataset.q);});
   window.openIvoAI=(prompt)=>{open();if(prompt)setTimeout(()=>send(prompt),420);};
+  window.closeA305X=close;
 })();
 
-/* ===== Energy Reading ===== */
+/* ===== A305X mind reader ===== */
 (function(){
-  const er=document.getElementById("er"),grid=document.getElementById("erGrid");
+  const er=document.getElementById("er"),inner=er.querySelector(".er-inner"),grid=document.getElementById("erGrid");
   const word=document.getElementById("erWord"),attuning=document.getElementById("erAttuning");
-  const scanArt=document.getElementById("erScanArt"),scanFill=document.getElementById("erScanFill"),scanPct=document.getElementById("erScanPct");
-  const freqEl=document.getElementById("erFreq"),readingEl=document.getElementById("erReading");
-  const screens=er.querySelectorAll(".er-screen");
-  let chosen=null, gridBuilt=false;
+  const scanArt=document.getElementById("erScanArt"),scanFill=document.getElementById("erScanFill");
+  const signalEl=document.getElementById("erSignal"),readingEl=document.getElementById("erReading");
+  const dareEl=document.getElementById("erDare"),permissionEl=document.getElementById("erPermission");
+  const screens=[...er.querySelectorAll(".er-screen")],data=window.A305XReaderData;
+  const bird=document.getElementById("erFlamingo"),motionBtn=document.getElementById("erMotion");
+  const reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)");
+  let chosen=null,gridBuilt=false,mood="curious",rebellion="overthinking",tone="elegant",result=null;
+  let requestId=0,controller=null,progressTimer=null,lineTimer=null,currentScreen="intro";
+  let readerTrigger=null,previousOverflow="",motionPaused=reducedMotion.matches;
 
-  function show(name){ screens.forEach(s=>s.classList.toggle("on",s.dataset.s===name)); }
-  function chosenHTML(w){
-    return `<img src="images/${w.img}" alt="${w.title}" onerror="this.outerHTML='<div class=ec-noimg></div>'"/>`
-      +`<div class="ec-t"><b>${w.title}</b><span>${w.medium}</span></div>`;
+  function syncFlamingo(){
+    const play=er.classList.contains("open")&&!document.hidden&&!motionPaused;
+    motionBtn.textContent=motionPaused?"▶":"Ⅱ";
+    motionBtn.setAttribute("aria-label",motionPaused?"Play flamingo animation":"Pause flamingo animation");
+    motionBtn.setAttribute("title",motionPaused?"Play animation":"Pause animation");
+    motionBtn.setAttribute("aria-pressed",String(motionPaused));
+    if(play)bird.play().catch(e=>{if(e.name!=="AbortError"&&er.classList.contains("open")&&!document.hidden){motionPaused=true;syncFlamingo();}});
+    else bird.pause();
+  }
+  motionBtn.onclick=()=>{motionPaused=!motionPaused;syncFlamingo();};
+  reducedMotion.addEventListener("change",e=>{motionPaused=e.matches;syncFlamingo();});
+  document.addEventListener("visibilitychange",syncFlamingo);
+  syncFlamingo();
+
+  function show(name){
+    currentScreen=name;
+    screens.forEach(s=>s.classList.toggle("on",s.dataset.s===name));
+    inner.scrollTop=0;
+    if(er.classList.contains("open")){
+      const screen=screens.find(s=>s.dataset.s===name);
+      (screen.querySelector("h3,[tabindex='-1']")||screen.querySelector("button"))?.focus({preventScroll:true});
+    }
+  }
+  function cancelRequest(){
+    requestId++;
+    controller?.abort();controller=null;
+    clearInterval(progressTimer);clearInterval(lineTimer);
+    er.removeAttribute("aria-busy");
+  }
+  function setOptions(container,attribute,value){
+    container.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset[attribute]===value)));
+  }
+  function reset(){
+    chosen=null;result=null;mood="curious";rebellion="overthinking";tone="elegant";word.value="";
+    setOptions(document.getElementById("erRules"),"rule",rebellion);
+    setOptions(document.getElementById("erVoices"),"tone",tone);
   }
   function renderChosen(){
-    const html=chosenHTML(chosen);
-    document.getElementById("erChosen1").innerHTML=html;
-    document.getElementById("erChosen2").innerHTML=html;
+    for(const id of ["erChosen1","erChosen2"]){
+      const el=document.getElementById(id),img=document.createElement("img"),caption=document.createElement("div");
+      img.src="images/"+chosen.img;img.alt=chosen.title;img.width=120;img.height=150;
+      caption.className="ec-t";
+      const title=document.createElement("b"),medium=document.createElement("span");
+      title.textContent=chosen.title;medium.textContent=chosen.medium;
+      caption.append(title,medium);el.replaceChildren(img,caption);
+    }
   }
   function buildGrid(){
-    if(gridBuilt)return; gridBuilt=true;
+    if(gridBuilt)return;gridBuilt=true;
     works.forEach(w=>{
-      const tile=document.createElement("div"); tile.className="er-tile";
-      const img=document.createElement("img"); img.src="images/"+w.img; img.alt=w.title; img.loading="lazy";
+      const tile=document.createElement("button");tile.type="button";tile.className="er-tile";tile.setAttribute("aria-label",w.title);
+      const img=document.createElement("img");img.src="images/"+w.img;img.alt="";img.loading="lazy";
       img.onerror=()=>{tile.classList.add("noimg");tile.textContent=w.title;};
-      const tt=document.createElement("div"); tt.className="tt"; tt.textContent=w.title;
-      tile.appendChild(img); tile.appendChild(tt);
-      tile.onclick=()=>{ chosen=w; renderChosen(); show("feel"); word.value=""; setTimeout(()=>word.focus(),350); };
+      const title=document.createElement("span");title.className="tt";title.textContent=w.title;
+      tile.append(img,title);
+      tile.onclick=()=>{chosen=w;renderChosen();show("feel");};
       grid.appendChild(tile);
     });
   }
-  function open(){ buildGrid(); chosen=null; show("intro"); er.classList.add("open"); document.body.style.overflow="hidden"; }
-  function close(){ er.classList.remove("open"); document.body.style.overflow=""; }
-  const delay=ms=>new Promise(r=>setTimeout(r,ms));
-
-  const SCAN_MS=5200;
-  const SCAN_LINES=["Attuning to the canvas…","Reading your field…","Gathering the colour's pulse…","Aligning your frequencies…","The paint remembers…"];
-
-  async function reveal(feeling){
-    if(!chosen)return;
-    show("attune");
-    scanArt.innerHTML='<img src="images/'+chosen.img+'" alt="" onerror="this.remove()"/><span class="er-scan-line"></span>';
-    scanFill.style.transform="scaleX(0)"; scanPct.textContent="0%";
-
-    // cycle the status lines
-    let liIdx=0; attuning.textContent=SCAN_LINES[0];
-    const lineTimer=setInterval(()=>{
-      liIdx=(liIdx+1)%SCAN_LINES.length;
-      attuning.style.opacity=0;
-      setTimeout(()=>{attuning.textContent=SCAN_LINES[liIdx];attuning.style.opacity=1;},300);
-    },1250);
-
-    // fetch the reading in the background while the scan runs
-    let data=null, fetchDone=false;
-    (async()=>{ try{
-      const res=await fetch("/api/reading",{method:"POST",headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({work:chosen.title,feeling})});
-      data=await res.json().catch(()=>null);
-    }catch(e){} fetchDone=true; })();
-
-    // run the scan meter for at least SCAN_MS, and until the reading returns
-    const start=Date.now();
-    await new Promise(resolve=>{
-      const prog=setInterval(()=>{
-        const el=(Date.now()-start)/SCAN_MS;
-        const shown=Math.min(el, fetchDone?1:0.92); // hold near the end until the reading lands
-        scanFill.style.transform="scaleX("+shown+")";
-        scanPct.textContent=Math.round(Math.min(shown,1)*100)+"%";
-        if(el>=1 && fetchDone){ clearInterval(prog); clearInterval(lineTimer); resolve(); }
-      },60);
-    });
-
-    let reading, freq;
-    if(data && data.reading){ reading=data.reading; freq=data.freq; }
-    else { reading="This one chose you. "+chosen.desc+" Sit with it a moment — what it stirs in you is already yours."; freq=""; }
-    freqEl.textContent=freq?("Your frequency · "+freq):"";
-    freqEl.style.display=freq?"block":"none";
-    readingEl.textContent=reading;
-    show("result");
+  function open(){
+    if(er.classList.contains("open"))return;
+    readerTrigger=document.activeElement;
+    if(document.getElementById("ccPanel").classList.contains("open"))window.closeA305X?.();
+    previousOverflow=document.body.style.overflow;
+    cancelRequest();reset();buildGrid();er.inert=false;er.setAttribute("aria-hidden","false");
+    er.classList.add("open");document.body.style.overflow="hidden";show("intro");syncFlamingo();
   }
-
+  function close(){
+    cancelRequest();er.classList.remove("open");er.inert=true;er.setAttribute("aria-hidden","true");
+    document.body.style.overflow=previousOverflow;syncFlamingo();
+    if(readerTrigger?.isConnected&&!readerTrigger.closest("[inert]"))readerTrigger.focus();
+    else document.getElementById("erOpen").focus();
+  }
+  const SCAN_LINES=["Offering your inner critic a day off…","Detecting excellent taste and suspicious obedience…","Looking for the colour of your beautiful chaos…","Preparing your permission to be yourself…"];
+  async function reveal(){
+    if(!chosen||currentScreen==="attune")return;
+    cancelRequest();const thisRequest=requestId,work=chosen;
+    const options={mood,rebellion,tone,feeling:word.value.trim()};
+    show("attune");er.setAttribute("aria-busy","true");controller=new AbortController();
+    const activeController=controller,timeout=setTimeout(()=>activeController.abort(),9500);
+    const img=document.createElement("img");img.src="images/"+work.img;img.alt=work.title;
+    const line=document.createElement("span");line.className="er-scan-line";scanArt.replaceChildren(img,line);
+    scanFill.style.transform="scaleX(0)";attuning.textContent=SCAN_LINES[0];
+    const start=performance.now(),dwell=reducedMotion.matches?300:2700;
+    progressTimer=setInterval(()=>{scanFill.style.transform="scaleX("+Math.min(.9,(performance.now()-start)/dwell)+")";},80);
+    let index=0;lineTimer=setInterval(()=>{attuning.textContent=SCAN_LINES[++index%SCAN_LINES.length];},1250);
+    let response=null;
+    try{
+      const readingRequest=(async()=>{
+        const res=await fetch("/api/reading",{method:"POST",headers:{"Content-Type":"application/json"},signal:activeController.signal,body:JSON.stringify({work:work.title,...options})});
+        if(!res.ok)throw new Error("Reading unavailable");
+        return res.json();
+      })();
+      const minimumPause=new Promise(resolve=>setTimeout(resolve,dwell));
+      [response]=await Promise.all([readingRequest,minimumPause]);
+    }catch(e){response=null;}
+    finally{clearTimeout(timeout);}
+    if(thisRequest!==requestId||!er.classList.contains("open"))return;
+    clearInterval(progressTimer);clearInterval(lineTimer);controller=null;er.removeAttribute("aria-busy");
+    const usable=response&&response.work===work.title&&["signal","reading","dare","permission"].every(k=>typeof response[k]==="string"&&response[k].trim());
+    result=usable?response:data.fallbackReading(work,options);
+    signalEl.textContent=result.signal;readingEl.textContent=result.reading;dareEl.textContent=result.dare;permissionEl.textContent=result.permission;
+    scanFill.style.transform="scaleX(1)";show("result");
+  }
+  document.getElementById("erMoods").addEventListener("click",e=>{
+    const button=e.target.closest("button[data-mood]");if(!button)return;
+    mood=button.dataset.mood;show("choose");
+  });
+  document.getElementById("erRules").addEventListener("click",e=>{
+    const button=e.target.closest("button[data-rule]");if(!button)return;
+    rebellion=button.dataset.rule;setOptions(e.currentTarget,"rule",rebellion);
+  });
+  document.getElementById("erVoices").addEventListener("click",e=>{
+    const button=e.target.closest("button[data-tone]");if(!button)return;
+    tone=button.dataset.tone;setOptions(e.currentTarget,"tone",tone);
+  });
+  er.querySelectorAll("[data-go]").forEach(button=>button.onclick=()=>show(button.dataset.go));
   document.getElementById("erOpen").onclick=open;
   document.getElementById("erX").onclick=close;
-  er.addEventListener("click",e=>{ if(e.target===er)close(); });
-  addEventListener("keydown",e=>{ if(e.key==="Escape"&&er.classList.contains("open"))close(); });
-  er.querySelector('[data-go="choose"]').onclick=()=>show("choose");
-  document.getElementById("erReveal").onclick=()=>reveal(word.value.trim());
-  document.getElementById("erSkip").onclick=()=>reveal("");
-  word.addEventListener("keydown",e=>{ if(e.key==="Enter"){e.preventDefault();reveal(word.value.trim());} });
-  document.getElementById("erAgain").onclick=()=>{ chosen=null; show("choose"); };
-  document.getElementById("erInquire").onclick=()=>{ if(chosen)pre(chosen.title); close(); location.hash="#inquire"; };
+  er.addEventListener("click",e=>{if(e.target===er)close();});
+  er.addEventListener("keydown",e=>{
+    if(e.key==="Escape"){e.preventDefault();close();return;}
+    if(e.key!=="Tab")return;
+    const focusable=[...er.querySelectorAll("button,input,a,[tabindex='0']")].filter(el=>!el.disabled&&el.getClientRects().length);
+    const first=focusable[0],last=focusable[focusable.length-1];
+    if(e.shiftKey&&(document.activeElement===first||!focusable.includes(document.activeElement))){e.preventDefault();last?.focus();}
+    else if(!e.shiftKey&&(document.activeElement===last||!focusable.includes(document.activeElement))){e.preventDefault();first?.focus();}
+  });
+  document.getElementById("erReveal").onclick=reveal;
+  word.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();reveal();}});
+  document.getElementById("erAgain").onclick=()=>{cancelRequest();reset();show("mood");};
+  document.getElementById("erInquire").onclick=()=>{if(chosen)pre(chosen.title);close();location.hash="#inquire";};
+  document.getElementById("erDiscuss").onclick=()=>{
+    if(!result||!chosen)return;
+    const prompt="I chose "+chosen.title+" and my A305X rebel signal was '"+result.signal+"'. Here is my playful art reading: "+result.reading+" Help me explore my own interpretation of this painting.";
+    close();window.openIvoAI?.(prompt);
+  };
+  document.getElementById("erCopy").onclick=async()=>{
+    if(!result||!chosen)return;
+    const text="A305X / MY REBEL SIGNAL\n"+result.signal+"\n\n"+result.reading+"\n\nMY TINY REBELLION\n"+result.dare+"\n\n"+result.permission+"\n\nThe painting: "+chosen.title+" by Ivaylo Peytchev\nBorn to disobey. Free to create.\nA playful art reading shaped by my choices.\nhttps://ivosart.com/#reading";
+    try{await navigator.clipboard.writeText(text);showToast("Your rebel reading is copied. Set it free.");}
+    catch(e){showToast("Select the reading above to copy it.");}
+  };
+  window.openA305XReader=open;
 })();
 
 render();bind();

@@ -1,84 +1,51 @@
-// IvosArt — Energy Reading (Vercel serverless function)
-// The visitor lets a painting choose them and offers one word for what they carry.
-// The studio returns a short, personal energy reading tied to that work's frequency.
-//
-// Works with NO setup: without a key it returns the hand-written reading for the
-// chosen work. Add GEMINI_API_KEY (see api/chat.js) to make each reading personal.
-
+// A305X — an original art reading based on the visitor's selections.
+// The same endpoint still accepts {work, feeling}; extra choices are optional.
 const { findWork } = require("./works");
-
+const { MOODS, REBELLIONS, TONES, getChoice, fallbackReading, READER_SYSTEM, validateReading } = require("../lib/a305x-reader");
 const MODEL = "gemini-2.5-flash";
-const MAX_TOKENS = 320;
-
-function readerPrompt(work, feeling) {
-  return `You are Ivaylo Peytchev, the abstract expressionist painter who made these works with your own hands. A visitor has let one of your paintings choose them and whispered a single word for what they carry today. Read their energy back to them, mystical and romantic, speaking as the artist who was there when the paint fell.
-
-THE PAINTING THAT CHOSE THEM:
-"${work.title}" — ${work.desc} (${work.medium}). Its frequency: ${work.freq}.
-Studio note on its energy: ${work.reading}
-
-WHAT THE VISITOR IS CARRYING (their word): "${feeling}"
-
-WRITE THE READING:
-- Speak directly to them, warm and a little mystical, grounded in the painting — never generic horoscope filler.
-- Weave their word and the painting's energy/frequency together into something that feels seen.
-- 3 to 4 sentences. Elegant, unhurried, poetic but clear. No lists, no headings, no emoji.
-- End on a quiet, open note — do NOT hard-sell. The page itself will invite them to acquire the work.
-- Never invent prices, dimensions, or facts beyond what is above.`;
-}
 
 module.exports = async (req, res) => {
-  if (req.method !== "POST") {
-    res.status(405).json({ error: "Method not allowed" });
-    return;
-  }
+  res.setHeader("Cache-Control", "no-store");
+  if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
+  let body;
+  try { body = typeof req.body === "string" ? JSON.parse(req.body) : req.body; }
+  catch { return res.status(400).json({ error: "Send a valid reading request." }); }
+  const work = findWork(body && body.work);
+  if (!work) return res.status(400).json({ error: "Choose a painting first." });
+  const mood = getChoice(MOODS, body.mood, "curious");
+  const rebellion = getChoice(REBELLIONS, body.rebellion, "overthinking");
+  const tone = getChoice(TONES, body.tone, "elegant");
+  if (!mood || !rebellion || !tone) return res.status(400).json({ error: "Choose a mood, rebellion and reading style from the game." });
+  const feeling = typeof body.feeling === "string" ? body.feeling.replace(/[\u0000-\u001f\u007f]/g, " ").trim().slice(0, 80) : "";
+  const options = { mood, rebellion, tone, feeling };
+  const fallback = fallbackReading(work, options);
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) return res.status(200).json(fallback);
 
   try {
-    let body = req.body;
-    if (typeof body === "string") body = JSON.parse(body || "{}");
-    const work = findWork(body && body.work);
-    if (!work) {
-      res.status(400).json({ error: "Choose a painting first." });
-      return;
-    }
-    const feeling = (typeof body.feeling === "string" ? body.feeling : "").trim().slice(0, 80);
-
-    const apiKey = process.env.GEMINI_API_KEY;
-
-    // No key (or no word offered) → serve the beautiful hand-written reading.
-    if (!apiKey || !feeling) {
-      res.status(200).json({ work: work.title, freq: work.freq, reading: work.reading });
-      return;
-    }
-
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
-    const apiRes = await fetch(url, {
-      method: "POST",
+    const apiRes = await fetch("https://generativelanguage.googleapis.com/v1beta/models/" + MODEL + ":generateContent", {
+      method: "POST", signal: AbortSignal.timeout(7500),
       headers: { "content-type": "application/json", "x-goog-api-key": apiKey },
       body: JSON.stringify({
-        contents: [{ role: "user", parts: [{ text: readerPrompt(work, feeling) }] }],
-        generationConfig: { maxOutputTokens: MAX_TOKENS, temperature: 0.95, thinkingConfig: { thinkingBudget: 0 } },
-      }),
+        systemInstruction: { parts: [{ text: READER_SYSTEM }] },
+        contents: [{ role: "user", parts: [{ text: JSON.stringify({
+          painting: { title: work.title, description: work.desc, medium: work.medium },
+          mood: MOODS[mood].label, rebellion: REBELLIONS[rebellion].label,
+          style: TONES[tone], visitorWord: feeling
+        }) }] }],
+        generationConfig: { maxOutputTokens: 550, temperature: 0.9, responseMimeType: "application/json", thinkingConfig: { thinkingBudget: 0 } }
+      })
     });
-
     if (!apiRes.ok) {
-      const detail = await apiRes.text().catch(() => "");
-      console.error("Gemini reading error", apiRes.status, detail);
-      // Graceful fallback to the hand-written reading.
-      res.status(200).json({ work: work.title, freq: work.freq, reading: work.reading });
-      return;
+      console.error("A305X reading upstream status", apiRes.status);
+      return res.status(200).json(fallback);
     }
-
     const data = await apiRes.json();
-    const text = ((data.candidates && data.candidates[0] && data.candidates[0].content &&
-      data.candidates[0].content.parts) || [])
-      .map((p) => p.text || "")
-      .join("")
-      .trim();
-
-    res.status(200).json({ work: work.title, freq: work.freq, reading: text || work.reading });
+    const text = (data.candidates?.[0]?.content?.parts || []).map(p => p.text || "").join("").trim();
+    const generated = validateReading(JSON.parse(text.replace(/^\x60{3}(?:json)?\s*|\s*\x60{3}$/g, "")));
+    return res.status(200).json(generated ? { ...fallback, ...generated } : fallback);
   } catch (err) {
-    console.error("reading handler error", err);
-    res.status(500).json({ error: "The reading couldn't come through. Please try again." });
+    console.error("A305X reading fallback", err.name || "Error");
+    return res.status(200).json(fallback);
   }
 };
