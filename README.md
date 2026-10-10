@@ -12,8 +12,10 @@ Mark a piece as sold by adding `sold:true` to its entry.
 The home gallery initially shows six works. Visitors can expand all 32 or choose a series filter.
 
 ## Multilingual Ivo AI guide (chat widget)
-A floating "Meet Ivo's AI" guide, bottom-right of the page, powered by the Google Gemini API.
+A floating "Meet Ivo's Muse" guide, bottom-right of the page, powered by the Google Gemini API. Its character is funny, elegant, and free-spirited, with dry wit and the motto **"Born to disobey. Free to create."** The welcome message, panel heading, and backend voice share this identity. The launcher keeps its label visible on phones.
 It is clearly disclosed as an AI representative. Its system prompt in `api/chat.js` covers the works, NEMO Studio, the House Passport concept, Orion Saint's books, and A305X. It replies in the visitor's language when possible and guides inquiries to Ivaylo's email. The creative-world cards also link directly to the live NEMO, Orion, and A305X sites.
+
+The Muse answers practical questions first and uses occasional, gentle humour. Creative rebellion never changes facts: it does not invent prices or availability, claim to be Ivaylo, or claim to process purchases. Customer problems receive calm, direct replies.
 
 - Frontend: chat widget markup/styles/JS live inside [`index.html`](index.html) (search for `AI CONCIERGE` / `cc-`).
 - Backend: [`api/chat.js`](api/chat.js) — a Vercel serverless function that calls Gemini. The API key stays server-side and never reaches the browser.

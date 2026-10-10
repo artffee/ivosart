@@ -309,6 +309,7 @@
   .cc-head .mg{width:38px;height:38px;border:1px solid var(--bronze-2);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:1rem;color:var(--bronze-2)}
   .cc-head .ci h4{font-family:var(--serif);font-weight:400;font-size:1.15rem;line-height:1.1}
   .cc-head .ci span{font-family:var(--mono);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze-2)}
+  .cc-motto{padding:11px 20px;border-bottom:1px solid var(--line);color:var(--bronze);font-family:var(--serif);font-style:italic;font-size:.95rem;line-height:1.3;flex:none}
   .cc-x{margin-left:auto;width:34px;height:34px;border:1px solid rgba(255,255,255,.24);border-radius:50%;background:none;color:var(--bone);font-size:1.05rem;cursor:pointer;transition:.3s}
   .cc-x:hover{background:var(--bone);color:var(--ink)}
   .cc-body{flex:1;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:14px;scroll-behavior:smooth}
@@ -328,7 +329,7 @@
   .cc-send{width:42px;height:42px;flex:none;border-radius:50%;border:none;background:var(--ink);color:var(--bone);cursor:pointer;font-size:1rem;transition:background .35s var(--e)}
   .cc-send:hover{background:var(--bronze)}
   .cc-send:disabled{opacity:.4;cursor:default}
-  @media(max-width:480px){.cc-fab span{display:none}.cc-fab{padding:15px}}
+  @media(max-width:480px){.cc-fab{padding:12px 16px;font-size:.58rem;letter-spacing:.12em}}
 
   /* ===== Energy Reading — section ===== */
   .reading-sec{padding:clamp(90px,12vw,170px) 0;background:var(--bone-2);text-align:center}
@@ -665,15 +666,16 @@
 </div>
 
 <!-- AI CONCIERGE -->
-<button class="cc-fab" id="ccFab" aria-label="Chat with Ivo's AI guide">
-  <span class="dot"></span><span>Meet Ivo's AI</span>
+<button class="cc-fab" id="ccFab" aria-label="Chat with Ivo's Muse, your AI studio guide">
+  <span class="dot"></span><span>Meet Ivo's Muse</span>
 </button>
-<section class="cc-panel" id="ccPanel" aria-live="polite" aria-label="Ivo's multilingual AI guide">
+<section class="cc-panel" id="ccPanel" aria-live="polite" aria-label="Ivo's Muse, a multilingual AI studio guide">
   <div class="cc-head">
-    <span class="mg">IP</span>
-    <div class="ci"><h4>Ivo's studio guide</h4><span>AI guide · multilingual</span></div>
+    <span class="mg" aria-hidden="true">M</span>
+    <div class="ci"><h4>Ivo's Muse</h4><span>AI guide · multilingual</span></div>
     <button class="cc-x" id="ccX" aria-label="Close chat">✕</button>
   </div>
+  <p class="cc-motto">Born to disobey. Free to create.</p>
   <div class="cc-body" id="ccBody"></div>
   <div class="cc-chips" id="ccChips">
     <button data-q="Help me find a painting that fits my mood or room.">Find my painting</button>
@@ -683,7 +685,7 @@
     <button data-q="What is A305X?">A305X</button>
   </div>
   <div class="cc-foot">
-    <textarea id="ccInput" rows="1" placeholder="Ask about a painting, book, idea or project…"></textarea>
+    <textarea id="ccInput" rows="1" aria-label="Message Ivo's Muse" placeholder="What is your imagination up to?…"></textarea>
     <button class="cc-send" id="ccSend" aria-label="Send">→</button>
   </div>
 </section>
@@ -907,7 +909,7 @@ function finish(){setTimeout(()=>{loader.classList.add("done");document.getEleme
   function open(){
     panel.classList.add("open"); fab.classList.add("hide");
     if(!greeted){ greeted=true;
-      bubble("bot","Welcome. I’m Ivo’s AI guide, here to help you discover a painting or explore NEMO Studio, House Passport, books and A305X. You can ask in your own language. Where would you like to begin?");
+      bubble("bot","Welcome. I’m Ivo’s Muse, your AI studio guide. Impeccable manners. Questionable respect for boring walls. I can help you find a painting, explore NEMO, books and A305X, or plan an inquiry. Ask in your own language — what shall we set free today?");
     }
     setTimeout(()=>input.focus(),350);
   }
