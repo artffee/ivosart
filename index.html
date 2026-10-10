@@ -175,6 +175,8 @@
   .stmt{background:var(--ink);color:var(--bone);padding:clamp(100px,16vw,220px) 0;overflow:hidden}
   .stmt h3{font-family:var(--serif);font-weight:300;font-size:clamp(2.4rem,8vw,8rem);line-height:.98;letter-spacing:-.01em}
   .stmt h3 em{font-style:italic;color:var(--bronze-2)}
+  .stmt .sphilosophy{max-width:36ch;margin-top:36px;font-family:var(--serif);font-weight:300;font-size:clamp(1.4rem,3vw,2.4rem);line-height:1.35;color:var(--bone)}
+  .stmt .sphilosophy em{font-style:italic;color:var(--bronze-2)}
   .stmt .smono{font-family:var(--mono);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze-2);margin-bottom:40px;display:flex;align-items:center;gap:14px}
   .stmt .smono::before{content:"";width:40px;height:1px;background:var(--bronze-2)}
 
@@ -477,6 +479,7 @@
   <div class="wrap rv">
     <div class="smono">The philosophy</div>
     <h3>Chaos, caught at the exact instant it <em>becomes form.</em></h3>
+    <p class="sphilosophy">“Only through art can we live in reality—because <em>we create it.</em>”</p>
   </div>
 </section>
 
@@ -909,7 +912,7 @@ function finish(){setTimeout(()=>{loader.classList.add("done");document.getEleme
   function open(){
     panel.classList.add("open"); fab.classList.add("hide");
     if(!greeted){ greeted=true;
-      bubble("bot","Welcome. I’m Ivo’s Muse, your AI studio guide. Impeccable manners. Questionable respect for boring walls. I can help you find a painting, explore NEMO, books and A305X, or plan an inquiry. Ask in your own language — what shall we set free today?");
+      bubble("bot","Welcome. I’m Ivo’s Muse, your AI studio guide. Impeccable manners. Questionable respect for boring walls. Our philosophy: “Only through art can we live in reality—because we create it.” Ask about paintings, stories or ideas in your own language — what shall we set free today?");
     }
     setTimeout(()=>input.focus(),350);
   }

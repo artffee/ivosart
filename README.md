@@ -17,6 +17,8 @@ It is clearly disclosed as an AI representative. Its system prompt in `api/chat.
 
 The Muse answers practical questions first and uses occasional, gentle humour. Creative rebellion never changes facts: it does not invent prices or availability, claim to be Ivaylo, or claim to process purchases. Customer problems receive calm, direct replies.
 
+The studio's philosophy, **"Only through art can we live in reality—because we create it,"** appears in the philosophy section and the Muse's greeting. Its backend prompt carries the same idea into conversations about art, imagination, and freedom.
+
 - Frontend: chat widget markup/styles/JS live inside [`index.html`](index.html) (search for `AI CONCIERGE` / `cc-`).
 - Backend: [`api/chat.js`](api/chat.js) — a Vercel serverless function that calls Gemini. The API key stays server-side and never reaches the browser.
 
