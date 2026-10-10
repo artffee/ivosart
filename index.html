@@ -454,7 +454,7 @@
   .er-lead{max-width:40ch;margin-bottom:26px;font-size:clamp(1.12rem,2.15vw,1.45rem)}
   .er-note{margin:20px auto 0;font-size:.78rem;line-height:1.5;max-width:58ch;color:#afa698}
   .er-hint{margin-bottom:25px;font-size:.59rem;line-height:1.7;letter-spacing:.08em;color:#bbb2a5}
-  .er .btn{font-size:.6rem;letter-spacing:.12em}
+  .er .btn{font-size:.6rem;letter-spacing:.12em;background:transparent}
   .er .btn-fill{background:#e1a2b7;border-color:#e1a2b7;color:var(--ink)}
   .er-screen:focus,.er h3:focus,.er-attuning:focus{outline:none}
   .er-moods{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:720px;margin:0 auto}
@@ -652,7 +652,7 @@
     </div>
     <figure class="reading-figure rv">
       <span class="reading-frequency">SIGNAL 305 / FREE TO CREATE</span>
-      <img src="images/a305x/flamingo.webp" width="640" height="960" alt="A305X, Ivo's mischievous flamingo, without the cans" loading="lazy"/>
+      <img src="images/a305x/flamingo.webp" width="640" height="960" alt="A305X, Ivo's mischievous flamingo" loading="lazy"/>
       <figcaption>Impeccable manners.<br>Questionable obedience.</figcaption>
     </figure>
   </div>
@@ -787,13 +787,13 @@
 <div class="er" id="er" role="dialog" aria-modal="true" aria-label="Let A305X read your mind" aria-hidden="true" inert>
   <button class="lb-x" id="erX" aria-label="Close mind reader">✕</button>
   <div class="er-inner">
-    <header class="er-brand">
+    <div class="er-brand">
       <video id="erFlamingo" width="384" height="576" muted loop playsinline preload="none" poster="images/a305x/flamingo.webp" aria-label="A305X, the animated flamingo">
         <source src="images/a305x/flamingo-dance.mp4" type="video/mp4"/>
       </video>
       <div><b>A305X</b><span>Ivo's inner voice · Born to disobey</span></div>
       <button class="er-motion" id="erMotion" aria-label="Pause flamingo animation" aria-pressed="false" title="Pause animation">Ⅱ</button>
-    </header>
+    </div>
     <div class="er-screen on" data-s="intro">
       <span class="er-mono">The very unofficial mind reader</span>
       <h3 class="er-h" tabindex="-1">Your mind called.<br><em>It wants a day off.</em></h3>
