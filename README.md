@@ -15,9 +15,9 @@ Mark a piece as sold by adding `sold:true` to its entry.
 The home gallery initially shows six works. Visitors can expand all 32 or choose a series filter.
 
 ## Framed. Never tamed.
-The **Art statements** navigation link opens `#statements`, a new gallery of five framed presentations: **Freedom in motion**, **Chaos with purpose**, **Beautifully untamed**, **Escape the matrix**, and **Untitled — study in motion** (a descriptive label for the image without supplied lettering). Six uploaded files contained five distinct images; the repeated Escape the matrix image is shown once.
+The **Art statements** navigation link opens `#statements`, a gallery of five framed presentations: **Freedom in motion**, **Chaos with purpose**, **Beautifully untamed**, **Escape the matrix**, and **Study in motion** (the gallery label for the image without supplied lettering). Six uploaded files contained five distinct images; the repeated Escape the matrix image is shown once.
 
-Visitors select a numbered thumbnail to change the featured image, open a full-screen viewer with previous/next and keyboard arrow controls, ask A305X about the selected statement, or prefill an inquiry using **Make room for this**. The native dialog supports Escape, focus containment and focus return. The layout stacks on phones, preserves the whole framed image, lazy-loads responsive WebP assets, and respects reduced-motion preferences. Dimensions, medium, prices and availability remain unconfirmed; A305X treats the presentations separately from the original-work catalogue.
+Every painting has a large card: three columns on wide screens, two on tablets, and full-width cards on phones. Tapping a card opens that painting directly in the full-screen viewer and updates the featured image. Previous/next and keyboard arrow controls, **Ask A305X**, and **Make room for this** remain available. The native dialog supports Escape, focus containment and focus return. The layout preserves the whole framed image, lazy-loads responsive WebP assets, and respects reduced-motion preferences. Dimensions, medium, prices and availability remain unconfirmed; A305X treats the presentations separately from the original-work catalogue.
 
 - Shared gallery data: `assets/framed-statements.js` (browser and chat backend).
 - Interaction and styling: `assets/framed-gallery.js` and `assets/framed-gallery.css`.

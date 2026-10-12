@@ -39,13 +39,18 @@
     document.getElementById("frCount").textContent = String(selected + 1).padStart(2, "0") + " / " + String(works.length).padStart(2, "0");
   }
 
-  choices.forEach((button, index) => button.addEventListener("click", () => select(index)));
-  opener.addEventListener("click", () => {
+  function openViewer() {
+    if (viewer.open) return;
     previousOverflow = document.body.style.overflow;
     viewer.showModal();
     document.body.style.overflow = "hidden";
     drawViewer();
-  });
+  }
+  choices.forEach((button, index) => button.addEventListener("click", () => {
+    select(index, false);
+    openViewer();
+  }));
+  opener.addEventListener("click", openViewer);
   document.getElementById("frClose").addEventListener("click", () => viewer.close());
   viewer.addEventListener("close", () => { document.body.style.overflow = previousOverflow; });
   document.getElementById("frPrevious").addEventListener("click", () => select(selected - 1));

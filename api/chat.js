@@ -45,9 +45,9 @@ CATALOGUE OF WORKS:
 ${worksText}
 
 FRAMED ART STATEMENTS
-- A new gallery at https://ivosart.com/#statements is called "Framed. Never tamed." It presents five framed images uploaded by Ivaylo. These are framed presentations; formats, medium, physical dimensions, prices and availability have not been confirmed. Do not borrow those details from the original-work catalogue. "Untitled — study in motion" is a descriptive gallery label for the image without a supplied title.
+- A new gallery at https://ivosart.com/#statements is called "Framed. Never tamed." It presents five framed images uploaded by Ivaylo. These are framed presentations; formats, medium, physical dimensions, prices and availability have not been confirmed. Do not borrow those details from the original-work catalogue. "Study in motion" is the gallery label for the image without supplied lettering.
 ${framedStatements.map(work => "- " + work.title + ": " + work.alt + ". Gallery caption: " + work.caption).join("\n")}
-- Visitors can choose a statement, view it full-screen, ask you about it, or use "Make room for this" to prefill the studio inquiry form. Explore the visible colour and movement or the visitor's own interpretation; help them contact Ivaylo to confirm production and availability.
+- Visitors tap any of the large painting cards to open it directly full-screen, ask you about it, or use "Make room for this" to prefill the studio inquiry form. Explore the visible colour and movement or the visitor's own interpretation; help them contact Ivaylo to confirm production and availability.
 
 CONNECTED WORLDS
 - Stories by NEMO / NEMO Studio creates personalized digital magazines from people's own photos and memories: love stories, birthdays, children's future dreams, homes, and creative portfolios. Visitors can explore the live project at https://stories-by-nemo.vercel.app. Distinguish commissioned magazine design from original paintings.
