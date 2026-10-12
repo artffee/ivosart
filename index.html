@@ -502,6 +502,7 @@
   @media(max-width:520px){.er{padding:20px 12px}.er-inner{max-height:calc(100dvh - 40px)}.er-brand{gap:10px;padding-right:15px;justify-content:flex-start}.er-brand span{font-size:.46rem}.er-moods{grid-template-columns:repeat(2,1fr);gap:9px}.er-moods button{min-height:135px;padding:18px 10px}.er-moods small{font-size:.72rem}.er-grid{grid-template-columns:repeat(3,1fr);gap:9px}.er-tile{padding:5px}.er-tile .tt{font-size:.49rem;letter-spacing:.04em}.er-voices{gap:6px}.er-options button{padding:11px 7px;font-size:.79rem}.er-result-actions{gap:14px;flex-direction:column}.er-result-actions .btn{width:100%;justify-content:center}.er-hint{margin-bottom:20px}}
   @media(prefers-reduced-motion:reduce){.er,.er-screen,.er-tile,.er-moods button,.reading-figure img{transition:none;animation:none}.er-scan-line{animation:none;top:50%}.er-scanbar i{transition:none}.reading-figure:hover img{transform:none}}
 </style>
+<link rel="stylesheet" href="assets/framed-gallery.css" />
 </head>
 <body>
 
@@ -518,6 +519,7 @@
     <a href="#" class="brand"><span class="mg">IP</span> Ivaylo Peytchev</a>
     <div class="nlinks">
       <a href="#works">Works</a>
+      <a href="#statements">Art statements</a>
       <a href="#reading">Mind reader</a>
       <a href="#signature">Signature</a>
       <a href="#artist">Artist</a>
@@ -530,7 +532,7 @@
 
 <div class="mm" id="mm" aria-hidden="true" inert>
   <button class="mx" id="mx" type="button" aria-label="Close navigation">✕</button>
-  <a href="#works">Works</a><a href="#reading">Mind reader</a><a href="#signature">Signature</a><a href="#artist">Artist</a><a href="#worlds">Worlds</a><a href="#inquire">Inquire</a>
+  <a href="#works">Works</a><a href="#statements">Art statements</a><a href="#reading">Mind reader</a><a href="#signature">Signature</a><a href="#artist">Artist</a><a href="#worlds">Worlds</a><a href="#inquire">Inquire</a>
 </div>
 
 <!-- HERO -->
@@ -609,6 +611,43 @@
       <span class="reality-credit">Crimson Ascent · Ivaylo Peytchev</span>
       <span class="reality-enter">Explore the paintings <span aria-hidden="true">→</span></span>
     </a>
+  </div>
+</section>
+
+<!-- FRAMED ART STATEMENTS -->
+<section class="fr-sec" id="statements" aria-labelledby="frHeading">
+  <div class="wrap">
+    <div class="fr-gallery">
+      <div class="fr-intro">
+        <span class="mono">New from the studio / 05 framed statements</span>
+        <h2 id="frHeading">Framed.<br><em>Never tamed.</em></h2>
+        <p>A little beautiful trouble for your walls. Choose the statement that feels like you.</p>
+      </div>
+      <figure class="fr-feature">
+        <button class="fr-art" id="frOpen" type="button" aria-haspopup="dialog" aria-controls="frViewer" aria-label="View Freedom in motion full-screen">
+          <img id="frImage" src="images/statements/freedom-in-motion.webp" srcset="images/statements/freedom-in-motion-small.webp 480w, images/statements/freedom-in-motion.webp 1254w" sizes="(max-width:640px) calc(100vw - 48px), 58vw" width="1254" height="1254" loading="lazy" decoding="async" alt="Freedom in Motion — red, purple and yellow abstract painting in a black frame with a cream mount" />
+          <span class="fr-zoom" aria-hidden="true">View full-screen <span>↗</span></span>
+        </button>
+        <figcaption>
+          <div aria-live="polite" aria-atomic="true">
+            <h3 id="frTitle">Freedom in motion</h3>
+            <p id="frCaption">A bold red gesture. A little yellow courage. Absolutely no interest in standing still.</p>
+          </div>
+          <div class="fr-actions">
+            <a class="fr-link" id="frInquire" href="#inquire">Make room for this <span aria-hidden="true">→</span></a>
+            <button class="fr-link" id="frAsk" type="button">Ask A305X <span aria-hidden="true">↗</span></button>
+          </div>
+        </figcaption>
+      </figure>
+      <ol class="fr-menu" aria-label="Choose a framed art statement">
+        <li><button type="button" data-fr-choice="0" aria-pressed="true" aria-controls="frImage frTitle frCaption"><img src="images/statements/freedom-in-motion-small.webp" width="50" height="50" loading="lazy" alt="" /><strong>Freedom in motion</strong><span class="fr-num" aria-hidden="true">01</span></button></li>
+        <li><button type="button" data-fr-choice="1" aria-pressed="false" aria-controls="frImage frTitle frCaption"><img src="images/statements/chaos-with-purpose-small.webp" width="50" height="50" loading="lazy" alt="" /><strong>Chaos with purpose</strong><span class="fr-num" aria-hidden="true">02</span></button></li>
+        <li><button type="button" data-fr-choice="2" aria-pressed="false" aria-controls="frImage frTitle frCaption"><img src="images/statements/beautifully-untamed-small.webp" width="50" height="50" loading="lazy" alt="" /><strong>Beautifully untamed</strong><span class="fr-num" aria-hidden="true">03</span></button></li>
+        <li><button type="button" data-fr-choice="3" aria-pressed="false" aria-controls="frImage frTitle frCaption"><img src="images/statements/escape-the-matrix-small.webp" width="50" height="50" loading="lazy" alt="" /><strong>Escape the matrix</strong><span class="fr-num" aria-hidden="true">04</span></button></li>
+        <li><button type="button" data-fr-choice="4" aria-pressed="false" aria-controls="frImage frTitle frCaption"><img src="images/statements/untitled-motion-study-small.webp" width="50" height="50" loading="lazy" alt="" /><strong>Untitled — study in motion</strong><span class="fr-num" aria-hidden="true">05</span></button></li>
+      </ol>
+    </div>
+    <div class="fr-footnote"><p>Some walls hold you in. Yours can let you out.</p><span>Framed presentations · Ask the studio about formats &amp; availability.</span></div>
   </div>
 </section>
 
@@ -764,7 +803,7 @@
     <div class="ftop">
       <div class="fname">Ivaylo<br><em>Peytchev</em></div>
       <div class="flinks">
-        <a href="#works">Works</a><a href="#signature">Signature</a><a href="#artist">Artist</a>
+        <a href="#works">Works</a><a href="#statements">Art statements</a><a href="#signature">Signature</a><a href="#artist">Artist</a>
         <a href="#worlds">Worlds</a><a href="#inquire">Inquire</a><a href="https://instagram.com/ivosart" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
@@ -918,6 +957,7 @@
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="assets/a305x-reader-data.js"></script>
+<script src="assets/framed-statements.js"></script>
 <script>
 /* ===== WORKS (no prices) — edit titles / medium / tags freely ===== */
 const works=[
@@ -1353,5 +1393,24 @@ function finish(){setTimeout(()=>{loader.classList.add("done");document.getEleme
 
 render();bind();
 </script>
+<dialog class="fr-viewer" id="frViewer" aria-labelledby="frViewerTitle" aria-describedby="frViewerCaption">
+  <div class="fr-viewbar">
+    <span class="mono">IvosArt / Framed. Never tamed. / <span id="frCount">01 / 05</span></span>
+    <button class="fr-close" id="frClose" type="button" aria-label="Close framed artwork" autofocus>✕</button>
+  </div>
+  <div class="fr-viewstage">
+    <button class="fr-nav" id="frPrevious" type="button" aria-label="Previous framed statement">←</button>
+    <img id="frViewerImage" width="1254" height="1254" alt="" />
+    <button class="fr-nav" id="frNext" type="button" aria-label="Next framed statement">→</button>
+  </div>
+  <div class="fr-viewcopy">
+    <div aria-live="polite" aria-atomic="true"><h3 id="frViewerTitle">Freedom in motion</h3><p id="frViewerCaption"></p></div>
+    <div class="fr-actions">
+      <a class="fr-link" id="frViewerInquire" href="#inquire">Make room for this <span aria-hidden="true">→</span></a>
+      <button class="fr-link" id="frViewerAsk" type="button">Ask A305X <span aria-hidden="true">↗</span></button>
+    </div>
+  </div>
+</dialog>
+<script src="assets/framed-gallery.js"></script>
 </body>
 </html>

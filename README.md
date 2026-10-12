@@ -14,6 +14,15 @@ Open `index.html`, find the `works` array near the bottom, and edit titles / med
 Mark a piece as sold by adding `sold:true` to its entry.
 The home gallery initially shows six works. Visitors can expand all 32 or choose a series filter.
 
+## Framed. Never tamed.
+The **Art statements** navigation link opens `#statements`, a new gallery of five framed presentations: **Freedom in motion**, **Chaos with purpose**, **Beautifully untamed**, **Escape the matrix**, and **Untitled — study in motion** (a descriptive label for the image without supplied lettering). Six uploaded files contained five distinct images; the repeated Escape the matrix image is shown once.
+
+Visitors select a numbered thumbnail to change the featured image, open a full-screen viewer with previous/next and keyboard arrow controls, ask A305X about the selected statement, or prefill an inquiry using **Make room for this**. The native dialog supports Escape, focus containment and focus return. The layout stacks on phones, preserves the whole framed image, lazy-loads responsive WebP assets, and respects reduced-motion preferences. Dimensions, medium, prices and availability remain unconfirmed; A305X treats the presentations separately from the original-work catalogue.
+
+- Shared gallery data: `assets/framed-statements.js` (browser and chat backend).
+- Interaction and styling: `assets/framed-gallery.js` and `assets/framed-gallery.css`.
+- Images: `images/statements/`, with full-resolution WebP versions and 480px thumbnails. The uploaded composition, framing and lettering are preserved.
+
 ## Multilingual A305X studio guide (chat widget)
 A floating "Meet A305X" guide, bottom-right of the page, powered by the Google Gemini API. **Ivo’s inner voice and customer service guide** appears as the original flamingo on its own, with the cans removed. The animation plays only while the guide is open and the tab is visible, has a pause button, and respects reduced-motion preferences. Its character is funny, elegant, and free-spirited, with Miami colour, anti-war kindness, dry wit, and the motto **"Born to disobey. Free to create."** The welcome message, panel heading, accessible labels, and backend voice share this identity. The launcher keeps its label visible on phones.
 A305X introduces itself by name without unsolicited technical explanations. If asked directly whether it is AI, automated, or human, it answers honestly; it never claims to be Ivaylo or a human. Its system prompt in `api/chat.js` covers the works, NEMO Studio, the House Passport concept, Orion Saint's books, and A305X. It replies in the visitor's language when possible and guides inquiries to Ivaylo's email. The creative-world cards also link directly to the live NEMO, Orion, and A305X sites, with "Ask A305X" buttons opening the guide.
