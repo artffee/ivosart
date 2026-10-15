@@ -16,14 +16,15 @@
     selected = (index + works.length) % works.length;
     const work = works[selected];
     image.src = work.image;
-    image.srcset = work.thumbnail + " 480w, " + work.image + " " + work.width + "w";
+    image.srcset = work.thumbnail + " " + work.thumbnailWidth + "w, " + work.image + " " + work.width + "w";
     image.alt = work.alt;
     image.width = work.width;
     image.height = work.height;
+    opener.style.aspectRatio = work.width + " / " + work.height;
     title.textContent = work.title;
     caption.textContent = work.caption;
     opener.setAttribute("aria-label", "View " + work.title + " full-screen");
-    choices.forEach((button, i) => button.setAttribute("aria-pressed", String(i === selected)));
+    choices.forEach(button => button.setAttribute("aria-pressed", String(Number(button.dataset.frChoice) === selected)));
     if (animate && !reducedMotion.matches) image.animate([{ opacity: .4, transform: "translateY(5px)" }, { opacity: 1, transform: "none" }], { duration: 320, easing: "ease-out" });
     if (viewer.open) drawViewer();
   }
@@ -34,6 +35,7 @@
     viewerImage.alt = work.alt;
     viewerImage.width = work.width;
     viewerImage.height = work.height;
+    document.getElementById("frOriginal").href = work.image;
     document.getElementById("frViewerTitle").textContent = work.title;
     document.getElementById("frViewerCaption").textContent = work.caption;
     document.getElementById("frCount").textContent = String(selected + 1).padStart(2, "0") + " / " + String(works.length).padStart(2, "0");
@@ -46,8 +48,8 @@
     document.body.style.overflow = "hidden";
     drawViewer();
   }
-  choices.forEach((button, index) => button.addEventListener("click", () => {
-    select(index, false);
+  choices.forEach(button => button.addEventListener("click", () => {
+    select(Number(button.dataset.frChoice), false);
     openViewer();
   }));
   opener.addEventListener("click", openViewer);

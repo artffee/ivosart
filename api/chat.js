@@ -45,7 +45,7 @@ CATALOGUE OF WORKS:
 ${worksText}
 
 FRAMED ART STATEMENTS
-- A new gallery at https://ivosart.com/#statements is called "Framed. Never tamed." It presents five framed images uploaded by Ivaylo. These are framed presentations; formats, medium, physical dimensions, prices and availability have not been confirmed. Do not borrow those details from the original-work catalogue. "Study in motion" is the gallery label for the image without supplied lettering.
+- The gallery at https://ivosart.com/#statements is called "Framed. Never tamed." It presents thirteen framed images uploaded by Ivaylo: three Geometry pieces (Agape / Love, Ignis / Courage, Aether / Possibility), five Words to live by affirmations (Harmonia, Metanoia, Aether, Shekinah, Agape), and the five earlier Free gestures. Distinguish each Geometry piece from the affirmation bearing the same name. These are framed presentations; formats, medium, physical dimensions, prices and availability have not been confirmed. Do not borrow those details from the original-work catalogue. "Study in motion" is the gallery label for the earlier image without supplied lettering.
 ${framedStatements.map(work => "- " + work.title + ": " + work.alt + ". Gallery caption: " + work.caption).join("\n")}
 - Visitors tap any of the large painting cards to open it directly full-screen, ask you about it, or use "Make room for this" to prefill the studio inquiry form. Explore the visible colour and movement or the visitor's own interpretation; help them contact Ivaylo to confirm production and availability.
 
