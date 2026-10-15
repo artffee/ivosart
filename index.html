@@ -34,7 +34,6 @@
   "name": "Ivaylo Peytchev",
   "alternateName": "IvosArt",
   "url": "https://ivosart.com/",
-  "image": "https://ivosart.com/images/work-01.jpg",
   "jobTitle": "Artist, writer and creative inventor",
   "description": "Artist, writer and creative inventor creating original paintings, books and story-led experiences.",
   "email": "usivaylo@gmail.com",
@@ -503,13 +502,15 @@
   @media(prefers-reduced-motion:reduce){.er,.er-screen,.er-tile,.er-moods button,.reading-figure img{transition:none;animation:none}.er-scan-line{animation:none;top:50%}.er-scanbar i{transition:none}.reading-figure:hover img{transform:none}}
 </style>
 <link rel="stylesheet" href="assets/framed-gallery.css" />
+<link rel="stylesheet" href="/assets/collector.css" />
 </head>
 <body>
+<a class="skip-link" href="#works">Skip to the paintings</a>
 
 <!-- LOADER -->
-<div class="loader" id="loader">
+<div class="loader" id="loader" hidden aria-hidden="true">
   <div class="lmono">IvosArt — Ivaylo Peytchev</div>
-  <div class="lbig"><span>Original works</span><span class="lcount" id="lcount">00</span></div>
+  <div class="lbig"><span>IvosArt</span><span class="lcount" id="lcount">00</span></div>
   <div class="lbar"><i id="lbar"></i></div>
 </div>
 
@@ -517,44 +518,34 @@
 <header id="header">
   <nav>
     <a href="#" class="brand"><span class="mg">IP</span> Ivaylo Peytchev</a>
-    <div class="nlinks">
-      <a href="#works">Works</a>
-      <a href="#statements">Art statements</a>
-      <a href="#reading">Mind reader</a>
-      <a href="#signature">Signature</a>
-      <a href="#artist">Artist</a>
-      <a href="#worlds">Worlds</a>
-      <a href="#inquire">Inquire</a>
-    </div>
+    <div class="nlinks"><a href="#works">Works</a><a href="#statements">Collections</a><a href="#artist">Meet Ivo</a><a href="#collect">Buying art</a><a href="#inquire">Inquire</a></div>
     <button class="burger" id="burger" type="button" aria-label="Open navigation" aria-controls="mm" aria-expanded="false"><span></span><span></span><span></span></button>
   </nav>
 </header>
 
 <div class="mm" id="mm" aria-hidden="true" inert>
-  <button class="mx" id="mx" type="button" aria-label="Close navigation">✕</button>
-  <a href="#works">Works</a><a href="#statements">Art statements</a><a href="#reading">Mind reader</a><a href="#signature">Signature</a><a href="#artist">Artist</a><a href="#worlds">Worlds</a><a href="#inquire">Inquire</a>
-</div>
+  <button class="mx" id="mx" type="button" aria-label="Close navigation">✕</button><a href="#works">Works</a><a href="#statements">Collections</a><a href="#artist">Meet Ivo</a><a href="#collect">Buying art</a><a href="#inquire">Inquire</a></div>
 
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="wrap">
     <div class="hero-top">
-      <span class="mono">Abstract · Gesture · 1&nbsp;of&nbsp;1</span>
-      <span class="mono">IvosArt — the studio</span>
+      <span class="mono">Original paintings · Art statements</span>
+      <span class="mono">South Florida · IvosArt</span>
     </div>
     <h1 class="hero-name" id="heroName">
       <span class="l1" data-split>Ivaylo</span>
       <span class="l2" data-split>Peytchev</span>
     </h1>
     <figure class="hero-img">
-      <img src="images/work-01.jpg" alt="Featured work" onerror="this.parentElement.classList.add('wplate','noimg');this.remove()" />
+      <img src="images/work-01.jpg" alt="Crossing — orange and black abstract painting by Ivaylo Peytchev" fetchpriority="high" onerror="this.parentElement.classList.add('wplate','noimg');this.remove()" />
       <figcaption class="cap"><span>Crossing</span><span>2024</span></figcaption>
     </figure>
     <div class="hero-bottom">
-      <p>Paintings made in a single surge of movement — colour thrown, dragged, and left where it lands. Each one happens once, and never again.</p>
+      <p>Original paintings by Ivaylo Peytchev. Colour, movement, and a little beautiful trouble for your walls.</p>
       <div class="hero-actions">
         <a href="#works" class="btn btn-fill mag">Enter the gallery <span class="ar">→</span></a>
-        <a href="#worlds" class="btn btn-out mag">Explore my worlds <span class="ar" aria-hidden="true">→</span></a>
+        <a href="#inquire" class="btn btn-out mag">Ask about a painting <span class="ar" aria-hidden="true">→</span></a>
       </div>
     </div>
   </div>
@@ -566,121 +557,11 @@
   <span>Gesture is memory</span><span>The hand never lies</span><span>Paint keeps the record of the moment</span>
 </div></div>
 
-<!-- DISCOVER YOUR REALITY -->
-<section class="reality-sec" id="reality" aria-labelledby="reality-title">
-  <div class="wrap rv">
-    <a class="reality-paper" href="#works" aria-labelledby="reality-studio reality-title">
-      <svg class="reality-art" viewBox="0 0 1200 560" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-        <defs>
-          <linearGradient id="realityRose" x2=".15" y2="1">
-            <stop stop-color="#c9a5a0"/><stop offset="1" stop-color="#ac807b"/>
-          </linearGradient>
-          <linearGradient id="realityFold">
-            <stop stop-color="#9c706b"/><stop offset=".25" stop-color="#cba5a0"/><stop offset=".6" stop-color="#d9b9b1"/><stop offset="1" stop-color="#a97d77"/>
-          </linearGradient>
-          <filter id="realityShadow" x="-30%" y="-20%" width="170%" height="150%">
-            <feDropShadow dx="7" dy="7" stdDeviation="7" flood-color="#604039" flood-opacity=".42"/>
-          </filter>
-          <filter id="realityGrain">
-            <feTurbulence type="fractalNoise" baseFrequency=".65" numOctaves="3" seed="8"/>
-            <feColorMatrix type="saturate" values="0"/>
-          </filter>
-        </defs>
-        <rect width="1200" height="560" fill="url(#realityRose)"/>
-        <rect width="1200" height="560" filter="url(#realityGrain)" opacity=".065" style="mix-blend-mode:multiply"/>
-      </svg>
-      <div class="reality-window">
-        <div class="reality-mount"></div>
-        <div class="reality-canvas">
-          <svg class="reality-painting" viewBox="39 46 469 636" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="reality-painting-title">
-            <title id="reality-painting-title">Crimson Ascent — an original painting by Ivaylo Peytchev</title>
-            <image href="images/work-03.jpg" width="548" height="731"/>
-          </svg>
-        </div>
-      </div>
-      <svg class="reality-art" viewBox="0 0 1200 560" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-        <g class="reality-flap" filter="url(#realityShadow)">
-          <path d="M453 30 L469 38 483 31 495 44 487 65 500 91 491 120 501 148 491 179 501 210 492 242 500 275 490 306 501 338 492 370 501 401 492 433 500 465 489 495 475 490 462 501 449 492 433 500 441 474 435 445 443 416 436 386 444 354 437 322 444 291 437 261 445 230 437 198 444 167 436 136 445 104 437 73 445 49 Z" fill="url(#realityFold)" stroke="#e5c9bd" stroke-width="4" stroke-linejoin="round"/>
-          <path d="M479 46 C471 160 487 355 477 480" fill="none" stroke="#8e635d" stroke-width="2" opacity=".35"/>
-        </g>
-      </svg>
-      <div class="reality-copy">
-        <span class="reality-studio" id="reality-studio">Ivo’s Art</span>
-        <h2 id="reality-title">Discover your reality.</h2>
-      </div>
-      <span class="reality-credit">Crimson Ascent · Ivaylo Peytchev</span>
-      <span class="reality-enter">Explore the paintings <span aria-hidden="true">→</span></span>
-    </a>
-  </div>
-</section>
-
-<!-- FRAMED ART STATEMENTS -->
-<section class="fr-sec" id="statements" aria-labelledby="frHeading">
-  <div class="wrap">
-    <div class="fr-gallery">
-      <div class="fr-intro">
-        <span class="mono">08 new arrivals / 13 framed statements</span>
-        <h2 id="frHeading">Framed.<br><em>Never tamed.</em></h2>
-        <p>Love. Courage. Wonder. A little room to become yourself. Tap a painting and let it speak.</p>
-        <div class="fr-jump" role="navigation" aria-label="Framed art collections"><a href="#geometry">The geometry</a><a href="#affirmations">Words to live by</a><a href="#free-gestures">Free gestures</a></div>
-      </div>
-      <figure class="fr-feature">
-        <button class="fr-art" id="frOpen" type="button" aria-haspopup="dialog" aria-controls="frViewer" aria-label="View Agape — The geometry of love full-screen" style="aspect-ratio:1086 / 1448">
-          <img id="frImage" src="images/statements/agape-geometry.webp" srcset="images/statements/agape-geometry-small.webp 360w, images/statements/agape-geometry.webp 1086w" sizes="(max-width:640px) calc(100vw - 32px), 60vw" width="1086" height="1448" loading="lazy" decoding="async" alt="Agape, The Geometry of Love — a framed portrait composition of red, yellow and violet abstract paint, fine orbital lines, and the words Open, Give, Allow and Love leaves room" />
-          <span class="fr-zoom" aria-hidden="true">View full-screen <span>↗</span></span>
-        </button>
-        <figcaption>
-          <div aria-live="polite" aria-atomic="true">
-            <h3 id="frTitle">Agape — The geometry of love</h3>
-            <p id="frCaption">Open. Give. Allow. A geometry of love drawn around a vivid red, yellow and violet gesture.</p>
-          </div>
-          <div class="fr-actions">
-            <a class="fr-link" id="frInquire" href="#inquire">Make room for this <span aria-hidden="true">→</span></a>
-            <button class="fr-link" id="frAsk" type="button">Ask A305X <span aria-hidden="true">↗</span></button>
-          </div>
-        </figcaption>
-      </figure>
-      <div class="fr-collections">
-        <section class="fr-chapter" id="geometry" aria-labelledby="geometry-title">
-          <div class="fr-chapter-head"><div><span class="mono">01 / Three ways to feel</span><h3 id="geometry-title">The geometry <em>of feeling.</em></h3></div><p>Open to love. Make room for courage. Leave a little space for the impossible.</p></div>
-          <ol class="fr-menu" aria-label="Geometry paintings — tap to view full-screen">
-            <li style="--fr-ratio:1086 / 1448"><button type="button" data-fr-choice="0" aria-pressed="true" aria-haspopup="dialog" aria-controls="frViewer" aria-label="View Agape — The geometry of love full-screen"><img src="images/statements/agape-geometry.webp" srcset="images/statements/agape-geometry-small.webp 360w, images/statements/agape-geometry.webp 1086w" sizes="(max-width:640px) calc(100vw - 32px), (max-width:900px) 45vw, 30vw" width="1086" height="1448" loading="lazy" decoding="async" alt="" /><span class="fr-card-label"><strong>Agape</strong><span class="fr-num" aria-hidden="true">01</span></span><span class="fr-card-statement">Love leaves room.</span><span class="fr-card-hint" aria-hidden="true">View artwork ↗</span></button></li>
-            <li style="--fr-ratio:1086 / 1448"><button type="button" data-fr-choice="1" aria-pressed="false" aria-haspopup="dialog" aria-controls="frViewer" aria-label="View Ignis — The geometry of courage full-screen"><img src="images/statements/ignis-geometry.webp" srcset="images/statements/ignis-geometry-small.webp 360w, images/statements/ignis-geometry.webp 1086w" sizes="(max-width:640px) calc(100vw - 32px), (max-width:900px) 45vw, 30vw" width="1086" height="1448" loading="lazy" decoding="async" alt="" /><span class="fr-card-label"><strong>Ignis</strong><span class="fr-num" aria-hidden="true">02</span></span><span class="fr-card-statement">Let your light take shape.</span><span class="fr-card-hint" aria-hidden="true">View artwork ↗</span></button></li>
-            <li style="--fr-ratio:1086 / 1448"><button type="button" data-fr-choice="2" aria-pressed="false" aria-haspopup="dialog" aria-controls="frViewer" aria-label="View Aether — The geometry of possibility full-screen"><img src="images/statements/aether-geometry.webp" srcset="images/statements/aether-geometry-small.webp 360w, images/statements/aether-geometry.webp 1086w" sizes="(max-width:640px) calc(100vw - 32px), (max-width:900px) 45vw, 30vw" width="1086" height="1448" loading="lazy" decoding="async" alt="" /><span class="fr-card-label"><strong>Aether</strong><span class="fr-num" aria-hidden="true">03</span></span><span class="fr-card-statement">Leave room for wonder.</span><span class="fr-card-hint" aria-hidden="true">View artwork ↗</span></button></li>
-          </ol>
-        </section>
-        <section class="fr-chapter" id="affirmations" aria-labelledby="affirmations-title">
-          <div class="fr-chapter-head"><div><span class="mono">02 / Five quiet rebellions</span><h3 id="affirmations-title">Words <em>to live by.</em></h3></div><p>A painting. A thought. Permission to become a little more yourself.</p></div>
-          <ol class="fr-menu" aria-label="Affirmations paintings — tap to view full-screen">
-            <li class="fr-landscape" style="--fr-ratio:1536 / 1024"><button type="button" data-fr-choice="3" aria-pressed="false" aria-haspopup="dialog" aria-controls="frViewer" aria-label="View Harmonia — I embrace all of me full-screen"><img src="images/statements/harmonia-embrace.webp" srcset="images/statements/harmonia-embrace-small.webp 480w, images/statements/harmonia-embrace.webp 1536w" sizes="(max-width:640px) calc(100vw - 32px), (max-width:900px) 90vw, 65vw" width="1536" height="1024" loading="lazy" decoding="async" alt="" /><span class="fr-card-label"><strong>Harmonia</strong><span class="fr-num" aria-hidden="true">04</span></span><span class="fr-card-statement">I embrace all of me.</span><span class="fr-card-hint" aria-hidden="true">View artwork ↗</span></button></li>
-            <li style="--fr-ratio:1086 / 1448"><button type="button" data-fr-choice="4" aria-pressed="false" aria-haspopup="dialog" aria-controls="frViewer" aria-label="View Metanoia — I trust my becoming full-screen"><img src="images/statements/metanoia-becoming.webp" srcset="images/statements/metanoia-becoming-small.webp 360w, images/statements/metanoia-becoming.webp 1086w" sizes="(max-width:640px) calc(100vw - 32px), (max-width:900px) 45vw, 30vw" width="1086" height="1448" loading="lazy" decoding="async" alt="" /><span class="fr-card-label"><strong>Metanoia</strong><span class="fr-num" aria-hidden="true">05</span></span><span class="fr-card-statement">I trust my becoming.</span><span class="fr-card-hint" aria-hidden="true">View artwork ↗</span></button></li>
-            <li class="fr-landscape" style="--fr-ratio:1536 / 1024"><button type="button" data-fr-choice="5" aria-pressed="false" aria-haspopup="dialog" aria-controls="frViewer" aria-label="View Aether — I leave room for wonder full-screen"><img src="images/statements/aether-wonder.webp" srcset="images/statements/aether-wonder-small.webp 480w, images/statements/aether-wonder.webp 1536w" sizes="(max-width:640px) calc(100vw - 32px), (max-width:900px) 90vw, 65vw" width="1536" height="1024" loading="lazy" decoding="async" alt="" /><span class="fr-card-label"><strong>Aether</strong><span class="fr-num" aria-hidden="true">06</span></span><span class="fr-card-statement">I leave room for wonder.</span><span class="fr-card-hint" aria-hidden="true">View artwork ↗</span></button></li>
-            <li style="--fr-ratio:1086 / 1448"><button type="button" data-fr-choice="6" aria-pressed="false" aria-haspopup="dialog" aria-controls="frViewer" aria-label="View Shekinah — I choose my own light full-screen"><img src="images/statements/shekinah-light.webp" srcset="images/statements/shekinah-light-small.webp 360w, images/statements/shekinah-light.webp 1086w" sizes="(max-width:640px) calc(100vw - 32px), (max-width:900px) 45vw, 30vw" width="1086" height="1448" loading="lazy" decoding="async" alt="" /><span class="fr-card-label"><strong>Shekinah</strong><span class="fr-num" aria-hidden="true">07</span></span><span class="fr-card-statement">I choose my own light.</span><span class="fr-card-hint" aria-hidden="true">View artwork ↗</span></button></li>
-            <li class="fr-landscape" style="--fr-ratio:1536 / 1024"><button type="button" data-fr-choice="7" aria-pressed="false" aria-haspopup="dialog" aria-controls="frViewer" aria-label="View Agape — I make room for love full-screen"><img src="images/statements/agape-love.webp" srcset="images/statements/agape-love-small.webp 480w, images/statements/agape-love.webp 1536w" sizes="(max-width:640px) calc(100vw - 32px), (max-width:900px) 90vw, 65vw" width="1536" height="1024" loading="lazy" decoding="async" alt="" /><span class="fr-card-label"><strong>Agape</strong><span class="fr-num" aria-hidden="true">08</span></span><span class="fr-card-statement">I make room for love.</span><span class="fr-card-hint" aria-hidden="true">View artwork ↗</span></button></li>
-            <li class="fr-wall-note">Your walls.<br>Your words.<br>Your way.<small>A little room to be yourself.</small></li>
-          </ol>
-        </section>
-        <section class="fr-chapter" id="free-gestures" aria-labelledby="free-gestures-title">
-          <div class="fr-chapter-head"><div><span class="mono">03 / Beautiful trouble</span><h3 id="free-gestures-title">Free <em>gestures.</em></h3></div><p>Colour that follows its own instinct. You are welcome to do the same.</p></div>
-          <ol class="fr-menu" aria-label="Gestures paintings — tap to view full-screen">
-            <li style="--fr-ratio:1254 / 1254"><button type="button" data-fr-choice="8" aria-pressed="false" aria-haspopup="dialog" aria-controls="frViewer" aria-label="View Freedom in motion full-screen"><img src="images/statements/freedom-in-motion.webp" srcset="images/statements/freedom-in-motion-small.webp 480w, images/statements/freedom-in-motion.webp 1254w" sizes="(max-width:640px) calc(100vw - 32px), (max-width:900px) 45vw, 30vw" width="1254" height="1254" loading="lazy" decoding="async" alt="" /><span class="fr-card-label"><strong>Freedom in motion</strong><span class="fr-num" aria-hidden="true">09</span></span><span class="fr-card-hint" aria-hidden="true">View artwork ↗</span></button></li>
-            <li style="--fr-ratio:1254 / 1254"><button type="button" data-fr-choice="9" aria-pressed="false" aria-haspopup="dialog" aria-controls="frViewer" aria-label="View Chaos with purpose full-screen"><img src="images/statements/chaos-with-purpose.webp" srcset="images/statements/chaos-with-purpose-small.webp 480w, images/statements/chaos-with-purpose.webp 1254w" sizes="(max-width:640px) calc(100vw - 32px), (max-width:900px) 45vw, 30vw" width="1254" height="1254" loading="lazy" decoding="async" alt="" /><span class="fr-card-label"><strong>Chaos with purpose</strong><span class="fr-num" aria-hidden="true">10</span></span><span class="fr-card-hint" aria-hidden="true">View artwork ↗</span></button></li>
-            <li style="--fr-ratio:1254 / 1254"><button type="button" data-fr-choice="10" aria-pressed="false" aria-haspopup="dialog" aria-controls="frViewer" aria-label="View Beautifully untamed full-screen"><img src="images/statements/beautifully-untamed.webp" srcset="images/statements/beautifully-untamed-small.webp 480w, images/statements/beautifully-untamed.webp 1254w" sizes="(max-width:640px) calc(100vw - 32px), (max-width:900px) 45vw, 30vw" width="1254" height="1254" loading="lazy" decoding="async" alt="" /><span class="fr-card-label"><strong>Beautifully untamed</strong><span class="fr-num" aria-hidden="true">11</span></span><span class="fr-card-hint" aria-hidden="true">View artwork ↗</span></button></li>
-            <li style="--fr-ratio:1254 / 1254"><button type="button" data-fr-choice="11" aria-pressed="false" aria-haspopup="dialog" aria-controls="frViewer" aria-label="View Escape the matrix full-screen"><img src="images/statements/escape-the-matrix.webp" srcset="images/statements/escape-the-matrix-small.webp 480w, images/statements/escape-the-matrix.webp 1254w" sizes="(max-width:640px) calc(100vw - 32px), (max-width:900px) 45vw, 30vw" width="1254" height="1254" loading="lazy" decoding="async" alt="" /><span class="fr-card-label"><strong>Escape the matrix</strong><span class="fr-num" aria-hidden="true">12</span></span><span class="fr-card-hint" aria-hidden="true">View artwork ↗</span></button></li>
-            <li style="--fr-ratio:1312 / 1199"><button type="button" data-fr-choice="12" aria-pressed="false" aria-haspopup="dialog" aria-controls="frViewer" aria-label="View Study in motion full-screen"><img src="images/statements/untitled-motion-study.webp" srcset="images/statements/untitled-motion-study-small.webp 480w, images/statements/untitled-motion-study.webp 1312w" sizes="(max-width:640px) calc(100vw - 32px), (max-width:900px) 45vw, 30vw" width="1312" height="1199" loading="lazy" decoding="async" alt="" /><span class="fr-card-label"><strong>Study in motion</strong><span class="fr-num" aria-hidden="true">13</span></span><span class="fr-card-hint" aria-hidden="true">View artwork ↗</span></button></li>
-          </ol>
-        </section>
-      </div>
-    </div>
-    <div class="fr-footnote"><p>Some walls hold you in. Yours can let you out.</p><span>Framed presentations · Ask the studio about formats &amp; availability.</span></div>
-  </div>
-</section>
-
 <!-- WORKS -->
 <section class="wrap" id="works" style="padding-top:clamp(90px,12vw,170px);padding-bottom:clamp(60px,8vw,120px)">
   <div class="shead rv">
     <h2>Selected<br><em>works</em></h2>
-    <div class="scol"><span class="mono">01 — Archive</span>Paintings, ink works and Miami collage studies. Ask the studio about availability.</div>
+    <div class="scol"><span class="mono">01 — Selected paintings</span>Six ways into the collection. Open a painting for details, or ask Ivo about price and availability.</div>
   </div>
   <div class="fil rv" id="fil" aria-label="Filter artworks">
     <button class="on" data-f="all" aria-pressed="true">All</button>
@@ -692,15 +573,84 @@
     <button data-f="zodiac">Zodiac</button>
   </div>
   <div class="flow" id="flow"></div>
-  <div class="gallery-more" id="galleryMore"><button class="btn btn-out" id="moreWorks" type="button" aria-controls="flow">See all 32 works <span class="ar" aria-hidden="true">→</span></button></div>
+  <div class="gallery-more" id="galleryMore"><a class="btn btn-out" id="moreWorks" href="/gallery/">Explore the full collection <span class="ar" aria-hidden="true">→</span></a></div>
 </section>
 
+<section class="collection-sec wrap" id="statements" aria-labelledby="collectionsTitle">
+<div class="shead"><h2 id="collectionsTitle">Find your <em>collection.</em></h2><div class="scol">A gesture. A thought. A different way to see.</div></div>
+<div class="collection-grid">
+<a class="collection-card" href="/gallery/#originals"><img src="images/work-03.jpg" alt="Crimson Ascent" loading="lazy"/><span class="mono">01 / Original paintings</span><h3>Colour in motion.</h3><p>Paintings and works on paper. Explore the catalogue and ask about the original.</p><span class="detail-link">Explore originals ↗</span></a>
+<a class="collection-card" href="/collections/art-statements/"><img src="images/statements/agape-geometry.webp" alt="Agape — The geometry of love" loading="lazy"/><span class="mono">02 / Framed art statements</span><h3>Framed. Never tamed.</h3><p>Love, courage, wonder. Thirteen presentations; ask about available formats and framing.</p><span class="detail-link">Explore art statements ↗</span></a>
+<a class="collection-card" href="/gallery/#collage"><img src="images/a305x/a305x-01.webp" alt="Between Sun and Shadow — Miami collage" loading="lazy"/><span class="mono">03 / Miami &amp; Zodiac</span><h3>Other worlds.</h3><p>A305X collage and zodiac studies. Discover the imagery and discuss production options.</p><span class="detail-link">Explore the studies ↗</span></a>
+</div></section>
 <!-- STATEMENT -->
 <section class="stmt">
   <div class="wrap rv">
     <div class="smono">The philosophy</div>
     <h3>Chaos, caught at the exact instant it <em>becomes form.</em></h3>
     <p class="sphilosophy">“Only through art can we live in reality—because <em>we create it.</em>”</p>
+  </div>
+</section>
+
+<!-- SIGNATURE -->
+<section class="feat" id="signature">
+  <div class="wrap">
+    <figure class="fimg rv">
+      <img src="images/don-quixote.jpg" alt="Don Quixote in a single line" onerror="this.parentElement.style.aspectRatio='3/4';this.parentElement.classList.add('wplate','noimg');this.remove()" />
+    </figure>
+    <div class="rv">
+      <span class="mono">02 — Signature piece</span>
+      <h2>Don Quixote, in a <em>single line</em></h2>
+      <p>One unbroken gesture: a wandering knight, a loyal companion, and the distant windmill that became a symbol of impossible dreams. Literature reduced to pure visual poetry.</p>
+      <div class="pull">“The world is transformed not by what we see, but by what we dare to imagine.”</div>
+      <a href="/artworks/don-quixote/" class="btn btn-out mag">View artwork details <span class="ar">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ARTIST -->
+<section class="about" id="artist">
+  <div class="wrap">
+    <figure class="about-port rv">
+      <img src="images/work-04.jpg" alt="Detail of Cacophony, a painting by Ivaylo Peytchev" loading="lazy" />
+      <figcaption>Cacophony / From the collection</figcaption>
+    </figure>
+    <div class="rv">
+      <span class="mono">Meet Ivo · Sofia to South Florida</span>
+      <h2>A life spent <em>making.</em></h2>
+      <p>Born in Sofia and based in South Florida, Ivaylo Peytchev is a Bulgarian artist, writer, and maker. IvosArt brings together his original paintings, works on paper, and art statements.</p>
+      <p>His painting follows movement: colour dragged, thrown, and allowed to find its own order. Some works are loud with colour; others say more with a single line.</p>
+      <p>Beyond the canvas, he writes as Orion Saint and creates the playful worlds of A305X and NEMO Studio. For a painting, a commission, or a studio viewing, speak with Ivo directly.</p>
+      <div class="quote">“The hand never lies. Whatever happened in front of the canvas, the paint remembers.”</div>
+      <div class="sig">Ivaylo Peytchev</div>
+    </div>
+  </div>
+</section>
+
+<section class="collect-sec wrap" id="collect" aria-labelledby="collectTitle"><div class="shead"><h2 id="collectTitle">Make room <em>for art.</em></h2><div class="scol">A personal conversation, from the first question to the final details.</div></div>
+<div class="collect-grid"><article><span class="mono">01 / Choose</span><h3>Find the work.</h3><p>Open an artwork page to see its image and catalogue details. Prices and availability are confirmed personally by Ivo.</p></article><article><span class="mono">02 / Ask</span><h3>Talk about your space.</h3><p>Request the price, dimensions, framing options, and delivery arrangements. A photograph of your wall can help the conversation.</p></article><article><span class="mono">03 / Confirm</span><h3>Know every detail.</h3><p>Agree the artwork, final price, framing, and delivery with the studio before making a payment.</p></article></div>
+<div class="collect-faq"><details><summary>Is every work an original?</summary><p>The original-work collection includes paintings and works on paper. Framed statements and collage studies are presented separately; their available formats, edition details, and production options are confirmed on inquiry.</p></details><details><summary>Can I commission something for my space?</summary><p>Send your preferred colours, approximate size, location, and any timing requirements. Ivo will discuss the idea and confirm whether he can take it on.</p></details><details><summary>Is the frame included? Can you ship to me?</summary><p>Frames pictured are part of the presentation. Ask the studio to confirm what is included, the final dimensions, and delivery options and costs for your location.</p></details><details><summary>Can I see the painting before deciding?</summary><p>Ask for more photographs, close-up details, or a private viewing by appointment. Availability will be confirmed by the studio.</p></details></div>
+<a href="#inquire" class="btn btn-out">Discuss a commission →</a></section>
+<!-- INQUIRE -->
+<section class="inq-sec" id="inquire">
+  <div class="wrap">
+    <div class="rv">
+      <span class="mono">05 — Acquire · commission · collaborate</span>
+      <h2>Inquire to <em>acquire</em></h2>
+      <p>Interested in a work, a commission, a private viewing or a creative project? Send a note and Ivaylo will reply personally with availability and details.</p>
+      <div class="inq-row"><b>Email</b><span><a href="mailto:usivaylo@gmail.com">usivaylo@gmail.com</a></span></div>
+      <div class="inq-row"><b>Studio</b><span>By appointment</span></div>
+      <div class="inq-row"><b>Follow</b><span><a href="https://instagram.com/ivosart" target="_blank" rel="noopener noreferrer">@ivosart ↗</a></span></div>
+    </div>
+    <form class="f rv" id="f" data-inquiry-form>
+      <div class="fld"><label for="inqName">Name</label><input type="text" name="name" id="inqName" autocomplete="name" maxlength="100" required /></div>
+      <div class="fld"><label for="inqEmail">Email</label><input type="email" name="email" id="inqEmail" autocomplete="email" maxlength="254" required /></div>
+      <div class="fld"><label for="wfield">Work of interest</label><input type="text" name="work" id="wfield" maxlength="200" placeholder="e.g. Crossing — or open to suggestions" /></div>
+      <div class="fld"><label for="inqMessage">Message</label><textarea name="message" id="inqMessage" maxlength="6000" required placeholder="Tell me about the space…"></textarea></div>
+      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true" />
+      <button type="submit" class="btn btn-fill mag" id="submitInquiry">Open email draft <span class="ar">→</span></button>
+      <p class="form-note" id="formNote" role="status" aria-live="polite">Your email app will open with this message ready. Press Send there to contact Ivaylo.</p>
+    <p class="form-note">Your details are used to respond to this inquiry. No newsletter signup. <a href="/privacy/">Privacy</a></p><button class="copy-inquiry" type="button" data-copy-inquiry>Copy inquiry instead</button></form>
   </div>
 </section>
 
@@ -719,41 +669,6 @@
       <img src="images/a305x/flamingo.webp" width="640" height="960" alt="A305X, Ivo's mischievous flamingo" loading="lazy"/>
       <figcaption>Impeccable manners.<br>Questionable obedience.</figcaption>
     </figure>
-  </div>
-</section>
-
-<!-- SIGNATURE -->
-<section class="feat" id="signature">
-  <div class="wrap">
-    <figure class="fimg rv">
-      <img src="images/don-quixote.jpg" alt="Don Quixote in a single line" onerror="this.parentElement.style.aspectRatio='3/4';this.parentElement.classList.add('wplate','noimg');this.remove()" />
-    </figure>
-    <div class="rv">
-      <span class="mono">02 — Signature piece</span>
-      <h2>Don Quixote, in a <em>single line</em></h2>
-      <p>One unbroken gesture: a wandering knight, a loyal companion, and the distant windmill that became a symbol of impossible dreams. Literature reduced to pure visual poetry.</p>
-      <div class="pull">“The world is transformed not by what we see, but by what we dare to imagine.”</div>
-      <a href="#inquire" class="btn btn-out mag">Inquire about this work <span class="ar">→</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- ARTIST -->
-<section class="about" id="artist">
-  <div class="wrap">
-    <figure class="about-port rv">
-      <img src="images/work-04.jpg" alt="Detail of Cacophony, a painting by Ivaylo Peytchev" loading="lazy" />
-      <figcaption>From the studio / Cacophony</figcaption>
-    </figure>
-    <div class="rv">
-      <span class="mono">03 — Artist · writer · inventor</span>
-      <h2>Ideas in <em>motion.</em></h2>
-      <p>Ivaylo Peytchev paints in motion. Each canvas is a single, committed gesture — colour flung and pulled across the surface, then allowed to find its own order. Nothing is planned twice. Nothing is corrected. What looks like chaos is a decision made in one breath and never taken back.</p>
-      <p>The work moves between explosive colour and severe restraint — a festival on one wall, two colours of silence on the next. Built by hand in the studio, layered and instinctive. No editions. No reproductions. Only the original moment.</p>
-      <p>The same instinct continues beyond the canvas: into books, personal magazines, rebellious objects and new ways for people, places and ideas to tell their stories.</p>
-      <div class="quote">“The hand never lies. Whatever happened in front of the canvas, the paint remembers.”</div>
-      <div class="sig">Ivaylo Peytchev</div>
-    </div>
   </div>
 </section>
 
@@ -780,7 +695,7 @@
       <article class="world-card">
         <span class="world-no">02 / HOME</span>
         <h3>House Passport</h3>
-        <p>A living record of a home: its facts, care, repairs, memories and owner's soul—connected to a multilingual AI House Guardian.</p>
+        <p>A developing idea for a home’s facts, care, repairs and memories, with a multilingual AI House Guardian concept.</p>
         <div class="world-actions"><a class="world-ask" href="#inquire" onclick="pre('House Passport')">Discuss a home <span aria-hidden="true">→</span></a><button type="button" class="world-ask world-secondary" onclick="window.openIvoAI?.('Explain the House Passport and AI House Guardian idea.')">Ask A305X <span aria-hidden="true">→</span></button></div>
       </article>
       <article class="world-card">
@@ -799,37 +714,14 @@
   </div>
 </section>
 
-<!-- INQUIRE -->
-<section class="inq-sec" id="inquire">
-  <div class="wrap">
-    <div class="rv">
-      <span class="mono">05 — Acquire · commission · collaborate</span>
-      <h2>Inquire to <em>acquire</em></h2>
-      <p>Interested in a work, a commission, a private viewing or a creative project? Send a note and Ivaylo will reply personally with availability and details.</p>
-      <div class="inq-row"><b>Email</b><span><a href="mailto:usivaylo@gmail.com">usivaylo@gmail.com</a></span></div>
-      <div class="inq-row"><b>Studio</b><span>By appointment</span></div>
-      <div class="inq-row"><b>Follow</b><span><a href="https://instagram.com/ivosart" target="_blank" rel="noopener noreferrer">@ivosart ↗</a></span></div>
-    </div>
-    <form class="f rv" id="f">
-      <div class="fld"><label for="inqName">Name</label><input type="text" name="name" id="inqName" required /></div>
-      <div class="fld"><label for="inqEmail">Email</label><input type="email" name="email" id="inqEmail" required /></div>
-      <div class="fld"><label for="wfield">Work of interest</label><input type="text" name="work" id="wfield" placeholder="e.g. Crossing — or open to suggestions" /></div>
-      <div class="fld"><label for="inqMessage">Message</label><textarea name="message" id="inqMessage" placeholder="Tell me about the space…"></textarea></div>
-      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true" />
-      <button type="submit" class="btn btn-fill mag" id="submitInquiry">Open email draft <span class="ar">→</span></button>
-      <p class="form-note" id="formNote">Your email app will open with this message ready. Press Send there to contact Ivaylo.</p>
-    </form>
-  </div>
-</section>
-
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
     <div class="ftop">
       <div class="fname">Ivaylo<br><em>Peytchev</em></div>
       <div class="flinks">
-        <a href="#works">Works</a><a href="#statements">Art statements</a><a href="#signature">Signature</a><a href="#artist">Artist</a>
-        <a href="#worlds">Worlds</a><a href="#inquire">Inquire</a><a href="https://instagram.com/ivosart" target="_blank" rel="noopener">Instagram</a>
+        <a href="/gallery/">Full gallery</a><a href="/collections/art-statements/">Art statements</a><a href="#artist">Meet Ivo</a><a href="#collect">Buying art</a>
+        <a href="#worlds">Creative worlds</a><a href="#inquire">Inquire</a><a href="/privacy/">Privacy</a><a href="https://instagram.com/ivosart" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
     <div class="fbot">
@@ -933,7 +825,7 @@
         <aside class="er-result-art">
           <span class="er-mono">The painting that caught your eye</span>
           <div class="er-chosen" id="erChosen2"></div>
-          <button class="er-skip" id="erInquire">Inquire about this work ↗</button>
+          <button class="er-skip" id="erInquire">View this artwork ↗</button>
         </aside>
       </div>
       <div class="er-result-actions">
@@ -981,48 +873,13 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<script src="assets/inquiry.js" defer></script>
+<script src="assets/original-works.js"></script>
 <script src="assets/a305x-reader-data.js"></script>
 <script src="assets/framed-statements.js"></script>
 <script>
 /* ===== WORKS (no prices) — edit titles / medium / tags freely ===== */
-const works=[
- {img:"work-01.jpg",title:"Crossing",desc:"Two forces meet, and neither yields.",medium:"Acrylic on canvas · 70 × 90 cm · 2024",tags:["gesture","colour"]},
- {img:"work-02.jpg",title:"Tempest",desc:"Weather with a temper. Silver and blood, refusing to settle.",medium:"Acrylic & mixed media · 70 × 90 cm · 2023",tags:["colour","gesture"]},
- {img:"work-03.jpg",title:"Crimson Ascent",desc:"Red climbing out of its own wreckage.",medium:"Acrylic on canvas · 60 × 80 cm · 2024",tags:["colour","gesture"]},
- {img:"work-04.jpg",title:"Cacophony",desc:"Every voice at once — and somehow, a chord.",medium:"Mixed media · 90 × 120 cm · 2023",tags:["colour"]},
- {img:"work-05.jpg",title:"Resonance",desc:"A struck note you can see before you hear it.",medium:"Acrylic on canvas · 60 × 90 cm · 2024",tags:["colour","gesture"]},
- {img:"work-06.jpg",title:"First Light",desc:"The quietest violence in the room.",medium:"Acrylic on canvas · 60 × 80 cm · 2024",tags:["gesture"]},
- {img:"work-07.jpg",title:"Festival",desc:"Joy with no brakes on.",medium:"Acrylic on canvas · 80 × 80 cm · 2023",tags:["colour"]},
- {img:"work-08.jpg",title:"Constellation",desc:"A night sky that forgot to hold still.",medium:"Mixed media · 90 × 120 cm · 2023",tags:["colour","gesture"]},
- {img:"work-09.jpg",title:"Bloom in Chaos",desc:"Spring, if spring were an argument.",medium:"Acrylic on canvas · 80 × 80 cm · 2024",tags:["colour"]},
- {img:"work-10.jpg",title:"Nightshade",desc:"Beautiful, and not to be touched.",medium:"Acrylic on canvas · 60 × 80 cm · 2024",tags:["colour","gesture"]},
- {img:"work-11.jpg",title:"Monochrome Study",desc:"Everything loud, said in two colours.",medium:"Acrylic on canvas · 70 × 90 cm · 2023",tags:["monochrome","gesture"]},
- {img:"work-12.jpg",title:"Inferno",desc:"A slow burn that refuses to go out.",medium:"Acrylic on canvas · 70 × 90 cm · 2024",tags:["colour","gesture"]},
- {img:"work-13.jpg",title:"Devotion",desc:"Gold held together by its own dark gravity.",medium:"Acrylic & gold on canvas · 60 × 80 cm · 2024",tags:["ink","gesture"]},
- {img:"work-14.jpg",title:"Whisper",desc:"The least paint, saying the most.",medium:"Ink & gold on paper · 70 × 70 cm · 2024",tags:["ink","monochrome"]},
-
- /* ═══ A305X series — Area 305 / Miami collage cards ═══ (shows under "A305X" — add more with tags:["a305x"]) */
- {img:"a305x/a305x-01.webp",title:"Between Sun & Shadow",desc:"Miami, 305 — the city caught between sun and shadow.",medium:"Mixed-media collage · 2025",tags:["a305x"]},
- {img:"a305x/a305x-02.webp",title:"Analog Paradise",desc:"Area 305, Signal 04 — paradise, transmitted by hand.",medium:"Mixed-media collage · 2025",tags:["a305x"]},
- {img:"a305x/a305x-03.webp",title:"Afterglow",desc:"Miami, Florida — the arch, the sea, the last of the light.",medium:"Mixed-media collage · 2025",tags:["a305x"]},
-
- /* ═══ Zodiac series ═══  (shows under "Zodiac" — add more with tags:["zodiac"]) */
- {img:"zodiac/zodiac-01.webp",title:"Ascend",desc:"Gold lifts out of the red like a held breath released.",medium:"Oil & gold leaf on canvas · diptych · 2025",tags:["zodiac"]},
- {img:"zodiac/zodiac-02.webp",title:"Orbit",desc:"Five still points, and a blue ring that will not stop turning.",medium:"Oil & pigment on canvas · diptych · 2025",tags:["zodiac"]},
- {img:"zodiac/zodiac-03.webp",title:"Aperture",desc:"A single eye of gold, opened in a field of fire.",medium:"Oil & gold leaf on canvas · diptych · 2025",tags:["zodiac"]},
- {img:"zodiac/zodiac-04.webp",title:"Crown",desc:"Black rises from red — a crest, a flame, a coronation.",medium:"Oil on canvas · diptych · 2025",tags:["zodiac"]},
- {img:"zodiac/zodiac-05.webp",title:"Covenant",desc:"Two forms bound at the centre, refusing to part.",medium:"Oil on canvas · diptych · 2025",tags:["zodiac"]},
- {img:"zodiac/zodiac-06.webp",title:"Scorpius",desc:"The scorpion, laid in black across a burning sky.",medium:"Oil & mixed media on canvas · diptych · 2025",tags:["zodiac"]},
- {img:"zodiac/zodiac-07.webp",title:"Benediction",desc:"Two gold arms open over a still, dark heart.",medium:"Oil & gold leaf on canvas · diptych · 2025",tags:["zodiac"]},
- {img:"zodiac/zodiac-08.webp",title:"Radiance",desc:"Leo — the light it cannot help but throw.",medium:"Mixed-media collage · 2025",tags:["zodiac"]},
- {img:"zodiac/zodiac-09.webp",title:"Integrity",desc:"Virgo — every line true, nothing out of place.",medium:"Mixed-media collage · 2025",tags:["zodiac"]},
- {img:"zodiac/zodiac-10.webp",title:"Endurance",desc:"Capricorn — holding the long line without complaint.",medium:"Mixed-media collage · 2025",tags:["zodiac"]},
- {img:"zodiac/zodiac-11.webp",title:"Resolve",desc:"Capricorn — the climb decided before the first step.",medium:"Mixed-media collage · 2025",tags:["zodiac"]},
- {img:"zodiac/zodiac-12.webp",title:"Equilibrium",desc:"Libra — weighing the world until it balances.",medium:"Mixed-media collage · 2025",tags:["zodiac"]},
- {img:"zodiac/zodiac-13.webp",title:"Curiosity",desc:"Gemini — two minds, one restless question.",medium:"Mixed-media collage · 2025",tags:["zodiac"]},
- {img:"zodiac/zodiac-14.webp",title:"Innovation",desc:"Aquarius — pouring the new thing into an old sky.",medium:"Mixed-media collage · 2025",tags:["zodiac"]},
- {img:"zodiac/zodiac-15.webp",title:"Nurture",desc:"Cancer — the moon cradled in quiet water.",medium:"Mixed-media collage · 2025",tags:["zodiac"]},
-];
+const works=window.IvosArtWorks;
 
 const flow=document.getElementById("flow");
 const pad=n=>String(n).padStart(2,"0");
@@ -1052,11 +909,11 @@ function render(f=currentFilter){
         </div>
       </button>
       <div class="wtext">
-        <div class="idx">Work №${pad(k+1)} / ${pad(list.length)}</div>
+        <div class="idx">${w.kind} · ${w.sold?"Acquired":"Availability on request"}</div>
         <h3>${w.title}</h3>
         ${w.desc?`<p class="wdesc">${w.desc}</p>`:""}
-        <div class="med">${w.medium}</div>
-        ${w.sold?'<span class="acq">Acquired</span>':`<a class="inq" href="#inquire" onclick="pre('${w.title.replace(/'/g,'')}')">Inquire to acquire <span class="ar">→</span></a>`}
+        <div class="med">${w.medium}</div><a class="detail-link" href="/artworks/${w.slug}/">Artwork details ↗</a>
+        ${w.sold?'<span class="acq">Acquired</span>':`<a class="inq" href="#inquire" onclick="pre('${w.title.replace(/'/g,'')}')">Request price <span class="ar">→</span></a>`}
       </div>`;
     flow.appendChild(el);
     el.querySelector(".wmedia").addEventListener("click",()=>openLb(o.i));
@@ -1064,7 +921,7 @@ function render(f=currentFilter){
   });
   bind();
 }
-document.getElementById("moreWorks").addEventListener("click",()=>{expanded=true;render("all");});
+
 
 /* filters */
 document.getElementById("fil").addEventListener("click",e=>{
@@ -1081,11 +938,12 @@ const lb=document.getElementById("lb"),stage=document.getElementById("lbstage");
 function openLb(i){li=i;lightboxTrigger=document.activeElement;drawLb();lb.inert=false;lb.classList.add("open");document.body.style.overflow="hidden";document.getElementById("lbx").focus();}
 function drawLb(){const w=works[li];stage.innerHTML=`
   <img src="images/${w.img}" alt="${w.title}" onerror="this.outerHTML='<div style=\\'width:60vw;max-width:440px;aspect-ratio:4/5;background:linear-gradient(150deg,#2a261d,#1a160f);display:grid;place-items:center;color:#6c655a;font-family:var(--serif);font-style:italic\\'>${w.title}</div>'"/>
-  <div class="lb-info"><h3>${w.title}</h3>${w.desc?`<p class="lb-desc">${w.desc}</p>`:""}<div class="m">${w.medium}</div>
-  ${w.sold?'<span class="acq">Acquired</span>':`<a href="#inquire" class="btn mag" onclick="pre('${w.title.replace(/'/g,'')}');closeLb()">Inquire to acquire <span class="ar">→</span></a>`}</div>`;bind();}
+  <div class="lb-info"><h3>${w.title}</h3>${w.desc?`<p class="lb-desc">${w.desc}</p>`:""}<div class="m">${w.medium}</div><p class="viewer-status">${w.sold?"Acquired":"Availability and framing confirmed by the studio"}</p><a class="detail-link" href="/artworks/${w.slug}/">Full artwork page ↗</a>
+  ${w.sold?'<span class="acq">Acquired</span>':`<a href="#inquire" class="btn mag" onclick="pre('${w.title.replace(/'/g,'')}');closeLb()">Request price <span class="ar">→</span></a>`}</div>`;bind();}
 function closeLb(){lb.classList.remove("open");lb.inert=true;document.body.style.overflow="";if(lightboxTrigger?.isConnected)lightboxTrigger.focus();}
 function step(d){const k=visibleWorkIndices.indexOf(li);li=visibleWorkIndices[(k+d+visibleWorkIndices.length)%visibleWorkIndices.length];drawLb();}
 document.getElementById("lbx").onclick=closeLb;
+lb.addEventListener("keydown",event=>{if(event.key!=="Tab"||!lb.classList.contains("open"))return;const focusable=[...lb.querySelectorAll("button,a[href]")];const first=focusable[0],last=focusable[focusable.length-1];if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}});
 document.getElementById("lbp").onclick=()=>step(-1);
 document.getElementById("lbnx").onclick=()=>step(1);
 lb.addEventListener("click",e=>{if(e.target===lb)closeLb();});
@@ -1094,50 +952,8 @@ addEventListener("keydown",e=>{if(!lb.classList.contains("open"))return;if(e.key
 /* inquire prefill */
 function pre(t){const f=document.getElementById("wfield");if(f)f.value=t;}
 
-/* ===== INQUIRY FORM =====
-   To send submissions silently to your inbox (no page redirect):
-   1. Go to https://web3forms.com  → enter usivaylo@gmail.com → they email you an Access Key (no account needed)
-   2. Paste that key below, replacing PASTE_YOUR_WEB3FORMS_KEY_HERE, then push.
-   Until then, the form opens a pre-filled email to you (works on every device with mail set up). */
-const WEB3FORMS_KEY = "PASTE_YOUR_WEB3FORMS_KEY_HERE";
-const INBOX = "usivaylo@gmail.com";
-const form = document.getElementById("f");
 const toast = document.getElementById("toast");
-const formSendEnabled=Boolean(WEB3FORMS_KEY&&WEB3FORMS_KEY!=="PASTE_YOUR_WEB3FORMS_KEY_HERE");
-if(formSendEnabled){document.getElementById("submitInquiry").innerHTML='Send inquiry <span class="ar">→</span>';document.getElementById("formNote").textContent="Your message will be sent to the studio.";}
 function showToast(msg){toast.textContent=msg;toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),3200);}
-form.addEventListener("submit", async e=>{
-  e.preventDefault();
-  const d = Object.fromEntries(new FormData(form).entries());
-  // Fallback (no service key yet): open a pre-filled email
-  if(!formSendEnabled){
-    const subject = encodeURIComponent(`Inquiry — ${d.work || "IvosArt"}`);
-    const body = encodeURIComponent(`Name: ${d.name||""}\nEmail: ${d.email||""}\nWork of interest: ${d.work||"(open to suggestions)"}\n\n${d.message||""}`);
-    window.location.href = `mailto:${INBOX}?subject=${subject}&body=${body}`;
-    showToast("Email draft opened — press Send in your email app.");
-    return;
-  }
-  // Service send (silent, stays on page)
-  const btn = form.querySelector('button[type="submit"]');
-  const original = btn.innerHTML; btn.disabled = true; btn.innerHTML = "Sending…";
-  try{
-    const res = await fetch("https://api.web3forms.com/submit",{
-      method:"POST",
-      headers:{"Content-Type":"application/json","Accept":"application/json"},
-      body: JSON.stringify({
-        access_key: WEB3FORMS_KEY,
-        subject: `New inquiry — ${d.work || "IvosArt"}`,
-        from_name: "IvosArt website",
-        name: d.name, email: d.email, work: d.work, message: d.message, botcheck: d.botcheck
-      })
-    });
-    const out = await res.json();
-    if(out.success){ form.reset(); showToast("Inquiry sent — thank you ✦"); }
-    else { showToast(`Couldn't send — please email ${INBOX}`); }
-  }catch(err){ showToast(`Network error — please email ${INBOX}`); }
-  btn.disabled = false; btn.innerHTML = original;
-});
-
 /* reveal */
 const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}});},{threshold:.12});
 document.querySelectorAll(".rv").forEach(el=>io.observe(el));
@@ -1170,13 +986,8 @@ document.querySelectorAll("[data-split]").forEach(node=>{
   [...t].forEach((c,i)=>{const s=document.createElement("span");s.className="ch";s.textContent=c;s.style.transitionDelay=(.04*i)+"s";node.appendChild(s);});
 });
 
-/* loader */
-const loader=document.getElementById("loader"),lcount=document.getElementById("lcount"),lbar=document.getElementById("lbar");
-let n=0;const t=setInterval(()=>{
-  n+=Math.ceil((100-n)*.08)+1;if(n>=100){n=100;clearInterval(t);finish();}
-  lcount.textContent=pad(n);lbar.style.transform="scaleX("+(n/100)+")";
-},55);
-function finish(){setTimeout(()=>{loader.classList.add("done");document.getElementById("hero").classList.add("go");},250);}
+document.getElementById("loader").classList.add("done");
+document.getElementById("hero").classList.add("go");
 
 /* ===== A305X — Ivo's inner voice ===== */
 (function(){
@@ -1401,7 +1212,7 @@ function finish(){setTimeout(()=>{loader.classList.add("done");document.getEleme
   document.getElementById("erReveal").onclick=reveal;
   word.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();reveal();}});
   document.getElementById("erAgain").onclick=()=>{cancelRequest();reset();show("mood");};
-  document.getElementById("erInquire").onclick=()=>{if(chosen)pre(chosen.title);close();location.hash="#inquire";};
+  document.getElementById("erInquire").onclick=()=>{if(chosen){const w=works.find(w=>w.title===chosen.title);if(w){location.href="/artworks/"+w.slug+"/";return;}pre(chosen.title);}close();location.hash="#inquire";};
   document.getElementById("erDiscuss").onclick=()=>{
     if(!result||!chosen)return;
     const prompt="I chose "+chosen.title+" and my A305X rebel signal was '"+result.signal+"'. Here is my playful art reading: "+result.reading+" Help me explore my own interpretation of this painting.";
@@ -1418,25 +1229,7 @@ function finish(){setTimeout(()=>{loader.classList.add("done");document.getEleme
 
 render();bind();
 </script>
-<dialog class="fr-viewer" id="frViewer" aria-labelledby="frViewerTitle" aria-describedby="frViewerCaption">
-  <div class="fr-viewbar">
-    <span class="mono">IvosArt / Framed. Never tamed. / <span id="frCount">01 / 13</span></span>
-    <button class="fr-close" id="frClose" type="button" aria-label="Close framed artwork" autofocus>✕</button>
-  </div>
-  <div class="fr-viewstage">
-    <button class="fr-nav" id="frPrevious" type="button" aria-label="Previous framed statement">←</button>
-    <img id="frViewerImage" width="1254" height="1254" alt="" />
-    <button class="fr-nav" id="frNext" type="button" aria-label="Next framed statement">→</button>
-  </div>
-  <div class="fr-viewcopy">
-    <div aria-live="polite" aria-atomic="true"><h3 id="frViewerTitle">Agape — The geometry of love</h3><p id="frViewerCaption"></p></div>
-    <div class="fr-actions">
-      <a class="fr-link" id="frViewerInquire" href="#inquire">Make room for this <span aria-hidden="true">→</span></a>
-      <a class="fr-link" id="frOriginal" href="images/statements/agape-geometry.webp" target="_blank" rel="noopener">View full resolution <span aria-hidden="true">↗</span></a>
-      <button class="fr-link" id="frViewerAsk" type="button">Ask A305X <span aria-hidden="true">↗</span></button>
-    </div>
-  </div>
-</dialog>
-<script src="assets/framed-gallery.js"></script>
+
+
 </body>
 </html>
