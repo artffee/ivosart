@@ -34,7 +34,7 @@ Commit the generated pages with the source changes. The published site requires 
 `assets/inquiry.js` prefills the artwork from `?work=...`, checks `/api/inquiry` for configured delivery, and maintains truthful messaging:
 
 - If sending is unconfigured, the form opens an email draft to `usivaylo@gmail.com`; the visitor presses Send there. A copy-inquiry action is also available.
-- If sending is configured, it sends directly through `/api/inquiry`, confirms provider acceptance, preserves the message on failure, and reuses an idempotency key for a retry of the same content.
+- If sending is configured, it sends directly through `/api/inquiry`, confirms provider acceptance, preserves the message on failure, and reuses an idempotency key for a retry of the same content. An explicit email-draft action remains available. If configuration becomes unavailable, the primary action switches back to a draft. Form controls are locked while sending; successful submissions retain the selected artwork.
 
 To enable direct delivery, set **production** Vercel environment variables:
 
@@ -45,6 +45,8 @@ Redeploy after setting them. Keys remain server-side. The recipient is fixed to 
 
 Direct sending was implemented but **not activated** by the October 15 update: the Vercel connector could not access the project's scope, and no verified sending configuration was available. Do not claim delivery is enabled until `GET /api/inquiry` returns `{"enabled":true}` and an authorized delivery test has succeeded.
 
+The October 16 production check still returned `{"enabled":false}`. Both inquiry variables were missing. The IvosArt Resend domain has now been prepared within the existing allowance, but Namecheap DNS verification, Vercel team write access and a studio-inbox receipt check remain necessary. See [the activation guide](docs/inquiry-delivery.md) for exact provider DNS records, secure production settings and the delivery test. No production email has been confirmed.
+
 ## A305X
 
 The multilingual animated studio guide remains in `index.html`, with `api/chat.js` calling Gemini using server-side `GEMINI_API_KEY`. The choice-based reader uses `api/reading.js`, `lib/a305x-reader.js` and `assets/a305x-reader-data.js`, including a local fallback. Its result now links to the chosen artwork page. It is an entertainment experience based on choices, not a literal mind-reading or measurement tool.
@@ -54,11 +56,11 @@ Flamingo motion remains pausable and respects reduced-motion preferences. Origin
 ## Validation
 
 ```sh
-node --test tests/inquiry.test.js tests/reading.test.js
+node --test tests/inquiry.test.js tests/inquiry-client.test.js tests/reading.test.js
 node --check assets/catalogue-ui.js
 node --check assets/inquiry.js
 node --check api/inquiry.js
 node scripts/build-catalogue.js
 ```
 
-Inquiry tests stub the delivery provider; they do not send email. The update also validates local links, image paths, anchor targets, duplicate IDs and inline JavaScript across all 50 pages. Managed browser preview was unavailable in the implementation environment, so responsive layouts still need visual review on a phone and desktop.
+Inquiry tests stub the delivery provider; they do not send email. Client regression coverage includes artwork-prefilled drafts, unavailable capability checks, success, in-flight duplicate prevention, failed sends, unchanged/edited retries, configuration loss, malformed responses, timeouts and manual fallback. Browser layout and flow results are recorded in the activation guide. Catalogue regeneration should leave the existing 46 artwork pages, gallery navigation and metadata unchanged for inquiry-only changes.

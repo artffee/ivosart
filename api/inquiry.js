@@ -44,6 +44,8 @@ module.exports = async (req, res) => {
       body:JSON.stringify({from:process.env.INQUIRY_FROM,to:[inbox],reply_to:data.email,subject:'IvosArt inquiry — '+(data.work||'Artwork'),text})
     });
     const result = await upstream.json().catch(()=>({}));
+    // A revoked key or unverified sender needs configuration, not another send.
+    if (upstream.status === 401 || upstream.status === 403) return res.status(503).json({ error: 'Direct inquiries are temporarily unavailable. Please use an email draft.' });
     if (!upstream.ok || !result.id) return res.status(502).json({ error: 'The studio could not accept your inquiry just now. Please try again.' });
     return res.status(200).json({ ok:true });
   } catch { return res.status(502).json({ error: 'We could not confirm delivery. Please try again.' }); }
