@@ -25,19 +25,45 @@
 <meta name="twitter:title" content="Ivaylo Peytchev — IvosArt" />
 <meta name="twitter:description" content="Original paintings, books and story-led creative worlds by Ivaylo Peytchev." />
 <meta name="twitter:image" content="https://ivosart.com/images/work-01.jpg" />
+<meta name="twitter:image:alt" content="Crossing — a painting by Ivaylo Peytchev" />
 
 <!-- Structured data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Ivaylo Peytchev",
-  "alternateName": "IvosArt",
-  "url": "https://ivosart.com/",
-  "jobTitle": "Artist, writer and creative inventor",
-  "description": "Artist, writer and creative inventor creating original paintings, books and story-led experiences.",
-  "email": "usivaylo@gmail.com",
-  "knowsAbout": ["Abstract painting", "Contemporary art", "Story design", "Creative publishing", "Interactive studio experiences"]
+  "@graph": [
+    {
+      "@type": "Person",
+      "name": "Ivaylo Peytchev",
+      "alternateName": "IvosArt",
+      "url": "https://ivosart.com/",
+      "jobTitle": "Artist, writer and creative inventor",
+      "description": "Artist, writer and creative inventor creating original paintings, books and story-led experiences.",
+      "email": "usivaylo@gmail.com",
+      "knowsAbout": [
+        "Abstract painting",
+        "Contemporary art",
+        "Story design",
+        "Creative publishing",
+        "Interactive studio experiences"
+      ],
+      "@id": "https://ivosart.com/#artist",
+      "sameAs": [
+        "https://instagram.com/ivosart"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ivosart.com/#website",
+      "url": "https://ivosart.com/",
+      "name": "IvosArt",
+      "alternateName": "IvosArt — Ivaylo Peytchev",
+      "publisher": {
+        "@id": "https://ivosart.com/#artist"
+      },
+      "inLanguage": "en"
+    }
+  ]
 }
 </script>
 
@@ -504,6 +530,7 @@
 <link rel="stylesheet" href="assets/framed-gallery.css" />
 <link rel="stylesheet" href="/assets/collector.css" />
 <link rel="stylesheet" href="/assets/book-feature.css" />
+<script src="/assets/analytics.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#works">Skip to the paintings</a>

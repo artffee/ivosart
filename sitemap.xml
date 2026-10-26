@@ -1,55 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url><loc>https://ivosart.com/</loc></url>
   <url><loc>https://ivosart.com/gallery/</loc></url>
   <url><loc>https://ivosart.com/books/the-quiet-between-us/</loc></url>
   <url><loc>https://ivosart.com/collections/art-statements/</loc></url>
   <url><loc>https://ivosart.com/privacy/</loc></url>
-  <url><loc>https://ivosart.com/artworks/crossing/</loc></url>
-  <url><loc>https://ivosart.com/artworks/tempest/</loc></url>
-  <url><loc>https://ivosart.com/artworks/crimson-ascent/</loc></url>
-  <url><loc>https://ivosart.com/artworks/cacophony/</loc></url>
-  <url><loc>https://ivosart.com/artworks/resonance/</loc></url>
-  <url><loc>https://ivosart.com/artworks/first-light/</loc></url>
-  <url><loc>https://ivosart.com/artworks/festival/</loc></url>
-  <url><loc>https://ivosart.com/artworks/constellation/</loc></url>
-  <url><loc>https://ivosart.com/artworks/bloom-in-chaos/</loc></url>
-  <url><loc>https://ivosart.com/artworks/nightshade/</loc></url>
-  <url><loc>https://ivosart.com/artworks/monochrome-study/</loc></url>
-  <url><loc>https://ivosart.com/artworks/inferno/</loc></url>
-  <url><loc>https://ivosart.com/artworks/devotion/</loc></url>
-  <url><loc>https://ivosart.com/artworks/whisper/</loc></url>
-  <url><loc>https://ivosart.com/artworks/between-sun-and-shadow/</loc></url>
-  <url><loc>https://ivosart.com/artworks/analog-paradise/</loc></url>
-  <url><loc>https://ivosart.com/artworks/afterglow/</loc></url>
-  <url><loc>https://ivosart.com/artworks/ascend/</loc></url>
-  <url><loc>https://ivosart.com/artworks/orbit/</loc></url>
-  <url><loc>https://ivosart.com/artworks/aperture/</loc></url>
-  <url><loc>https://ivosart.com/artworks/crown/</loc></url>
-  <url><loc>https://ivosart.com/artworks/covenant/</loc></url>
-  <url><loc>https://ivosart.com/artworks/scorpius/</loc></url>
-  <url><loc>https://ivosart.com/artworks/benediction/</loc></url>
-  <url><loc>https://ivosart.com/artworks/radiance/</loc></url>
-  <url><loc>https://ivosart.com/artworks/integrity/</loc></url>
-  <url><loc>https://ivosart.com/artworks/endurance/</loc></url>
-  <url><loc>https://ivosart.com/artworks/resolve/</loc></url>
-  <url><loc>https://ivosart.com/artworks/equilibrium/</loc></url>
-  <url><loc>https://ivosart.com/artworks/curiosity/</loc></url>
-  <url><loc>https://ivosart.com/artworks/innovation/</loc></url>
-  <url><loc>https://ivosart.com/artworks/nurture/</loc></url>
-  <url><loc>https://ivosart.com/artworks/agape-geometry/</loc></url>
-  <url><loc>https://ivosart.com/artworks/ignis-geometry/</loc></url>
-  <url><loc>https://ivosart.com/artworks/aether-geometry/</loc></url>
-  <url><loc>https://ivosart.com/artworks/harmonia-embrace/</loc></url>
-  <url><loc>https://ivosart.com/artworks/metanoia-becoming/</loc></url>
-  <url><loc>https://ivosart.com/artworks/aether-wonder/</loc></url>
-  <url><loc>https://ivosart.com/artworks/shekinah-light/</loc></url>
-  <url><loc>https://ivosart.com/artworks/agape-love/</loc></url>
-  <url><loc>https://ivosart.com/artworks/freedom-in-motion/</loc></url>
-  <url><loc>https://ivosart.com/artworks/chaos-with-purpose/</loc></url>
-  <url><loc>https://ivosart.com/artworks/beautifully-untamed/</loc></url>
-  <url><loc>https://ivosart.com/artworks/escape-the-matrix/</loc></url>
-  <url><loc>https://ivosart.com/artworks/untitled-motion-study/</loc></url>
-  <url><loc>https://ivosart.com/artworks/don-quixote/</loc></url>
+  <url><loc>https://ivosart.com/artworks/crossing/</loc><image:image><image:loc>https://ivosart.com/images/work-01.jpg</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/tempest/</loc><image:image><image:loc>https://ivosart.com/images/work-02.jpg</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/crimson-ascent/</loc><image:image><image:loc>https://ivosart.com/images/work-03.jpg</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/cacophony/</loc><image:image><image:loc>https://ivosart.com/images/work-04.jpg</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/resonance/</loc><image:image><image:loc>https://ivosart.com/images/work-05.jpg</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/first-light/</loc><image:image><image:loc>https://ivosart.com/images/work-06.jpg</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/festival/</loc><image:image><image:loc>https://ivosart.com/images/work-07.jpg</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/constellation/</loc><image:image><image:loc>https://ivosart.com/images/work-08.jpg</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/bloom-in-chaos/</loc><image:image><image:loc>https://ivosart.com/images/work-09.jpg</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/nightshade/</loc><image:image><image:loc>https://ivosart.com/images/work-10.jpg</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/monochrome-study/</loc><image:image><image:loc>https://ivosart.com/images/work-11.jpg</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/inferno/</loc><image:image><image:loc>https://ivosart.com/images/work-12.jpg</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/devotion/</loc><image:image><image:loc>https://ivosart.com/images/work-13.jpg</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/whisper/</loc><image:image><image:loc>https://ivosart.com/images/work-14.jpg</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/between-sun-and-shadow/</loc><image:image><image:loc>https://ivosart.com/images/a305x/a305x-01.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/analog-paradise/</loc><image:image><image:loc>https://ivosart.com/images/a305x/a305x-02.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/afterglow/</loc><image:image><image:loc>https://ivosart.com/images/a305x/a305x-03.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/ascend/</loc><image:image><image:loc>https://ivosart.com/images/zodiac/zodiac-01.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/orbit/</loc><image:image><image:loc>https://ivosart.com/images/zodiac/zodiac-02.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/aperture/</loc><image:image><image:loc>https://ivosart.com/images/zodiac/zodiac-03.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/crown/</loc><image:image><image:loc>https://ivosart.com/images/zodiac/zodiac-04.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/covenant/</loc><image:image><image:loc>https://ivosart.com/images/zodiac/zodiac-05.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/scorpius/</loc><image:image><image:loc>https://ivosart.com/images/zodiac/zodiac-06.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/benediction/</loc><image:image><image:loc>https://ivosart.com/images/zodiac/zodiac-07.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/radiance/</loc><image:image><image:loc>https://ivosart.com/images/zodiac/zodiac-08.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/integrity/</loc><image:image><image:loc>https://ivosart.com/images/zodiac/zodiac-09.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/endurance/</loc><image:image><image:loc>https://ivosart.com/images/zodiac/zodiac-10.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/resolve/</loc><image:image><image:loc>https://ivosart.com/images/zodiac/zodiac-11.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/equilibrium/</loc><image:image><image:loc>https://ivosart.com/images/zodiac/zodiac-12.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/curiosity/</loc><image:image><image:loc>https://ivosart.com/images/zodiac/zodiac-13.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/innovation/</loc><image:image><image:loc>https://ivosart.com/images/zodiac/zodiac-14.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/nurture/</loc><image:image><image:loc>https://ivosart.com/images/zodiac/zodiac-15.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/agape-geometry/</loc><image:image><image:loc>https://ivosart.com/images/statements/agape-geometry.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/ignis-geometry/</loc><image:image><image:loc>https://ivosart.com/images/statements/ignis-geometry.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/aether-geometry/</loc><image:image><image:loc>https://ivosart.com/images/statements/aether-geometry.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/harmonia-embrace/</loc><image:image><image:loc>https://ivosart.com/images/statements/harmonia-embrace.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/metanoia-becoming/</loc><image:image><image:loc>https://ivosart.com/images/statements/metanoia-becoming.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/aether-wonder/</loc><image:image><image:loc>https://ivosart.com/images/statements/aether-wonder.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/shekinah-light/</loc><image:image><image:loc>https://ivosart.com/images/statements/shekinah-light.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/agape-love/</loc><image:image><image:loc>https://ivosart.com/images/statements/agape-love.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/freedom-in-motion/</loc><image:image><image:loc>https://ivosart.com/images/statements/freedom-in-motion.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/chaos-with-purpose/</loc><image:image><image:loc>https://ivosart.com/images/statements/chaos-with-purpose.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/beautifully-untamed/</loc><image:image><image:loc>https://ivosart.com/images/statements/beautifully-untamed.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/escape-the-matrix/</loc><image:image><image:loc>https://ivosart.com/images/statements/escape-the-matrix.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/untitled-motion-study/</loc><image:image><image:loc>https://ivosart.com/images/statements/untitled-motion-study.webp</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/don-quixote/</loc><image:image><image:loc>https://ivosart.com/images/don-quixote.jpg</image:loc></image:image></url>
 </urlset>
-
