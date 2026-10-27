@@ -7,8 +7,8 @@ const sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
 const routes=[...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);
 function read(url){return fs.readFileSync(path.join(root,new URL(url).pathname,'index.html'),'utf8');}
 function jsonld(html){return [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap(m=>JSON.parse(m[1]));}
-test('all 51 canonical pages have indexable metadata, social images and exactly one analytics loader',()=>{
- assert.equal(routes.length,51);assert.equal(new Set(routes).size,51);
+test('all 54 canonical pages have indexable metadata, social images and exactly one analytics loader',()=>{
+ assert.equal(routes.length,54);assert.equal(new Set(routes).size,54);
  for(const url of routes){const html=read(url);
   assert.ok(html.includes(`rel="canonical" href="${url}"`),url);
   assert.ok(html.includes(`property="og:url" content="${url}"`),url);
@@ -21,9 +21,9 @@ test('all 51 canonical pages have indexable metadata, social images and exactly 
   for(const m of html.matchAll(/(?:property="og:image"|name="twitter:image") content="https:\/\/ivosart.com([^"?]+)"/g)){assert.ok(fs.existsSync(path.join(root,m[1])),m[1]);}
  }
 });
-test('all 46 artwork pages have accurate ordered breadcrumbs, artwork schema and image sitemap entries',()=>{
- const artworkRoutes=routes.filter(url=>url.includes('/artworks/'));assert.equal(artworkRoutes.length,46);
- assert.equal((sitemap.match(/<image:image>/g)||[]).length,46);
+test('all 49 artwork pages have accurate ordered breadcrumbs, artwork schema and image sitemap entries',()=>{
+ const artworkRoutes=routes.filter(url=>url.includes('/artworks/'));assert.equal(artworkRoutes.length,49);
+ assert.equal((sitemap.match(/<image:image>/g)||[]).length,49);
  for(const url of artworkRoutes){const data=jsonld(read(url));const art=data.find(x=>x['@type']==='VisualArtwork');const crumbs=data.find(x=>x['@type']==='BreadcrumbList');
   assert.equal(art.url,url);assert.equal(art.creator['@id'],'https://ivosart.com/#artist');assert.ok(!art.offers);
   assert.deepEqual(crumbs.itemListElement.map(x=>x.position),[1,2,3]);assert.equal(crumbs.itemListElement[2].item,url);

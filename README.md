@@ -6,8 +6,8 @@ The artist's portfolio at https://ivosart.com. Static HTML/CSS/JavaScript with V
 
 The homepage leads with six paintings, compact collection links, the artist's signature work and biography, buying information, and a studio inquiry. A305X and Creative Worlds remain as optional discovery sections below the inquiry. The oversized loading animation has been removed. Cream, ink, bronze, existing typography and all original image assets are retained.
 
-- `/gallery/`: 46 works; collection filters, title search, artwork-page links.
-- `/collections/art-statements/`: the 13 framed presentations, grouped into geometry, affirmations and free gestures.
+- `/gallery/`: 49 works; collection filters, title search, artwork-page links.
+- `/collections/art-statements/`: the 16 framed presentations, grouped into geometry, affirmations and free gestures.
 - `/artworks/<slug>/`: static, shareable artwork page with metadata, enlarged image dialog, full image link, catalogue facts, price request, related works and canonical/social tags.
 - `/privacy/`: inquiry, hosting and optional AI data-flow explanation.
 - `sitemap.xml`: all public artwork and collection routes.
@@ -17,7 +17,7 @@ Prices and stock are **not invented**. The first 14 existing paintings are descr
 ## Edit artwork data
 
 - `assets/original-works.js`: the 32 existing catalogue records, now shared by the homepage and static generator.
-- `assets/framed-statements.js`: the 13 framed presentations (also used by the AI backend).
+- `assets/framed-statements.js`: the 16 framed presentations (also used by the AI backend).
 - `scripts/build-catalogue.js`: adds the signature Don Quixote record and generates the pages and sitemap.
 - `api/works.js`: the guide/reader's existing catalogue; mirror changes to original-work titles and medium here as well.
 
@@ -63,4 +63,4 @@ node --check api/inquiry.js
 node scripts/build-catalogue.js
 ```
 
-Inquiry tests stub the delivery provider; they do not send email. Client regression coverage includes artwork-prefilled drafts, unavailable capability checks, success, in-flight duplicate prevention, failed sends, unchanged/edited retries, configuration loss, malformed responses, timeouts and manual fallback. Browser layout and flow results are recorded in the activation guide. Catalogue regeneration should leave the existing 46 artwork pages, gallery navigation and metadata unchanged for inquiry-only changes.
+Inquiry tests stub the delivery provider; they do not send email. Client regression coverage includes artwork-prefilled drafts, unavailable capability checks, success, in-flight duplicate prevention, failed sends, unchanged/edited retries, configuration loss, malformed responses, timeouts and manual fallback. Browser layout and flow results are recorded in the activation guide. Catalogue regeneration should leave the existing 49 artwork pages, gallery navigation and metadata unchanged for inquiry-only changes.
