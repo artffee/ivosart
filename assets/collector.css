@@ -6,3 +6,5 @@
 /* The persistent header uses ink on paper in every scroll position. */
 header,header.solid{mix-blend-mode:normal;color:var(--ink);background:rgba(244,241,234,.97);border-bottom:1px solid var(--line)}
 .inquiry-alternatives{display:flex;flex-wrap:wrap;gap:12px 24px}.inquiry-alternatives button{min-height:44px;text-align:left}.f[aria-busy="true"] button{cursor:wait}.f :disabled{opacity:.65}
+
+.hero-img img{height:auto}

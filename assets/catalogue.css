@@ -2,3 +2,6 @@
 @media(max-width:1000px){.artwork-layout{gap:30px}.art-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card-image img{height:330px}.site-header nav{gap:15px}}
 @media(max-width:640px){body{font-size:16px}.site-header{display:block;padding:20px 6vw}.site-header nav{margin-top:17px;justify-content:space-between;gap:12px;font-size:.62rem}.brand{font-size:1.3rem}main{padding:0 6vw}.artwork-layout{grid-template-columns:1fr;gap:12px;padding-top:0}.artwork-image img{max-height:520px}.artwork-copy h1{font-size:3.3rem}.art-facts>div{grid-template-columns:90px 1fr;gap:13px}.art-grid{grid-template-columns:1fr;gap:40px}.card-image img{height:auto;max-height:490px}.page-intro{padding:40px 0 28px}.page-intro h1{font-size:3.5rem}.gallery-controls{gap:20px}.search-label,.search-label input{width:100%}.filter-buttons{gap:8px}.filter-buttons button{font-size:.8rem;padding:10px 14px}.collection-nav{gap:6px 17px}.collection-chapter{padding:30px 0 45px}.prose h1{font-size:3.3rem}footer{padding-left:6vw;padding-right:6vw}.breadcrumbs{font-size:.76rem}.buy-note h2{font-size:2.3rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card-image img{transition:none}}
+
+/* Intrinsic image dimensions reserve space before artwork files load. */
+.art-card h2{font-size:2rem;margin:12px 0}.artwork-image img{height:auto}

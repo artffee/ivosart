@@ -27,7 +27,7 @@ After changing catalogue data, run:
 node scripts/build-catalogue.js
 ```
 
-Commit the generated pages with the source changes. The published site requires no runtime build. Changing a title can change its generated slug; preserve established slugs and add redirects when deliberately renaming a public URL.
+The generator also refreshes the homepage’s six static featured-work cards and verified image dimensions from the actual image files. Featured artwork links remain available before JavaScript runs. Commit the generated pages with the source changes. The published site requires no runtime build. Changing a title can change its generated slug; preserve established slugs and add redirects when deliberately renaming a public URL.
 
 ## Inquiries
 
@@ -56,7 +56,7 @@ Flamingo motion remains pausable and respects reduced-motion preferences. Origin
 ## Validation
 
 ```sh
-node --test tests/inquiry.test.js tests/inquiry-client.test.js tests/reading.test.js
+node --test tests/*.test.js
 node --check assets/catalogue-ui.js
 node --check assets/inquiry.js
 node --check api/inquiry.js
