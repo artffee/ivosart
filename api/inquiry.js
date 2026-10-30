@@ -47,7 +47,7 @@ module.exports = async (req, res) => {
     // Operational metadata only: never log credentials, messages or addresses.
     if (!upstream.ok || typeof result.id !== 'string' || !result.id) {
       const providerError = typeof result.name === 'string' && /^[a-z_]{1,60}$/.test(result.name) ? result.name : 'unknown';
-      console.error('Inquiry provider rejection', { status: upstream.status, error: providerError });
+      console.error('Inquiry provider rejection', { status: upstream.status, error: providerError, format: (upstream.headers?.get('content-type') || '').split(';')[0], fields: Object.keys(result).filter(key => /^[a-z_]{1,30}$/i.test(key)).slice(0,8), keyFormatValid: /^re_[A-Za-z0-9_-]+$/.test(process.env.RESEND_API_KEY) });
     }
     // A revoked key or unverified sender needs configuration, not another send.
     if (upstream.status === 401 || upstream.status === 403) return res.status(503).json({ error: 'Direct inquiries are temporarily unavailable. Please use an email draft.' });
