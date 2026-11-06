@@ -17,6 +17,8 @@ module.exports = async (req, res) => {
   try { data = typeof req.body === 'string' ? JSON.parse(req.body) : req.body; } catch { return res.status(400).json({ error: 'Invalid request.' }); }
   if (!data || typeof data !== 'object' || Array.isArray(data) || JSON.stringify(data).length > 9000) return res.status(400).json({ error: 'Please shorten your inquiry.' });
   if (data.botcheck) return res.status(400).json({ error: 'Please try again.' });
+  const discoverySource = data.discoverySource ?? '';
+  if (!["", "Google Search / Maps", "ChatGPT", "Gemini", "Perplexity", "Other AI assistant", "Social media", "Friend / referral", "Other"].includes(discoverySource)) return res.status(400).json({ error: 'Please choose a listed discovery source.' });
   const fields = [['name',100],['email',254],['work',200],['message',6000]];
   for (const [field,limit] of fields) {
     if (data[field] === undefined && field === 'work') data[field] = '';
@@ -35,7 +37,7 @@ module.exports = async (req, res) => {
   if (rate.count >= 5) { res.setHeader('Retry-After','600'); return res.status(429).json({ error: 'Please wait a few minutes before trying again.' }); }
   if (buckets.size > 10000) buckets.clear();
   rate.count++; buckets.set(fingerprint,rate);
-  const text = `Name: ${data.name}\nEmail: ${data.email}\nWork of interest: ${data.work || 'Open to suggestions'}\n\n${data.message}`;
+  const text = `Name: ${data.name}\nEmail: ${data.email}\nWork of interest: ${data.work || 'Open to suggestions'}\nFound via: ${discoverySource || 'Not specified'}\n\n${data.message}`;
   const digest = createHash('sha256').update(text).digest('hex');
   try {
     const upstream = await fetch('https://api.resend.com/emails', {

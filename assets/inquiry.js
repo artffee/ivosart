@@ -18,7 +18,7 @@
       if (data?.enabled === true) { enabled = true; updateButtons(); show('Send your inquiry directly to Ivo.'); }
     }).catch(() => {});
   const values = () => Object.fromEntries(new FormData(form).entries());
-  const draft = d => `Name: ${d.name || ''}\nEmail: ${d.email || ''}\nWork of interest: ${d.work || 'Open to suggestions'}\n\n${d.message || ''}`;
+  const draft = d => `Name: ${d.name || ''}\nEmail: ${d.email || ''}\nWork of interest: ${d.work || 'Open to suggestions'}\nFound via: ${d.discoverySource || 'Not specified'}\n\n${d.message || ''}`;
   const openDraft = data => {
     location.href = `mailto:${inbox}?subject=${encodeURIComponent('IvosArt inquiry — ' + (data.work || 'Artwork'))}&body=${encodeURIComponent(draft(data))}`;
     show('Your email app should open. Press Send there, or copy your inquiry below.');
