@@ -47,6 +47,10 @@ Direct delivery was restored and verified on **October 30, 2026**. Missing Namec
 
 See [the inquiry delivery guide](docs/inquiry-delivery.md) for verified results, preserved DNS records, secure configuration and repeatable delivery checks. The October 16 `enabled:false` result is retained there as historical context. Configuration presence alone does not prove delivery; future changes should repeat the provider and inbox checks.
 
+## Visitor analytics
+
+Vercel Web Analytics is enabled on the existing Hobby plan. Page views are collected only after the visitor accepts analytics. The integration covers every canonical page, strips query strings and fragments, and excludes inquiry and chat text. View the private [analytics dashboard](https://vercel.com/usivaylo-5363s-projects/ivosart/analytics) or read [the implementation and verification guide](docs/analytics.md). Collection begins with the activation deployment; past visits cannot be reconstructed.
+
 ## A305X
 
 The multilingual animated studio guide remains in `index.html`, with `api/chat.js` calling Gemini using server-side `GEMINI_API_KEY`. The choice-based reader uses `api/reading.js`, `lib/a305x-reader.js` and `assets/a305x-reader-data.js`, including a local fallback. Its result now links to the chosen artwork page. It is an entertainment experience based on choices, not a literal mind-reading or measurement tool.
