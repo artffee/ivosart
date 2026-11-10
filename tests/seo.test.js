@@ -7,8 +7,8 @@ const sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
 const routes=[...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);
 function read(url){return fs.readFileSync(path.join(root,new URL(url).pathname,'index.html'),'utf8');}
 function jsonld(html){return [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap(m=>JSON.parse(m[1]));}
-test('all 54 canonical pages have indexable metadata, social images and exactly one analytics loader',()=>{
- assert.equal(routes.length,54);assert.equal(new Set(routes).size,54);
+test('all 58 canonical pages have indexable metadata, social images and exactly one analytics loader',()=>{
+ assert.equal(routes.length,58);assert.equal(new Set(routes).size,58);
  for(const url of routes){const html=read(url);
   assert.ok(html.includes(`rel="canonical" href="${url}"`),url);
   assert.ok(html.includes(`property="og:url" content="${url}"`),url);
@@ -21,9 +21,9 @@ test('all 54 canonical pages have indexable metadata, social images and exactly 
   for(const m of html.matchAll(/(?:property="og:image"|name="twitter:image") content="https:\/\/ivosart.com([^"?]+)"/g)){assert.ok(fs.existsSync(path.join(root,m[1])),m[1]);}
  }
 });
-test('all 49 artwork pages have accurate ordered breadcrumbs, artwork schema and image sitemap entries',()=>{
- const artworkRoutes=routes.filter(url=>url.includes('/artworks/'));assert.equal(artworkRoutes.length,49);
- assert.equal((sitemap.match(/<image:image>/g)||[]).length,49);
+test('all 52 artwork pages have accurate ordered breadcrumbs, artwork schema and image sitemap entries',()=>{
+ const artworkRoutes=routes.filter(url=>url.includes('/artworks/'));assert.equal(artworkRoutes.length,52);
+ assert.equal((sitemap.match(/<image:image>/g)||[]).length,52);
  for(const url of artworkRoutes){const data=jsonld(read(url));const art=data.find(x=>x['@type']==='VisualArtwork');const crumbs=data.find(x=>x['@type']==='BreadcrumbList');
   assert.equal(art.url,url);assert.equal(art.creator['@id'],'https://ivosart.com/#artist');assert.ok(!art.offers);
   assert.deepEqual(crumbs.itemListElement.map(x=>x.position),[1,2,3]);assert.equal(crumbs.itemListElement[2].item,url);
@@ -50,7 +50,7 @@ test('homepage exposes six featured artwork links and a main landmark before Jav
 });
 
 test('collection pages describe their visible artwork lists without invented commercial data',()=>{
- for(const [route,count,title] of [['/gallery/',49,'Original Paintings'],['/collections/art-statements/',16,'Framed Art Statements']]){
+ for(const [route,count,title] of [['/gallery/',52,'Original Paintings'],['/collections/art-statements/',16,'Framed Art Statements'],['/collections/art-after-hours/',3,'Art After Hours']]){
   const html=read('https://ivosart.com'+route);
   assert.ok(html.match(/<title>(.*?)<\/title>/)[1].includes(title));
   const graph=jsonld(html)[0]['@graph'];
@@ -68,7 +68,7 @@ test('collection pages describe their visible artwork lists without invented com
   assert.doesNotMatch(JSON.stringify(graph),/"(?:offers|aggregateRating|review)"/);
  }
  const gallery=read('https://ivosart.com/gallery/');
- assert.equal((gallery.match(/<h2><a href="\/artworks\//g)||[]).length,49);
+ assert.equal((gallery.match(/<h2><a href="\/artworks\//g)||[]).length,52);
 });
 
 test('generated catalogue imagery has verified intrinsic dimensions and social descriptions',()=>{

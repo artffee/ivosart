@@ -1,0 +1,18 @@
+/* Shared by the homepage feature and the Art After Hours collection. */
+.after-hours-feature{padding:65px 0 75px;background:#161513;color:#f4f1ea}
+.after-hours-feature .shead{align-items:end}
+.after-hours-feature .scol{color:#c8c0b3;max-width:42ch}
+.after-hours-feature h2 em{color:#c5a16b}
+.after-hours-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.after-hours-card{min-width:0}
+.after-hours-card img{display:block;width:100%;height:430px;object-fit:contain;background:#0c0c0b}
+.after-hours-card h3{font:400 1.9rem/1.15 var(--serif);margin:20px 0 10px}
+.after-hours-card p{color:#c8c0b3;font-size:.95rem;line-height:1.6;max-width:38ch}
+.after-hours-card a:focus-visible,.after-hours-feature a:focus-visible{outline:2px solid #d4b47f;outline-offset:5px}
+.after-hours-feature .detail-link{color:#f4f1ea}
+.after-hours-note{font-size:.8rem;color:#c8c0b3;margin:25px 0 0}
+.after-hours-collection .card-image{padding:0;background:#161513}
+.after-hours-collection .card-image img{height:500px;object-fit:contain}
+.after-hours-collection .art-grid{padding-bottom:65px}
+@media(max-width:1000px){.after-hours-card img{height:340px}.after-hours-collection .card-image img{height:420px}}
+@media(max-width:640px){.after-hours-grid{grid-template-columns:1fr;gap:38px}.after-hours-card img{height:auto;max-height:560px}.after-hours-feature{padding:45px 0 55px}.after-hours-card h3{font-size:2.1rem}.after-hours-collection .card-image img{height:auto;max-height:590px}}

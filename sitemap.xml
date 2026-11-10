@@ -4,6 +4,7 @@
   <url><loc>https://ivosart.com/gallery/</loc></url>
   <url><loc>https://ivosart.com/books/the-quiet-between-us/</loc></url>
   <url><loc>https://ivosart.com/collections/art-statements/</loc></url>
+  <url><loc>https://ivosart.com/collections/art-after-hours/</loc></url>
   <url><loc>https://ivosart.com/privacy/</loc></url>
   <url><loc>https://ivosart.com/artworks/crossing/</loc><image:image><image:loc>https://ivosart.com/images/work-01.jpg</image:loc></image:image></url>
   <url><loc>https://ivosart.com/artworks/tempest/</loc><image:image><image:loc>https://ivosart.com/images/work-02.jpg</image:loc></image:image></url>
@@ -54,4 +55,7 @@
   <url><loc>https://ivosart.com/artworks/escape-the-matrix/</loc><image:image><image:loc>https://ivosart.com/images/statements/escape-the-matrix.webp</image:loc></image:image></url>
   <url><loc>https://ivosart.com/artworks/untitled-motion-study/</loc><image:image><image:loc>https://ivosart.com/images/statements/untitled-motion-study.webp</image:loc></image:image></url>
   <url><loc>https://ivosart.com/artworks/don-quixote/</loc><image:image><image:loc>https://ivosart.com/images/don-quixote.jpg</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/shape-of-passion-studio-hour/</loc><image:image><image:loc>https://ivosart.com/images/after-hours/shape-of-passion-studio.jpg</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/midnight-art-deco-bar/</loc><image:image><image:loc>https://ivosart.com/images/after-hours/midnight-art-deco-bar.jpg</image:loc></image:image></url>
+  <url><loc>https://ivosart.com/artworks/agape-after-hours/</loc><image:image><image:loc>https://ivosart.com/images/after-hours/agape-after-hours.jpg</image:loc></image:image></url>
 </urlset>
